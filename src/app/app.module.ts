@@ -8,19 +8,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //services
 import { DataService } from './components/services/data/data.service';
 
-
+//components
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { RegisterUsersComponent } from './components/register-users/register-users.component';
+import { UsersComponent } from './components/users/users.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    RegisterUsersComponent
+    RegisterUsersComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +34,7 @@ import { RegisterUsersComponent } from './components/register-users/register-use
       [
         {path: 'login', component:  LoginComponent  },
         {path: 'register-users', component:  RegisterUsersComponent  },
+        {path: 'users', component:  UsersComponent  },
         {path: '', component:  HomeComponent  }
 
       ])
