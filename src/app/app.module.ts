@@ -4,6 +4,10 @@ import {RouterModule} from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 // import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule } from '@angular/material';
+import { MatListModule } from '@angular/material/list';
+import { LayoutModule } from '@angular/cdk/layout';
+
 
 //services
 import { DataService } from './components/services/data/data.service';
@@ -15,6 +19,8 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { RegisterUsersComponent } from './components/register-users/register-users.component';
 import { UsersComponent } from './components/users/users.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +28,8 @@ import { UsersComponent } from './components/users/users.component';
     LoginComponent,
     HomeComponent,
     RegisterUsersComponent,
-    UsersComponent
+    UsersComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -30,14 +37,22 @@ import { UsersComponent } from './components/users/users.component';
     // MaterialModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatListModule ,
     RouterModule.forRoot(
       [
         {path: 'login', component:  LoginComponent  },
+        {path: 'dashboard', component:  DashboardComponent  },
         {path: 'register-users', component:  RegisterUsersComponent  },
         {path: 'users', component:  UsersComponent  },
         {path: '', component:  HomeComponent  }
 
-      ])
+      ]),
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule,
+    LayoutModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
