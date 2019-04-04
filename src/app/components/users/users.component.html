@@ -1,0 +1,9 @@
+
+  <a routerLink="">Home</a>
+  <h1>users page</h1>
+  <div *ngFor="let user of users$">
+    <ul>
+      <li>{{user.id}} {{user.name}} {{user.username}} {{user.password}} {{user.email}} {{user.when_added}}</li>
+    </ul>
+
+  </div>
