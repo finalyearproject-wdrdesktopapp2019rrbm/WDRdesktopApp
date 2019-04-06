@@ -12,6 +12,9 @@ import { LayoutModule } from '@angular/cdk/layout';
 //services
 import { DataService } from './components/services/data/data.service';
 
+//guards
+import { AuthGuard } from './components/guard/auth.guard';
+
 //components
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +23,7 @@ import { HomeComponent } from './components/home/home.component';
 import { RegisterUsersComponent } from './components/register-users/register-users.component';
 import { UsersComponent } from './components/users/users.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DatamanagerComponent } from './components/datamanager/datamanager.component';
 
 
 @NgModule({
@@ -29,7 +33,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     HomeComponent,
     RegisterUsersComponent,
     UsersComponent,
-    DashboardComponent
+    DashboardComponent,
+    DatamanagerComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +46,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     RouterModule.forRoot(
       [
         {path: 'login', component:  LoginComponent  },
-        {path: 'dashboard', component:  DashboardComponent  },
+        {path: 'datamanager', component:  DatamanagerComponent  },
+        {path: 'dashboard', component:  DashboardComponent, canActivate: [AuthGuard] },
         {path: 'register-users', component:  RegisterUsersComponent  },
         {path: 'users', component:  UsersComponent  },
         {path: '', component:  HomeComponent  }
@@ -54,7 +60,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     MatButtonModule,
     LayoutModule
   ],
-  providers: [DataService],
+  providers: [DataService, AuthGuard ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

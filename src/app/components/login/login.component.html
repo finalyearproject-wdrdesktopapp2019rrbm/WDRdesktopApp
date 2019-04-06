@@ -1,12 +1,18 @@
-<h1>Login page</h1>
+
 <mat-nav-list>
   <a mat-list-item routerLink="">Home</a>
   <a mat-list-item  routerLink="/dashboard">Dashboard</a>
 </mat-nav-list>
-  <div class="conatiner">
+  <div class="container">
     <div class="jumbtron">
-      <button type="button" class="btn btn-success" name="button">Login</button>
+      <h1>Login</h1>
+      <form (submit)="loginUser($event)">
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <input type="submit" name="" value="submit">
 
-    </div>
+      </form>
+
+        </div>
 
   </div>
