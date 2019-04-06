@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule } from '@angular/material';
 import { MatListModule } from '@angular/material/list';
 import { LayoutModule } from '@angular/cdk/layout';
-
+import {ReactiveFormsModule} from "@angular/forms";
 
 //services
 import { DataService } from './components/services/data/data.service';
@@ -43,6 +43,7 @@ import { DatamanagerComponent } from './components/datamanager/datamanager.compo
     BrowserAnimationsModule,
     HttpClientModule,
     MatListModule ,
+    ReactiveFormsModule,
     RouterModule.forRoot(
       [
         {path: 'login', component:  LoginComponent  },
