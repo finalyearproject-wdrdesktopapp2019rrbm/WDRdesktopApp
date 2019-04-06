@@ -11,6 +11,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 
 //services
 import { DataService } from './components/services/data/data.service';
+import { UsersService } from './components/services/users/users.service';
 
 //guards
 import { AuthGuard } from './components/guard/auth.guard';
@@ -61,7 +62,7 @@ import { DatamanagerComponent } from './components/datamanager/datamanager.compo
     MatButtonModule,
     LayoutModule
   ],
-  providers: [DataService, AuthGuard ],
+  providers: [DataService, AuthGuard, UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
