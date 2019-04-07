@@ -49,13 +49,15 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
     ReactiveFormsModule,
     RouterModule.forRoot(
       [
-        {path: 'login', component:  LoginComponent  },
+
         {path: 'datamanager', component:  DatamanagerComponent  },
         {path: 'dashboard', component:  DashboardComponent, canActivate: [AuthGuard] },
         {path: 'register-users', component:  RegisterUsersComponent  },
         {path: 'users', component:  UsersComponent  },
         {path: 'edit-user', component:  EditUserComponent  },
-        {path: '', component:  HomeComponent  }
+        {path: 'home', component:  HomeComponent  },
+          {path: '', component:  LoginComponent  }
+
 
       ]),
     MatGridListModule,

@@ -1,43 +1,30 @@
 
 <mat-nav-list>
-  <a mat-list-item routerLink="">Home</a>
+  <a mat-list-item routerLink="home">Home</a>
   <a mat-list-item  routerLink="/dashboard">Dashboard</a>
 </mat-nav-list>
   <div class="container">
-    <div class="jumbtron">
-      <h1>Login</h1>
-      <!-- <form (submit)="loginUser($event)">
-        <input type="text" placeholder="Username">
-        <input type="password" placeholder="Password">
-        <input type="submit" name="" value="submit">
-
-      </form> -->
-
-
-
-        </div>
-
         <div class="row">
 
           <div class="col-md-6 col-md-offset-2">
-            <h1>Login </h1>
+            <h1 class="text-center">Login </h1>
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
               <div class="form-group">
                 <label for="email">Email address:</label>
                 <input type="email" class="form-control" formControlName="email" id="email">
                 <div *ngIf="submitted && loginForm.controls.email.errors" class="error">
-                  <div *ngIf="loginForm.controls.email.errors.required">Email is required</div>
+                  <div *ngIf="loginForm.controls.email.errors.required" class="text-danger">Email is required</div>
                 </div>
               </div>
               <div class="form-group">
                 <label for="pwd">Password:</label>
                 <input type="password" class="form-control" formControlName="password" id="pwd">
                 <div *ngIf="submitted && loginForm.controls.password.errors" class="error">
-                  <div *ngIf="loginForm.controls.password.errors.required">Password is required</div>
+                  <div *ngIf="loginForm.controls.password.errors.required" class="text-danger">Password is required</div>
                 </div>
               </div>
-              <button class="btn btn-default">Login</button>
-              <div *ngIf="invalidLogin" class="error">
+              <button class="btn btn-success">Login</button>
+              <div *ngIf="invalidLogin" class="error" class="text-danger">
                 <div>Invalid credentials.</div>
               </div>
             </form>
