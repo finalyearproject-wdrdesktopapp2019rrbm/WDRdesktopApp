@@ -25,6 +25,7 @@ import { RegisterUsersComponent } from './components/register-users/register-use
 import { UsersComponent } from './components/users/users.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DatamanagerComponent } from './components/datamanager/datamanager.component';
+import { EditUserComponent } from './components/edit-user/edit-user.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { DatamanagerComponent } from './components/datamanager/datamanager.compo
     RegisterUsersComponent,
     UsersComponent,
     DashboardComponent,
-    DatamanagerComponent
+    DatamanagerComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +54,7 @@ import { DatamanagerComponent } from './components/datamanager/datamanager.compo
         {path: 'dashboard', component:  DashboardComponent, canActivate: [AuthGuard] },
         {path: 'register-users', component:  RegisterUsersComponent  },
         {path: 'users', component:  UsersComponent  },
+        {path: 'edit-user', component:  EditUserComponent  },
         {path: '', component:  HomeComponent  }
 
       ]),

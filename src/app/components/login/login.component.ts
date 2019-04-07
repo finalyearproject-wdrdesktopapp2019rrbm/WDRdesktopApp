@@ -12,6 +12,7 @@ import {AuthService } from "../services/auth/auth.service";
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   submitted: boolean = false;
+   invalidLogin: boolean = false;
 
   constructor(private formBuilder:  FormBuilder, private router: Router, private auhService: AuthService) { }
 

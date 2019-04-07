@@ -27,7 +27,24 @@ export class UsersComponent implements OnInit {
 
   }
 
-
   // deleteUser
+  deleteUser(user: User): void {
+    this.userService.deleteUser(user.id)
+    .subscribe( data => {
+      // this.users = this.users.filter( u => u !== user);
+      this.users$ = this.users$.filter( u => u !== user);
+    })
+  };
+
+  //edit user details
+  editUser(user: User): void {
+    localStorage.removeItem("editUserId");
+    localStorage.setItem("editUserId", user.id.toString());
+    this.router.navigate(['edit-user']);
+  };
+
+  addUser(): void {
+    this.router.navigate(['register-users']);
+  }
 
 }
