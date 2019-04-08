@@ -27,7 +27,7 @@ export class EditUserComponent implements OnInit {
     }
     console.log('user data');
     this.editForm = this.formBuilder.group({
-      id: ['', Validators.required],
+      id: [],
       name: ['', Validators.required],
       username: ['', Validators.required],
       email: ['', Validators.required],
