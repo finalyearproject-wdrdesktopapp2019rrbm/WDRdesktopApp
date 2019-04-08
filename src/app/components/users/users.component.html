@@ -1,9 +1,9 @@
 
   <a routerLink="">Home</a>
 
-  <div class="col-md-6">
+  <div class="col-md-12 col-sm-12 col-xm-12">
   <h2> User Details</h2>
-  <button class="btn btn-danger" (click)="addUser()"> Add User</button> <br />
+  <p><button class="btn btn-info" (click)="addUser()"> Add User</button> <br /></p>
   <table class="table table-striped">
     <thead>
     <tr>
@@ -16,15 +16,15 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let user of users$">
+    <tr *ngFor="let user of users">
       <!-- <td class="hidden"></td> -->
       <td>{{user.id}}</td>
       <td>{{user.name}}</td>
       <td>{{user.email}}</td>
       <td>{{user.password}}</td>
       <td>{{user.when_added}}</td>
-      <td><button class="btn btn-danger" (click)="deleteUser(user)"> Delete</button>
-        <button class="btn btn-danger" (click)="editUser(user)" style="margin-left: 20px;"> Edit</button></td>
+      <td><button class="btn btn-sm btn-danger" (click)="deleteUser(user)"> Delete</button>
+        <button class="btn btn-sm  btn-info" (click)="editUser(user)" style="margin-left: 20px;"> Edit</button></td>
     </tr>
     </tbody>
   </table>

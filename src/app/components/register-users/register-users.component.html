@@ -1,23 +1,31 @@
-<div class="col-md-6">
-  <h2 class="text-center">Add User</h2>
-  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="firstName">Name:</label>
-      <input formControlName="name" placeholder="name" name="name" class="form-control" id="name">
-    </div>
-    <div class="form-group">
-      <label for="username">Username</label>
-      <input formControlName="username" placeholder="Username" name="username" class="form-control" id="username">
-    </div>
-    <div class="form-group">
-      <label for="email">Email address:</label>
-      <input type="email" formControlName="email" placeholder="Email" name="email" class="form-control" id="email">
-    </div>
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input type="password" formControlName="password" placeholder="password" name="password" class="form-control" id="password">
+<div class="container">
+    <div class="jumbotron">
+
     </div>
 
-    <button class="btn btn-success">Update</button>
-  </form>
+    <div class="col-md-6 " >
+      <h2 class="text-center">Add User</h2>
+      <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="firstName">Name:</label>
+          <input formControlName="name" placeholder="name" name="name" class="form-control" id="name">
+        </div>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input formControlName="username" placeholder="Username" name="username" class="form-control" id="username">
+        </div>
+        <div class="form-group">
+          <label for="email">Email address:</label>
+          <input type="email" formControlName="email" placeholder="Email" name="email" class="form-control" id="email">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" formControlName="password" placeholder="password" name="password" class="form-control" id="password">
+        </div>
+
+        <button class="btn btn-success">Add user</button>
+      </form>
+    </div>
+
+
 </div>

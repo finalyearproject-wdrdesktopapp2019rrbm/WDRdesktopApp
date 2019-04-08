@@ -10,7 +10,7 @@ import { UserService } from '../services/user/user.service';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-    users$: User[];
+    users: User[];
     // _users: User[];
   constructor(private router: Router, private userService: UserService, private dataService: DataService) { }
 
@@ -22,7 +22,7 @@ export class UsersComponent implements OnInit {
     //option two
     this.userService.getUsers()
     .subscribe( data => {
-      this.users$ = data;
+      this.users = data;
     });
 
   }
@@ -32,14 +32,15 @@ export class UsersComponent implements OnInit {
     this.userService.deleteUser(user.id)
     .subscribe( data => {
       // this.users = this.users.filter( u => u !== user);
-      this.users$ = this.users$.filter( u => u !== user);
+      this.users = this.users$.filter( u => u !== user);
     })
   };
 
   //edit user details
   editUser(user: User): void {
     localStorage.removeItem("editUserId");
-    localStorage.setItem("editUserId", user.id.toString());
+    // localStorage.setItem("editUserId", user.id.toString());
+    localStorage.setItem("editUserId", user.id);
     this.router.navigate(['edit-user']);
   };
 

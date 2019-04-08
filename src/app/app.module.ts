@@ -2,9 +2,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {RouterModule} from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 // import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule } from '@angular/material';
+import {
+  MatGridListModule,
+  MatCardModule,
+  MatMenuModule,
+  MatIconModule,
+  MatButtonModule,
+  MatDialogModule,
+  MatInputModule,
+  MatTableModule,
+  MatToolbarModule
+    } from '@angular/material';
 import { MatListModule } from '@angular/material/list';
 import { LayoutModule } from '@angular/cdk/layout';
 import {ReactiveFormsModule} from "@angular/forms";
@@ -60,13 +71,20 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
 
 
       ]),
+    CommonModule,
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
-    LayoutModule
+    LayoutModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatInputModule,
+    MatTableModule,
+    MatToolbarModule
   ],
+   exports: [CommonModule, MatToolbarModule, MatButtonModule, MatCardModule, MatInputModule, MatDialogModule, MatTableModule],
   providers: [DataService, AuthGuard, UserService],
   bootstrap: [AppComponent]
 })

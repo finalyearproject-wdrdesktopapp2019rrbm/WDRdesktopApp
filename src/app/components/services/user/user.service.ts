@@ -9,7 +9,7 @@ import  { User } from '../../models/user/user.model';
 
 export class UserService {
   // baseUrl:string='http:localhost:3000/';
-   baseUrl = 'http://localhost:3000/Users';
+   baseUrl = 'http://localhost:3000/users';
   constructor(private http: HttpClient) { }
 
   // getUsers() {
@@ -26,7 +26,7 @@ export class UserService {
   }
 
   createUser(user:User) {
-    return this.http.post(this.baseUrl,  user);
+     return this.http.post(this.baseUrl,  user);
   }
 
   updateUser(user: User) {

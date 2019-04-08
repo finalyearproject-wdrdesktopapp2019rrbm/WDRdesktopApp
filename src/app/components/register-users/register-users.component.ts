@@ -28,10 +28,12 @@ export class RegisterUsersComponent implements OnInit {
   }
 
   onSubmit(){
-    this.userService.createUser(this.addForm.value)
+      this.userService.createUser(this.addForm.value)
       .subscribe( data => {
         this.router.navigate(['users']);
       })
   }
+
+  // addUser(user)
 
 }
