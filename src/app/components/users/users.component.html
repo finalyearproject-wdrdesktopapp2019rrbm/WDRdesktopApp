@@ -23,6 +23,14 @@
       <td>{{user.email}}</td>
       <td>{{user.password}}</td>
       <td>{{user.when_added}}</td>
+      <td>
+      <a class="btn" (click)="showForEdit(employee)">
+        <i class="fa fa-pencil-square-o"></i>
+      </a>
+      <a class="btn text-danger" (click)="onDelete(employee.EmployeeID)">
+        <i class="fa fa-trash-o"></i>
+      </a>
+    </td>
       <td><button class="btn btn-sm btn-danger" (click)="deleteUser(user)"> Delete</button>
         <button class="btn btn-sm  btn-info" (click)="editUser(user)" style="margin-left: 20px;"> Edit</button></td>
     </tr>

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {RouterModule} from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+// import { AngularFontAwesomeModule } from 'angular-font-awesome';
 // import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
@@ -14,7 +15,8 @@ import {
   MatDialogModule,
   MatInputModule,
   MatTableModule,
-  MatToolbarModule
+  MatToolbarModule,
+  // AngularFontAwesomeModule,
     } from '@angular/material';
 import { MatListModule } from '@angular/material/list';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -67,7 +69,7 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
         {path: 'users', component:  UsersComponent  },
         {path: 'edit-user', component:  EditUserComponent  },
         {path: 'home', component:  HomeComponent  },
-          {path: '', component:  LoginComponent  }
+        {path: '', component:  LoginComponent  }
 
 
       ]),
