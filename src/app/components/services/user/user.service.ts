@@ -12,10 +12,6 @@ export class UserService {
    baseUrl = 'http://localhost:3000/users';
   constructor(private http: HttpClient) { }
 
-  // getUsers() {
-  //   return this.http.get<User[]>(this.baseUrl + 'users');
-  // }
-  //get all users
   getUsers(){
     return this.http.get<User[]>(this.baseUrl)
   }
@@ -30,8 +26,11 @@ export class UserService {
   }
 
   updateUser(user: User) {
+    alert(user);
     return this.http.put(this.baseUrl + '/' + user.id, user);
   }
+
+  
 
   deleteUser(id: number) {
     return this.http.delete(this.baseUrl + '/' + id);
