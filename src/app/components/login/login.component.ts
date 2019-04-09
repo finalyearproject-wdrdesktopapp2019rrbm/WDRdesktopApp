@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
       return;
     }
     if(this.loginForm.controls.email.value == 'test' && this.loginForm.controls.password.value == 'test'){
-      this.router.navigate(['dashboard']);
+      this.router.navigate(['main-nav']);
     } else {
       this.invalidLogin = true;
     }

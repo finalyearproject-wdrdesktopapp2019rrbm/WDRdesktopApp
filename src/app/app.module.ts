@@ -16,7 +16,7 @@ import {
   MatInputModule,
   MatTableModule,
   MatToolbarModule,
-  // AngularFontAwesomeModule,
+  MatSidenavModule
     } from '@angular/material';
 import { MatListModule } from '@angular/material/list';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -39,6 +39,7 @@ import { UsersComponent } from './components/users/users.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DatamanagerComponent } from './components/datamanager/datamanager.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
+import { MainNavComponent } from './main-nav/main-nav.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
     UsersComponent,
     DashboardComponent,
     DatamanagerComponent,
-    EditUserComponent
+    EditUserComponent,
+    MainNavComponent
   ],
   imports: [
     BrowserModule,
@@ -69,6 +71,7 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
         {path: 'users', component:  UsersComponent  },
         {path: 'edit-user', component:  EditUserComponent  },
         {path: 'home', component:  HomeComponent  },
+        {path: 'main-nav', component:   MainNavComponent  },
         {path: '', component:  LoginComponent  }
 
 
@@ -84,7 +87,8 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
     MatDialogModule,
     MatInputModule,
     MatTableModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatSidenavModule
   ],
    exports: [CommonModule, MatToolbarModule, MatButtonModule, MatCardModule, MatInputModule, MatDialogModule, MatTableModule],
   providers: [DataService, AuthGuard, UserService],
