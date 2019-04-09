@@ -36,8 +36,8 @@ export class LoginComponent implements OnInit {
     if(this.loginForm.invalid) {
       return;
     }
-    if(this.loginForm.controls.email.value == 'mic@gmail.com' && this.loginForm.controls.password.value == 'michael'){
-      this.router.navigate(['users']);
+    if(this.loginForm.controls.email.value == 'test' && this.loginForm.controls.password.value == 'test'){
+      this.router.navigate(['dashboard']);
     } else {
       this.invalidLogin = true;
     }

@@ -1,13 +1,10 @@
-
-<mat-nav-list>
-  <a mat-list-item routerLink="home">Home</a>
-  <a mat-list-item  routerLink="/dashboard">Dashboard</a>
-</mat-nav-list>
   <div class="container">
-        <div class="row">
 
-          <div class="col-md-6 col-md-offset-2">
-            <h1 class="text-center">Login </h1>
+        <div class="row">
+          <div class="col-md-3"></div>
+          <!-- <hr> -->
+          <div class="col-md-6 col-md-offset-3" id="login">
+            <h1 class="text-center text-primary">Login </h1>
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
               <div class="form-group">
                 <label for="email">Email address:</label>
@@ -23,9 +20,12 @@
                   <div *ngIf="loginForm.controls.password.errors.required" class="text-danger">Password is required</div>
                 </div>
               </div>
-              <button class="btn btn-success">Login</button>
-              <div *ngIf="invalidLogin" class="error" class="text-danger">
-                <div>Invalid credentials.</div>
+              <div class="text-center">
+                <button class="btn btn-success">Login</button>
+                <div *ngIf="invalidLogin" class="error" class="text-danger">
+                  <div><p>Invalid credentials.</p></div>
+                </div>
+
               </div>
             </form>
           </div>
@@ -71,4 +71,4 @@
     <mat-card-actions>
       <button mat-raised-button color="primary">Login</button>
     </mat-card-actions>
-  </mat-card> --> 
+  </mat-card> -->
