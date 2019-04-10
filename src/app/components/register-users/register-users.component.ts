@@ -20,7 +20,7 @@ export class RegisterUsersComponent implements OnInit {
 
     this.addForm = this.formBuilder.group({
       id: [],
-      name: ['', Validators.required],
+      firstname: ['', Validators.required],
       username: ['', Validators.required],
       email: ['', Validators.required],
       password: ['', Validators.required]
@@ -28,10 +28,17 @@ export class RegisterUsersComponent implements OnInit {
   }
 
   onSubmit(){
+    if(!this.addFrom){
       this.userService.createUser(this.addForm.value)
       .subscribe( data => {
         this.router.navigate(['users']);
       })
+
+
+    }else{
+      alert('fill fields');
+    }
+
   }
 
   // addUser(user)
