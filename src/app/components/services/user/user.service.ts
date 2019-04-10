@@ -22,6 +22,7 @@ export class UserService {
   }
 
   createUser(user:User) {
+     console.log(user);
      return this.http.post(this.baseUrl,  user);
   }
 
@@ -30,7 +31,7 @@ export class UserService {
     return this.http.put(this.baseUrl + '/' + user.id, user);
   }
 
-  
+
 
   deleteUser(id: number) {
     return this.http.delete(this.baseUrl + '/' + id);

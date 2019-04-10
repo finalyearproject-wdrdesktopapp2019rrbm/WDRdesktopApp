@@ -1,12 +1,13 @@
 <div class="container-fluid pt-5">
+  <a routerLink="/main-nav" class="btn btn-primary">Home</a>
     <div class="col-md-6 mx-auto" >
-      <div class="card rounded-0">
+      <div class="card rounded-1">
         <div class="card-header">
           <h2 class="text-center mb-0 text-primary">Add User</h2>
         </div>
-
       </div>
-      <form [formGroup]="addForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+
+      <form [formGroup]="addForm" (ngSubmit)="onSubmit()" class="needs-validation"  novalidate>
         <div class="form-row">
            <div class="col-md-10 mb-3">
            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Station</label>
@@ -78,7 +79,7 @@
                      </div>
                    </div>
               </div>
-                  <button class="btn btn-success">Add user</button>
+                  <button class="btn btn-success" >Add user</button>
         </form>
   </div>
 </div>
