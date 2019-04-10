@@ -26,11 +26,6 @@ export class LoginComponent implements OnInit {
   }
 
 
-  // loginUser(event){
-  //   event.preventDefault();
-  //   console.log(event);
-  // }
-
   onSubmit() {
     this.submitted = true;
     if(this.loginForm.invalid) {
