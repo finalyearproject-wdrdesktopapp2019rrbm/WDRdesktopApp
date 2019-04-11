@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router, ActivatedRoute} from "@angular/router";
 import {first} from "rxjs/operators";
 import {AuthService } from "../services/auth/auth.service";
+import {AlertService } from "../services/alert/alert.service";
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,8 @@ export class LoginComponent implements OnInit {
     private formBuilder:  FormBuilder,
     private router: Router,
     private route: ActivatedRoute,
-    private authService: AuthService) { }
+    private authService: AuthService,
+    private alertService: AlertService) { }
 
 
 
@@ -48,11 +50,6 @@ export class LoginComponent implements OnInit {
     }
 
     this.loading = true;
-    // if(this.loginForm.controls.username.value == 'test' && this.loginForm.controls.password.value == 'test'){
-    //   this.router.navigate(['main-nav']);
-    // } else {
-    //   this.invalidLogin = true;
-    // }
 
     this.authService.login(this.f.username.value, this.f.password.value)
     .pipe(first())
