@@ -31,6 +31,8 @@ export class LoginComponent implements OnInit {
     if(this.loginForm.invalid) {
       return;
     }
+
+    
     if(this.loginForm.controls.username.value == 'test' && this.loginForm.controls.password.value == 'test'){
       this.router.navigate(['main-nav']);
     } else {
