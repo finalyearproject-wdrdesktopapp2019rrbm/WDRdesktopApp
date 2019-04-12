@@ -40,6 +40,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DatamanagerComponent } from './components/datamanager/datamanager.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
+import { ObservationSlipComponent } from './components/Forms/observation-slip/observation-slip.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { MainNavComponent } from './main-nav/main-nav.component';
     DashboardComponent,
     DatamanagerComponent,
     EditUserComponent,
-    MainNavComponent
+    MainNavComponent,
+    ObservationSlipComponent
   ],
   imports: [
     BrowserModule,
@@ -71,6 +73,7 @@ import { MainNavComponent } from './main-nav/main-nav.component';
         {path: 'users', component:  UsersComponent  },
         {path: 'edit-user', component:  EditUserComponent  },
         {path: 'home', component:  HomeComponent  },
+        {path: 'observation-slip', component:  ObservationSlipComponent  },
         {path: 'main-nav', component:   MainNavComponent  },
         {path: '', component:  LoginComponent  }
 
