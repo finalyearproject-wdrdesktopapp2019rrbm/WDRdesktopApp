@@ -40,7 +40,19 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DatamanagerComponent } from './components/datamanager/datamanager.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
+<<<<<<< HEAD
 import { ObservationSlipComponent } from './components/Forms/observation-slip/observation-slip.component';
+=======
+import { ObservationslipComponent } from './components/forms/observationslip/observationslip.component';
+import { StationComponent } from './components/forms/station/station.component';
+import { ElementsComponent } from './components/forms/elements/elements.component';
+import { InstrumentsComponent } from './components/forms/instruments/instruments.component';
+import { ArchiveObservationslipComponent } from './components/archiveForm/archive-observationslip/archive-observationslip.component';
+import { ArchivemonthlyrainfallformreportdataComponent } from './components/archiveForm/archivemonthlyrainfallformreportdata/archivemonthlyrainfallformreportdata.component';
+import { ArchivedekadalformreportdataComponent } from './components/archiveForm/archivedekadalformreportdata/archivedekadalformreportdata.component';
+
+
+>>>>>>> master
 
 
 @NgModule({
@@ -54,7 +66,17 @@ import { ObservationSlipComponent } from './components/Forms/observation-slip/ob
     DatamanagerComponent,
     EditUserComponent,
     MainNavComponent,
+<<<<<<< HEAD
     ObservationSlipComponent
+=======
+    ObservationslipComponent,
+    StationComponent,
+    ElementsComponent,
+    InstrumentsComponent,
+    ArchiveObservationslipComponent,
+    ArchivemonthlyrainfallformreportdataComponent,
+    ArchivedekadalformreportdataComponent
+>>>>>>> master
   ],
   imports: [
     BrowserModule,
@@ -72,6 +94,10 @@ import { ObservationSlipComponent } from './components/Forms/observation-slip/ob
         {path: 'register-users', component:  RegisterUsersComponent  },
         {path: 'users', component:  UsersComponent  },
         {path: 'edit-user', component:  EditUserComponent  },
+        {path: 'station', component:  StationComponent   },
+        {path: 'observationslip', component:  ObservationslipComponent   },
+        {path: 'instrument', component:  InstrumentsComponent   },
+        {path: 'elements', component:  ElementsComponent  },
         {path: 'home', component:  HomeComponent  },
         {path: 'observation-slip', component:  ObservationSlipComponent  },
         {path: 'main-nav', component:   MainNavComponent  },

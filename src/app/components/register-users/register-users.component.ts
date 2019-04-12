@@ -20,7 +20,7 @@ export class RegisterUsersComponent implements OnInit {
 
     this.addForm = this.formBuilder.group({
       id: [],
-      name: ['', Validators.required],
+      firstname: ['', Validators.required],
       username: ['', Validators.required],
       email: ['', Validators.required],
       password: ['', Validators.required]
@@ -34,6 +34,5 @@ export class RegisterUsersComponent implements OnInit {
       })
   }
 
-  // addUser(user)
 
 }
