@@ -18,9 +18,10 @@ import {
   MatToolbarModule,
   MatSidenavModule
     } from '@angular/material';
+import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatListModule } from '@angular/material/list';
 import { LayoutModule } from '@angular/cdk/layout';
-import {ReactiveFormsModule} from "@angular/forms";
+import { ReactiveFormsModule } from '@angular/forms';
 
 //services
 import { DataService } from './components/services/data/data.service';
@@ -78,6 +79,7 @@ import { ArchivedekadalformreportdataComponent } from './components/archiveForm/
     HttpClientModule,
     MatListModule ,
     ReactiveFormsModule,
+    MatFormFieldModule,
     RouterModule.forRoot(
       [
 
