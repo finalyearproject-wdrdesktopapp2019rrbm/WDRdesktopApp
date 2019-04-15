@@ -3,25 +3,12 @@ import { NgModule } from '@angular/core';
 import {RouterModule} from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-// import { AngularFontAwesomeModule } from 'angular-font-awesome';
-// import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {
-  MatGridListModule,
-  MatCardModule,
-  MatMenuModule,
-  MatIconModule,
-  MatButtonModule,
-  MatDialogModule,
-  MatInputModule,
-  MatTableModule,
-  MatToolbarModule,
-  MatSidenavModule
-    } from '@angular/material';
+import {  MatGridListModule,  MatCardModule,  MatMenuModule,  MatIconModule,  MatButtonModule,  MatDialogModule,  MatInputModule,  MatTableModule,  MatToolbarModule,  MatSidenavModule ,MatPaginatorModule  } from '@angular/material';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatListModule } from '@angular/material/list';
 import { LayoutModule } from '@angular/cdk/layout';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 //services
 import { DataService } from './components/services/data/data.service';
@@ -30,6 +17,9 @@ import { UserService } from './components/services/user/user.service';
 //guards
 import { AuthGuard } from './components/guard/auth.guard';
 
+
+//interceptor
+import { AuthInterceptor  } from './components/services/auth/auth-interceptor';
 //components
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -74,12 +64,26 @@ import { ArchivedekadalformreportdataComponent } from './components/archiveForm/
   imports: [
     BrowserModule,
     AppRoutingModule,
-    // MaterialModule,
     BrowserAnimationsModule,
     HttpClientModule,
     MatListModule ,
     ReactiveFormsModule,
     MatFormFieldModule,
+    CommonModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule,
+    LayoutModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatInputModule,
+    MatTableModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatPaginatorModule,
+    FormsModule,
     RouterModule.forRoot(
       [
 
@@ -95,22 +99,7 @@ import { ArchivedekadalformreportdataComponent } from './components/archiveForm/
         {path: 'home', component:  HomeComponent  },
         {path: 'main-nav', component:   MainNavComponent  },
         {path: '', component:  LoginComponent  }
-
-
-      ]),
-    CommonModule,
-    MatGridListModule,
-    MatCardModule,
-    MatMenuModule,
-    MatIconModule,
-    MatButtonModule,
-    LayoutModule,
-    MatButtonModule,
-    MatDialogModule,
-    MatInputModule,
-    MatTableModule,
-    MatToolbarModule,
-    MatSidenavModule
+      ])
   ],
    exports: [CommonModule, MatToolbarModule, MatButtonModule, MatCardModule, MatInputModule, MatDialogModule, MatTableModule],
   providers: [DataService, AuthGuard, UserService],

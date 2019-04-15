@@ -2,8 +2,8 @@
     <div class="col-md-12 col-sm-12 col-xm-12">
     <h2 class="jumbotron text-center text-primary">WDR Registered users</h2>
     <p>
-      <a routerLink="/main-nav" class="btn btn-default">Home</a>
-      <button class="btn btn-info" (click)="addUser()"> Add user </button> <br />
+      <a routerLink="/main-nav" class="btn btn-default fa fa-home"> Home</a>
+      <a class="btn btn-default fa fa-pencil" routerLink="/register-users"> Add user </a> <br />
     </p>
     <table class="table table-striped">
       <thead>
@@ -39,15 +39,9 @@
         <th>{{user.LastLoggedIn}}</th>
         <td>{{user.CreatedBy}}</td>
         <td>
-        <!-- <a class="btn" (click)="showForEdit(employee)">
-          <i class="fa fa-pencil-square-o"></i>
-        </a>
-        <a class="btn text-danger" (click)="onDelete(employee.EmployeeID)">
-          <i class="fa  fa-trash-o"></i>
-        </a> -->
       </td>
-        <td><button class="btn btn-sm btn-secondary" (click)="deleactivateUser(user)">Deactivate</button></td><td>
-          <button class="btn btn-sm  btn-info" (click)="editUser(user)" style="margin-left: 20px;"> Edit</button></td>
+        <td><button class="btn btn-secondary" (click)="deleactivateUser(user)"><i class="fa fa-lock"></i>  Deactivate</button></td><td>
+          <button class="btn   btn-info" (click)="editUser(user)" style="margin-left: 20px;"><i class="fa fa-pencil-square-o"></i> Edit</button></td>
       </tr>
       </tbody>
     </table>

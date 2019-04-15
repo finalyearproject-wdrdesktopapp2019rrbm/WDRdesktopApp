@@ -3,6 +3,7 @@ import { DataService } from '../services/data/data.service';
 import { User } from '../models/user/user.model';
 import {Router } from '@angular/router';
 import { UserService } from '../services/user/user.service';
+import { MatPaginator } from '@angular/material';
 
 @Component({
   selector: 'app-users',
@@ -11,19 +12,20 @@ import { UserService } from '../services/user/user.service';
 })
 export class UsersComponent implements OnInit {
     users: User[];
-    // _users: User[];
+    // @ViewChild(MatPaginator) paginator : MatPaginator;
+
   constructor(private router: Router, private userService: UserService, private dataService: DataService) { }
 
   ngOnInit() {
-  //option one to return use data
-    // return this.dataService.getUsers()
-    // .subscribe(data => this.users$ = data);
+
 
     //option two
     this.userService.getUsers()
     .subscribe( data => {
       this.users = data;
     });
+
+    // this.users.paginator = this.paginator;
 
   }
 
