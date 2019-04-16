@@ -38,6 +38,8 @@ import { InstrumentsComponent } from './components/forms/instruments/instruments
 import { ArchiveObservationslipComponent } from './components/archiveForm/archive-observationslip/archive-observationslip.component';
 import { ArchivemonthlyrainfallformreportdataComponent } from './components/archiveForm/archivemonthlyrainfallformreportdata/archivemonthlyrainfallformreportdata.component';
 import { ArchivedekadalformreportdataComponent } from './components/archiveForm/archivedekadalformreportdata/archivedekadalformreportdata.component';
+import { PmComponent } from './components/pm/pm.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 
 
@@ -59,7 +61,9 @@ import { ArchivedekadalformreportdataComponent } from './components/archiveForm/
     InstrumentsComponent,
     ArchiveObservationslipComponent,
     ArchivemonthlyrainfallformreportdataComponent,
-    ArchivedekadalformreportdataComponent
+    ArchivedekadalformreportdataComponent,
+    PmComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -87,18 +91,18 @@ import { ArchivedekadalformreportdataComponent } from './components/archiveForm/
     RouterModule.forRoot(
       [
 
-        {path: 'datamanager', component:  DatamanagerComponent  },
-        {path: 'dashboard', component:  DashboardComponent, canActivate: [AuthGuard] },
-        {path: 'register-users', component:  RegisterUsersComponent  },
-        {path: 'users', component:  UsersComponent  },
-        {path: 'edit-user', component:  EditUserComponent  },
-        {path: 'station', component:  StationComponent   },
-        {path: 'observationslip', component:  ObservationslipComponent   },
-        {path: 'instrument', component:  InstrumentsComponent   },
-        {path: 'elements', component:  ElementsComponent  },
-        {path: 'home', component:  HomeComponent  },
-        {path: 'main-nav', component:   MainNavComponent  },
-        {path: '', component:  LoginComponent  }
+        // {path: 'datamanager', component:  DatamanagerComponent  },
+        // {path: 'dashboard', component:  DashboardComponent, canActivate: [AuthGuard] },
+        // {path: 'register-users', component:  RegisterUsersComponent  },
+        // {path: 'users', component:  UsersComponent  },
+        // {path: 'edit-user', component:  EditUserComponent  },
+        // {path: 'station', component:  StationComponent   },
+        // {path: 'observationslip', component:  ObservationslipComponent   },
+        // {path: 'instrument', component:  InstrumentsComponent   },
+        // {path: 'elements', component:  ElementsComponent  },
+        // {path: 'home', component:  HomeComponent  },
+        // {path: 'main-nav', component:   MainNavComponent  },
+        // {path: '', component:  LoginComponent  }
       ])
   ],
    exports: [CommonModule, MatToolbarModule, MatButtonModule, MatCardModule, MatInputModule, MatDialogModule, MatTableModule],

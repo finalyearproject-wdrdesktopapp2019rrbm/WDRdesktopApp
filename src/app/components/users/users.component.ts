@@ -12,22 +12,39 @@ import { MatPaginator } from '@angular/material';
 })
 export class UsersComponent implements OnInit {
     users: User[];
-    // @ViewChild(MatPaginator) paginator : MatPaginator;
+
+
+    userInfo: any;
+    board: string;
+    errorMessage: string;
 
   constructor(private router: Router, private userService: UserService, private dataService: DataService) { }
 
   ngOnInit() {
 
 
-    //option two
-    this.userService.getUsers()
-    .subscribe( data => {
-      this.users = data;
-    });
+    //old
+    // this.userService.getUsers()
+    // .subscribe( data => {
+    //   this.users = data;
+    // });
 
-    // this.users.paginator = this.paginator;
-
+    //new way
+    this.userService.getUserBoard().subscribe(
+      data => {
+        this.userInfo = {
+          name: data.user.nam,
+          email: data.user.email
+        };
+        this.board =  data.description;
+      },
+      error => {
+        this.errorMessage = `${error.status}: ${error.error}`;
+      }
+    );
   }
+
+
 
   // deleteUser
   deleteUser(user: User): void {

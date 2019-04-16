@@ -31,7 +31,7 @@ export class TokenStorageService {
     window.sessionStorage.setItem(USERNAME_KEY, username);
   }
 
-  public getusername(): string {
+  public getUsername(): string {
     return sessionStorage.getItem(USERNAME_KEY);
   }
 
@@ -48,7 +48,7 @@ export class TokenStorageService {
         this.roles.push(authority.authority);
       });
     }
-    return roles;
+    return this.roles;
   }
 
 

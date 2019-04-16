@@ -1,6 +1,18 @@
-<p>
-  <a routerLink="/register-users">Login</a>
-  <br />
-  <a routerLink="/users">Users</a>
-  home works!
-</p>
+  <!-- <p>
+    <a routerLink="/register-users">Login</a>
+    <br />
+    <a routerLink="/users">Users</a>
+    home works!
+  </p> -->
+  <div *ngIf="info.token; else loggedOut">
+    <h5 class="text-primary">Your information</h5>
+    <p>
+      <strong>Username</strong>{{info.username}}<br />
+      <strong>Roles: </strong>
+    </p>
+    <button class="btn btn-secondary" (click)="logout()">Logout</button>
+  </div>
+
+  <ng-template #loggedOut>
+      Please login
+  </ng-template>
