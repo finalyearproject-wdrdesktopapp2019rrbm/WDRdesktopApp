@@ -1,4 +1,94 @@
-  <div class="container">
+ <html class="bg-black">
+    <head>
+
+        <title>WIMEA Weather Data Repository - Log in</title>
+        <meta charset="UTF-8">
+    </head>
+    <body class="bg-black">
+
+
+    <div class="form-box" id="login-box">
+        <h3 class="head">WIMEA-ICT Weather Data Repository</h3>
+        <h4 class="head">&copy; WIMEA-ICT WDR</h4>
+
+        <div class="header">
+            <div class="col-lg-3">
+                <img src="../../../assets/WIMEA LOGO.png" class="img-responsive">
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-3">
+                <img src="../../../assets/new-mak.png" class="img-responsive">
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-3">
+                <img src="../../../assets/noradlogosort_.gif" class="img-responsive">
+            </div>
+            <div class="clearfix"></div>
+            <hr>
+            Enter your login credentials to continue
+
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="body bg-gray">
+
+                <div class="form-group">
+                    <label>UserName:</label>
+                    <input type="text" class="form-control"formControlName="username" id="username" required placeholder="Enter your username"/>
+                </div>
+
+                <div class="form-group">
+                    <label>Password:</label>
+                    <input type="password" formControlName="password" id="pwd" class="form-control" required placeholder="Enter your password"/>
+                </div>
+            </div>
+            <div class="footer">
+
+                <button class="btn bg-olive btn-block" name="login" >Sign me in</button>
+                <hr>
+                <p>In Partnership</p>
+                <div class="col-lg-2">
+                    <img src="../../../assets/logo.fw.png" class="img-responsive">
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-8">
+                    <img src="../../../assets/bergen.gif" class="img-responsive">
+                </div>
+                <div class="clearfix"></div>
+                <p><a href="" >I forgot my password</a></p>
+                <div class="clearfix"></div>
+            </div>
+        </form>
+    </div>
+
+
+
+
+    </body>
+    </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- <div class="container">
 
         <div class="row">
           <div class="col-md-3"></div>
@@ -30,7 +120,7 @@
           </div>
         </div>
 
-  </div>
+  </div> -->
 
 <!--
   <mat-toolbar color="primary">

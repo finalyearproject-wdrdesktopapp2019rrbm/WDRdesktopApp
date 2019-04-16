@@ -20,7 +20,7 @@ import {
     } from '@angular/material';
 import { MatListModule } from '@angular/material/list';
 import { LayoutModule } from '@angular/cdk/layout';
-import {ReactiveFormsModule} from "@angular/forms";
+import {ReactiveFormsModule, FormsModule} from "@angular/forms";
 
 //services
 import { DataService } from './components/services/data/data.service';
@@ -47,6 +47,12 @@ import { InstrumentsComponent } from './components/forms/instruments/instruments
 import { ArchiveObservationslipComponent } from './components/archiveForm/archive-observationslip/archive-observationslip.component';
 import { ArchivemonthlyrainfallformreportdataComponent } from './components/archiveForm/archivemonthlyrainfallformreportdata/archivemonthlyrainfallformreportdata.component';
 import { ArchivedekadalformreportdataComponent } from './components/archiveForm/archivedekadalformreportdata/archivedekadalformreportdata.component';
+import { UsertestComponent } from './components/usertest/usertest.component';
+import { ObservationSlipFormComponent } from './components/forms/observation-slip-form/observation-slip-form.component';
+import { ObservationSlipReportComponent } from './components/forms/observation-slip-report/observation-slip-report.component';
+// import { ObservationSlipFormComponent } from './forms/observationSlipForm/observation-slip-form.component';
+//import { FComponent } from './f/f.component';
+// import { FormsComponent } from './forms.component';
 
 
 
@@ -68,7 +74,13 @@ import { ArchivedekadalformreportdataComponent } from './components/archiveForm/
     InstrumentsComponent,
     ArchiveObservationslipComponent,
     ArchivemonthlyrainfallformreportdataComponent,
-    ArchivedekadalformreportdataComponent
+    ArchivedekadalformreportdataComponent,
+    UsertestComponent,
+    ObservationSlipFormComponent,
+    ObservationSlipReportComponent,
+    // ObservationSlipFormComponent,
+    //FComponent,
+    // FormsComponent
   ],
   imports: [
     BrowserModule,
@@ -92,7 +104,10 @@ import { ArchivedekadalformreportdataComponent } from './components/archiveForm/
         {path: 'elements', component:  ElementsComponent  },
         {path: 'home', component:  HomeComponent  },
         {path: 'main-nav', component:   MainNavComponent  },
-        {path: '', component:  LoginComponent  }
+        {path: '', component:  LoginComponent  },
+        {path: 'usertest', component:  UsertestComponent  },
+        {path: 'observationSlipForm', component:  ObservationSlipFormComponent  },
+        {path: 'observationSlipReport', component:  ObservationSlipReportComponent  }
 
 
       ]),
@@ -108,6 +123,8 @@ import { ArchivedekadalformreportdataComponent } from './components/archiveForm/
     MatInputModule,
     MatTableModule,
     MatToolbarModule,
+    FormsModule,
+
     MatSidenavModule
   ],
    exports: [CommonModule, MatToolbarModule, MatButtonModule, MatCardModule, MatInputModule, MatDialogModule, MatTableModule],
