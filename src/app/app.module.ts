@@ -40,6 +40,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DatamanagerComponent } from './components/datamanager/datamanager.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
+import { TasksComponent } from './components/tasks/tasks.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { MainNavComponent } from './main-nav/main-nav.component';
     DashboardComponent,
     DatamanagerComponent,
     EditUserComponent,
-    MainNavComponent
+    MainNavComponent,
+    TasksComponent
   ],
   imports: [
     BrowserModule,
