@@ -5,16 +5,19 @@
     <div class="col-md-12 col-sm-12 col-xm-12">
     <h2 class="jumbotron text-center text-primary">WDR Registered users</h2>
     <p>
-      <a routerLink="/main-nav" class="btn btn-default">Home</a>
+      <!-- <a routerLink="/main-nav" class="btn btn-default">Home</a> -->
       <button class="btn btn-info" (click)="addUser()"> Add user </button> <br />
     </p>
     <table class="table table-striped">
       <thead>
       <tr>
         <th>User Id</th>
-        <th>Station</th>
-        <th>First Name</th>
-        <th>Surname </th>
+        <th>username</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th colspan="2" class="text-center">Action</th>
+
+        <!-- <th>Surname </th>
         <th>Username</th>
         <th>User role</th>
         <th>User email</th>
@@ -23,15 +26,19 @@
         <th>Last loggedin</th>
         <th>CreatedBy</th>
         <th></th>
-        <th></th>
+        <th></th> -->
 
 
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let user of users">
-        <td>{{user.Userid}}</td>
-        <td>{{user.station}}</td>
+        <td>{{user.id}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.password}}</td>
+
+        <!-- <td>{{user.station}}</td>
         <td>{{user.FirstName}}</td>
         <td>{{user.SurName}}</td>
         <td>{{user.UserName}}</td>
@@ -40,15 +47,15 @@
         <td>{{user.UserPhone}}</td>
         <th></th>
         <th>{{user.LastLoggedIn}}</th>
-        <td>{{user.CreatedBy}}</td>
-        <td>
-        <!-- <a class="btn" (click)="showForEdit(employee)">
+        <td>{{user.CreatedBy}}</td> -->
+        <!-- <td>
+        <a class="btn" (click)="showForEdit(employee)">
           <i class="fa fa-pencil-square-o"></i>
         </a>
         <a class="btn text-danger" (click)="onDelete(employee.EmployeeID)">
           <i class="fa  fa-trash-o"></i>
-        </a> -->
-      </td>
+        </a>
+      </td> -->
         <td><button class="btn btn-sm btn-danger" (click)="deleteUser(user)"> Delete</button></td><td>
           <button class="btn btn-sm  btn-info" (click)="editUser(user)" style="margin-left: 20px;"> Edit</button></td>
       </tr>

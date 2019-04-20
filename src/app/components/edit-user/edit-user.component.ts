@@ -27,8 +27,7 @@ export class EditUserComponent implements OnInit {
     }
     console.log('user data');
     this.editForm = this.formBuilder.group({
-      id: [],
-      name: ['', Validators.required],
+      id: userId,
       username: ['', Validators.required],
       email: ['', Validators.required],
       password: ['', Validators.required]
@@ -38,6 +37,7 @@ export class EditUserComponent implements OnInit {
     this.userService.getUserById(+userId).subscribe(data => {
       console.log(data);
       this.editForm.patchValue(data);
+      console.log(userId);
 
     });
 
@@ -49,24 +49,24 @@ export class EditUserComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    // this.userService.updateUser(this.editForm.value)
-    //   .pipe(first())
-    //   .subscribe(
-    //     data => {
-    //       this.router.navigate(['list-user']);
-    //     },
-    //     error => {
-    //       alert(error);
-    //     });
+    this.userService.updateUser(this.editForm.value)
+      .pipe(first())
+      .subscribe(
+        data => {
+          this.router.navigate(['users']);
+        },
+        error => {
+          alert(error);
+        });
 
-    if(this.editForm.valid){
-      this.userService.updateUser(this.editForm.value)
-      .subscribe(data => {
-        console.log(data);
-        this.router.navigate(['users']);
-      });
-
-    }
+    // if(this.editForm.valid){
+    //   this.userService.updateUser(this.editForm.value)
+    //   .subscribe(data => {
+    //     console.log(data);
+    //     this.router.navigate(['users']);
+    //   });
+    //
+    // }
   }
 
 }

@@ -26,11 +26,10 @@ export class UserService {
   }
 
   updateUser(user: User) {
-    alert(user);
     return this.http.put(this.baseUrl + '/' + user.id, user);
   }
 
-  
+
 
   deleteUser(id: number) {
     return this.http.delete(this.baseUrl + '/' + id);

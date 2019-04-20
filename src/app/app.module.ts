@@ -68,15 +68,15 @@ import { FilterPipe } from './components/pipes/filter.pipe';
     ReactiveFormsModule,
     RouterModule.forRoot(
       [
-        // {path: 'tasks', component:  TasksComponent },
-        // {path: 'datamanager', component:  DatamanagerComponent  },
-        // {path: 'dashboard', component:  DashboardComponent, canActivate: [AuthGuard] },
-        // {path: 'register-users', component:  RegisterUsersComponent  },
-        // {path: 'users', component:  UsersComponent  },
-        // {path: 'edit-user', component:  EditUserComponent  },
-        // {path: 'home', component:  HomeComponent  },
-        // {path: 'main-nav', component:   MainNavComponent  },
-        // {path: '', component:  LoginComponent  }
+        {path: 'tasks', component:  TasksComponent },
+        {path: 'datamanager', component:  DatamanagerComponent  },
+        {path: 'dashboard', component:  DashboardComponent, canActivate: [AuthGuard] },
+        {path: 'register-users', component:  RegisterUsersComponent  },
+        {path: 'users', component:  UsersComponent  },
+        {path: 'edit-user', component:  EditUserComponent  },
+        {path: 'home', component:  HomeComponent  },
+        {path: 'main-nav', component:   MainNavComponent  },
+        {path: '', component:  LoginComponent  }
 
 
       ]),

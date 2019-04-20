@@ -11,16 +11,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./register-users.component.css']
 })
 export class RegisterUsersComponent implements OnInit {
+  addForm: FormGroup;
+  submitted: boolean = false;
 
   constructor(private formBuilder: FormBuilder, private router: Router, private userService: UserService) { }
 
-  addForm: FormGroup;
+
 
   ngOnInit() {
 
     this.addForm = this.formBuilder.group({
-      id: [],
-      firstname: ['', Validators.required],
       username: ['', Validators.required],
       email: ['', Validators.required],
       password: ['', Validators.required]
@@ -28,7 +28,9 @@ export class RegisterUsersComponent implements OnInit {
   }
 
   onSubmit(){
-    if(!this.addForm){
+    this.submitted = true;
+    if(this.addForm){
+      console.log(this.addForm);
       this.userService.createUser(this.addForm.value)
       .subscribe( data => {
         this.router.navigate(['users']);
