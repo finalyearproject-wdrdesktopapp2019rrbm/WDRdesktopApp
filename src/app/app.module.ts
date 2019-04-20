@@ -2,9 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {RouterModule} from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
-// import { AngularFontAwesomeModule } from 'angular-font-awesome';
-// import { MaterialModule } from './material.module';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatGridListModule,
@@ -41,6 +41,7 @@ import { DatamanagerComponent } from './components/datamanager/datamanager.compo
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { TasksComponent } from './components/tasks/tasks.component';
+import { FilterPipe } from './components/pipes/filter.pipe';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { TasksComponent } from './components/tasks/tasks.component';
     DatamanagerComponent,
     EditUserComponent,
     MainNavComponent,
-    TasksComponent
+    TasksComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -66,15 +68,15 @@ import { TasksComponent } from './components/tasks/tasks.component';
     ReactiveFormsModule,
     RouterModule.forRoot(
       [
-
-        {path: 'datamanager', component:  DatamanagerComponent  },
-        {path: 'dashboard', component:  DashboardComponent, canActivate: [AuthGuard] },
-        {path: 'register-users', component:  RegisterUsersComponent  },
-        {path: 'users', component:  UsersComponent  },
-        {path: 'edit-user', component:  EditUserComponent  },
-        {path: 'home', component:  HomeComponent  },
-        {path: 'main-nav', component:   MainNavComponent  },
-        {path: '', component:  LoginComponent  }
+        // {path: 'tasks', component:  TasksComponent },
+        // {path: 'datamanager', component:  DatamanagerComponent  },
+        // {path: 'dashboard', component:  DashboardComponent, canActivate: [AuthGuard] },
+        // {path: 'register-users', component:  RegisterUsersComponent  },
+        // {path: 'users', component:  UsersComponent  },
+        // {path: 'edit-user', component:  EditUserComponent  },
+        // {path: 'home', component:  HomeComponent  },
+        // {path: 'main-nav', component:   MainNavComponent  },
+        // {path: '', component:  LoginComponent  }
 
 
       ]),
@@ -90,7 +92,8 @@ import { TasksComponent } from './components/tasks/tasks.component';
     MatInputModule,
     MatTableModule,
     MatToolbarModule,
-    MatSidenavModule
+    MatSidenavModule,
+    HttpModule
   ],
    exports: [CommonModule, MatToolbarModule, MatButtonModule, MatCardModule, MatInputModule, MatDialogModule, MatTableModule],
   providers: [DataService, AuthGuard, UserService],

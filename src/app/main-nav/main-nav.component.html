@@ -5,11 +5,11 @@
       [opened]="!(isHandset$ | async)">
     <mat-toolbar>
       <mat-icon (click)="sidenav.toggle()" id="toolbarMenu"></mat-icon>
-        Menu
     </mat-toolbar>
     <mat-nav-list>
       <a mat-list-item routerLink="/register-users">Add Users</a>
       <a mat-list-item routerLink="/users">View Users</a>
+      <a mat-list-item routerLink="/tasks">View Tasks</a>
       <a mat-list-item href="#"></a>
     </mat-nav-list>
   </mat-sidenav>

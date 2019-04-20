@@ -59,65 +59,58 @@ import { Injectable } from '@angular/core';
 import { Task } from '../../models/task/task';
 
 import { Http,Headers,Response,RequestOptions } from '@angular/http';
-
 import 'rxjs/Rx';
 
 @Injectable()
 
 export class DataService {
+  public url:string='http://localhost:3000/Tasks';
 
-public url:string='http://localhost:3000/Tasks';
+  constructor(private _http:Http) { }
 
-constructor(private _http:Http) { }
+    getAllTasks(){
+          return this._http.get(this.url)
+           .map((response:Response)=>response.json());
+    }
 
-getAllTasks(){
+    deleteTask(item:Task){
+          let headers = new Headers({ 'Content-Type': 'application/json' });
+          let options = new RequestOptions({ headers: headers });
+          
+          return this._http.delete(this.url+item.Id,options)
+          .map((response:Response)=>response.json());
+    }
 
-return this._http.get(this.url)
+    addTask(item:Task){
 
-.map((response:Response)=>response.json());
+    let body = JSON.stringify(item);
 
-}
+    let headers = new Headers({ 'Content-Type': 'application/json' });
 
-deleteTask(item:Task){
+    let options = new RequestOptions({ headers: headers });
 
-let headers = new Headers({ 'Content-Type': 'application/json' });
+    return this._http.post(this.url,body, options)
 
-let options = new RequestOptions({ headers: headers });
+    .map((response:Response)=>response.json());
 
-return this._http.delete(this.url+item.Id,options)
-.map((response:Response)=>response.json());
-}
+    }
 
-addTask(item:Task){
+    getTaskId(id:any){
 
-let body = JSON.stringify(item);
+    return this._http.get(this.url+id)
 
-let headers = new Headers({ 'Content-Type': 'application/json' });
+    .map((response:Response)=>response.json());
 
-let options = new RequestOptions({ headers: headers });
+    }
 
-return this._http.post(this.url,body, options)
+    editTask(item:Task){
 
-.map((response:Response)=>response.json());
+    let body = JSON.stringify(item);
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+    return this._http.put(this.url+item.Id, body, options)
+    .map((response:Response)=>response.json());
 
-}
-
-getTaskId(id:any){
-
-return this._http.get(this.url+id)
-
-.map((response:Response)=>response.json());
-
-}
-
-editTask(item:Task){
-
-let body = JSON.stringify(item);
-let headers = new Headers({ 'Content-Type': 'application/json' });
-let options = new RequestOptions({ headers: headers });
-return this._http.put(this.url+item.Id, body, options)
-.map((response:Response)=>response.json());
-
-}
+    }
 
 }
