@@ -1,15 +1,14 @@
 export class User{
-  constructor(public id:number, public username: String, public email:String, public password:String) {}
+  constructor(
+    public Userid:number,
+    public station: String,
+    public FirstName:String,
+    public SurName:String,
+    public UserName:String,
+    public UserPassword:String,
+    public UserRole:String,
+    public UserEmail:String,
+    public UserPhone:String,
+    public Active:string
+  ) {}
 }
-
-
-//
-// export class User {
-//   id: number;
-//   name: string;
-//   username:string;
-//   email:string;
-//   password:string;
-//   when_added:string;
-//
-// }
