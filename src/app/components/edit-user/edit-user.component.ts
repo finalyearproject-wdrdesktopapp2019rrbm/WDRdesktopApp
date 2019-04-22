@@ -20,12 +20,13 @@ export class EditUserComponent implements OnInit {
 
   ngOnInit() {
     const userId = localStorage.getItem('editUserId');
+
     if(!userId) {
       alert('Invalid action.');
       this.router.navigate(['list-user']);
       return;
     }
-    console.log('user data');
+
     this.editForm = this.formBuilder.group({
       id: userId,
       username: ['', Validators.required],
@@ -38,7 +39,7 @@ export class EditUserComponent implements OnInit {
       this.user = data;
       console.log(this.user);
       this.editForm.patchValue(data);
-    });
+    }, err=>console.log(err));
 
 
   }

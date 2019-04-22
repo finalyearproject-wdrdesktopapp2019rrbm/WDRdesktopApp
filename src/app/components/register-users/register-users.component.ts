@@ -2,7 +2,7 @@ import { Component, OnInit, HostBinding} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { UserService } from '../services/user/user.service';
 import { first } from 'rxjs/operators';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import {User }  from '../models/user/user';
 
 
@@ -16,6 +16,7 @@ export class RegisterUsersComponent implements OnInit {
   submitted: boolean = false;
 
   @HostBinding('class') classes ='row';
+
   user: User = {
     Userid:0,
     station:'',
@@ -29,36 +30,47 @@ export class RegisterUsersComponent implements OnInit {
     Active:  ''
 };
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private userService: UserService) { }
+  constructor(private formBuilder: FormBuilder, private router: Router, private userService: UserService, private activatedRoute: ActivatedRoute) { }
 
 
 
   ngOnInit() {
-
-    this.addForm = this.formBuilder.group({
-      fname: ['', Validators.required],
-      sname: ['', Validators.required],
-      uname: ['', Validators.required],
-      email: ['', Validators.required],
-      password: ['', Validators.required],
-      uRole: ['', Validators.required],
-      phone: ['', Validators.required],
-    });
+      const params = this.activatedRoute.snapshot.params;
+      console.log(params);
+    // this.addForm = this.formBuilder.group({
+    //   fname: ['', Validators.required],
+    //   sname: ['', Validators.required],
+    //   uname: ['', Validators.required],
+    //   email: ['', Validators.required],
+    //   password: ['', Validators.required],
+    //   uRole: ['', Validators.required],
+    //   phone: ['', Validators.required],
+    // });
   }
 
   onSubmit(){
+    delete this.user.Userid;
+    delete this.user.Active;
     this.submitted = true;
-    if(this.addForm){
-      console.log(this.addForm);
-      this.userService.createUser(this.addForm.value)
-      .subscribe( data => {
+    this.userService.createUser(this.user)
+    .subscribe(
+      res => {
+        console.log(res);
         this.router.navigate(['users']);
-      })
-
-
-    }else{
-      alert('fill fields');
-    }
+      },
+      err => console.error(err)
+    )
+    // if(this.addForm){
+    //   console.log(this.addForm);
+    //   this.userService.createUser(this.addForm.value)
+    //   .subscribe( data => {
+    //     this.router.navigate(['users']);
+    //   })
+    //
+    //
+    // }else{
+    //   alert('fill fields');
+    // }
 
   }
 

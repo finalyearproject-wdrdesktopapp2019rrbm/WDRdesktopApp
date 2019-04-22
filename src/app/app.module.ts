@@ -4,6 +4,7 @@ import {RouterModule} from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
@@ -90,7 +91,8 @@ import { FilterPipe } from './components/pipes/filter.pipe';
     MatTableModule,
     MatToolbarModule,
     MatSidenavModule,
-    HttpModule
+    HttpModule,
+    FormsModule
   ],
    exports: [CommonModule, MatToolbarModule, MatButtonModule, MatCardModule, MatInputModule, MatDialogModule, MatTableModule],
   providers: [DataService, AuthGuard, UserService],
