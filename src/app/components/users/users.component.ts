@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data/data.service';
-import { User } from '../models/user/user.model';
+import { User } from '../models/user/user';
 import {Router } from '@angular/router';
 import { UserService } from '../services/user/user.service';
 
@@ -30,7 +30,7 @@ export class UsersComponent implements OnInit {
 
   // deleteUser
   deleteUser(user: User): void {
-    this.userService.deleteUser(user.id)
+    this.userService.deleteUser(user.Userid)
     .subscribe( data => {
       // this.users = this.users.filter( u => u !== user);
       this.users = this.users.filter( u => u !== user);
@@ -40,7 +40,7 @@ export class UsersComponent implements OnInit {
   //edit user details
   editUser(user: User): void {
     localStorage.removeItem("editUserId");
-    let userID = user.id.toString();
+    let userID = user.Userid.toString();
     localStorage.setItem("editUserId", userID);
     this.router.navigate(['edit-user']);
   };

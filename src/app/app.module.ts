@@ -40,7 +40,6 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DatamanagerComponent } from './components/datamanager/datamanager.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
-import { TasksComponent } from './components/tasks/tasks.component';
 import { FilterPipe } from './components/pipes/filter.pipe';
 
 
@@ -55,7 +54,6 @@ import { FilterPipe } from './components/pipes/filter.pipe';
     DatamanagerComponent,
     EditUserComponent,
     MainNavComponent,
-    TasksComponent,
     FilterPipe
   ],
   imports: [
@@ -68,15 +66,14 @@ import { FilterPipe } from './components/pipes/filter.pipe';
     ReactiveFormsModule,
     RouterModule.forRoot(
       [
-        {path: 'tasks', component:  TasksComponent },
-        {path: 'datamanager', component:  DatamanagerComponent  },
-        {path: 'dashboard', component:  DashboardComponent, canActivate: [AuthGuard] },
-        {path: 'register-users', component:  RegisterUsersComponent  },
-        {path: 'users', component:  UsersComponent  },
-        {path: 'edit-user', component:  EditUserComponent  },
-        {path: 'home', component:  HomeComponent  },
-        {path: 'main-nav', component:   MainNavComponent  },
-        {path: '', component:  LoginComponent  }
+        // {path: 'datamanager', component:  DatamanagerComponent  },
+        // {path: 'dashboard', component:  DashboardComponent, canActivate: [AuthGuard] },
+        // {path: 'register-users', component:  RegisterUsersComponent  },
+        // {path: 'users', component:  UsersComponent  },
+        // {path: 'edit-user', component:  EditUserComponent  },
+        // {path: 'home', component:  HomeComponent  },
+        // {path: 'app', component:   AppComponent  },
+        // {path: 'login', component:  LoginComponent  }
 
 
       ]),

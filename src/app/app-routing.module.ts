@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { TasksComponent } from './components/tasks/tasks.component';
-import { HomeComponent } from './components/home/home.component';
-import { MainNavComponent } from './main-nav/main-nav.component';
+import { RegisterUsersComponent } from './components/register-users/register-users.component';
 import { UsersComponent } from './components/users/users.component';
-
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DatamanagerComponent } from './components/datamanager/datamanager.component';
+import { EditUserComponent } from './components/edit-user/edit-user.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
-  {path: '', redirectTo:'/users', pathMatch:'full'},
+  {path: 'register-users', component:  RegisterUsersComponent  },
   {path: 'users', component:  UsersComponent  },
-  {path:'allTask', component:TasksComponent},
-  {path:'main-nav', component:MainNavComponent}
+  {path: 'edit-user', component:  EditUserComponent  }
+
 ];
 
 @NgModule({

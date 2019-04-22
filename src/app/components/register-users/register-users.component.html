@@ -1,78 +1,80 @@
 <!-- <div class="container-fluid pt-5">
-    <div class="col-md-6 mx-auto" >
+    <div class="col-md mx-auto" >
       <div class="card rounded-0">
         <div class="card-header">
           <h2 class="text-center mb-0 text-primary">Add User</h2>
         </div>
-
       </div>
+
+
       <form [formGroup]="addForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
         <div class="form-row">
-           <div class="col-md-10 mb-3">
-           <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Station</label>
-           <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="station">
-             <option selected>Choose a station</option>
-             <option value="1">Makerere Station</option>
-             <option value="2">Kampala</option>
-             <option value="3">Fort Portal</option>
+           <div class="col-md-6 mb-3">
+           <label class="my-1 mr-2" for="UserRole">User Role</label>
+           <select class="custom-select my-1 mr-sm-2" id="uRole" class="form-control" formControlName="uRole" required>
+             <option selected>Select user's role</option>
+             <option value="Observer">Observer</option>
+             <option value="OC">OC</option>
            </select>
          </div>
+         <div class="col-md-6 mb-3">
+         <label class="my-1 mr-2" for="station">Station</label>
+         <select class="custom-select my-0 mr-sm-2" id="station" name="station">
+           <option selected>Select a station</option>
+           <option value="1">Makerere Station</option>
+           <option value="2">Kampala</option>
+           <option value="3">Fort Portal</option>
+         </select>
+       </div>
         </div>
             <div class="form-row">
-                   <div class="col-md-5 mb-3">
+                   <div class="col-md-6 mb-3">
                      <label for="validationCustom01">First name</label>
-                     <input type="text" class="form-control" id="validationCustom01" placeholder="First name"  required>
+                     <input type="text" class="form-control" id="fname" formControlName="fname" placeholder="First name"  required>
                      <div class="valid-feedback">
                        Looks good!
                      </div>
                    </div>
-                   <div class="col-md-5 mb-3">
+                   <div class="col-md-6 mb-3">
                      <label for="validationCustomSurname">Surname</label>
-                     <input type="text" class="form-control" id="validationCustomSurname" placeholder="surname"  required>
+                     <input type="text" class="form-control" id="Surname" formControlName="sname" placeholder="surname"  required>
                      <div class="valid-feedback">
                        Looks good!
                      </div>
                    </div>
               </div>
               <div class="form-row">
-                   <div class="col-md-4 mb-3">
+                   <div class="col-md-6 mb-3">
                      <label for="validationCustomUsername">Username</label>
                      <div class="input-group">
                        <div class="input-group-prepend">
                          <span class="input-group-text" id="inputGroupPrepend">@</span>
                        </div>
-                       <input type="text" class="form-control" id="validationCustomUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required>
+                       <input type="text" class="form-control" id="Username" formControlName="uname" placeholder="Username" aria-describedby="inputGroupPrepend" required>
                        <div class="invalid-feedback">
                          Please choose a username.
                        </div>
                      </div>
                    </div>
-                   <div class="col-md-4 mb-3">
+                   <div class="col-md-6 mb-3">
                      <label for="validationCustomPassword">Password</label>
-                     <input type="password" class="form-control" id="validationCustomPassword" placeholder="password" required>
-                     <div class="valid-feedback">
-                       Looks good!
-                     </div>
-                   </div>
-                   <div class="col-md-4 mb-3">
-                     <label for="validationCustomPassword">User Role</label>
-                     <input type="text" class="form-control" id="validationCustomUserRole" placeholder="UserRole" required>
+                     <input type="password" class="form-control" id="password" formControlName="password" placeholder="password" required>
                      <div class="valid-feedback">
                        Looks good!
                      </div>
                    </div>
               </div>
               <div class="form-row">
-                <div class="col-md-4 mb-3">
+                <div class="col-md-6 mb-3">
                   <label for="validationCustomUserEmail">Email</label>
-                  <input type="email" class="form-control" id="validationCustomUserEmail" placeholder="enter email" required>
+                  <input type="email" class="form-control" id="email" formControlName="email" placeholder="enter email" required>
                   <div class="valid-feedback">
                     Looks good!
                   </div>
                 </div>
-                   <div class="col-md-4 mb-3">
+                   <div class="col-md-6 mb-3">
                      <label for="validationCustomPassword">Phone</label>
-                     <input type="text" class="form-control" id="validationCustomUserPhone" placeholder="enter phone number" required>
+                     <input type="text" class="form-control" id="phone" formControlName="phone" placeholder="enter phone number" required>
                      <div class="valid-feedback">
                        Looks good!
                      </div>
@@ -81,46 +83,92 @@
                   <button class="btn btn-success">Add user</button>
         </form>
   </div>
-</div>
--->
+</div> -->
 
-<div class="container">
-  <form [formGroup]="addForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+
+<div class="container-fluid pt-5">
+    <div class="col-md mx-auto" >
+      <div class="card rounded-0">
+        <div class="card-header">
+          <h2 class="text-center mb-0 text-primary">Add User</h2>
+        </div>
+      </div>
+
+
+      <form [formGroup]="addForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
         <div class="form-row">
-               <div class="col-md-4 mb-3 form-group">
-                 <label for="validationCustomUsername">Username</label>
-                 <div class="input-group">
-                   <div class="input-group-prepend">
-                     <span class="input-group-text" id="inputGroupPrepend">@</span>
+           <div class="col-md-6 mb-3">
+           <label class="my-1 mr-2" for="UserRole">User Role</label>
+           <select class="custom-select my-1 mr-sm-2" id="uRole" class="form-control" formControlName="uRole" required>
+             <option selected>Select user's role</option>
+             <option value="Observer">Observer</option>
+             <option value="OC">OC</option>
+           </select>
+         </div>
+         <div class="col-md-6 mb-3">
+         <label class="my-1 mr-2" for="station">Station</label>
+         <select class="custom-select my-0 mr-sm-2" id="station" name="station">
+           <option selected>Select a station</option>
+           <option value="1">Makerere Station</option>
+           <option value="2">Kampala</option>
+           <option value="3">Fort Portal</option>
+         </select>
+       </div>
+        </div>
+            <div class="form-row">
+                   <div class="col-md-6 mb-3">
+                     <label for="validationCustom01">First name</label>
+                     <input type="text" class="form-control" id="fname" formControlName="fname" placeholder="First name"  required>
+                     <div class="valid-feedback">
+                       Looks good!
+                     </div>
                    </div>
-                   <input type="text" class="form-control" formControlName="username" id="username" placeholder="Username" aria-describedby="inputGroupPrepend" required>
-                   <div *ngIf="submitted && addForm.controls.username.errors" class="error">
-                     <div *ngIf="addForm.controls.username.errors.required" class="text-danger">Username is required       </div>
-
+                   <div class="col-md-6 mb-3">
+                     <label for="validationCustomSurname">Surname</label>
+                     <input type="text" class="form-control" id="Surname" formControlName="sname" placeholder="surname"  required>
+                     <div class="valid-feedback">
+                       Looks good!
+                     </div>
                    </div>
-                 </div>
-               </div>
-               <div class="col-md-4 mb-3 form-group">
-                 <label for="validationCustomPassword">Password</label>
-                 <input type="password" class="form-control" formControlName="password" id="password" placeholder="password" required>
-                 <div *ngIf="submitted && addForm.controls.password.errors" class="error">
-                   <div *ngIf="addForm.controls.password.errors.required" class="text-danger">Password is required </div>
-
-                 </div>
-               </div>
-          </div>
-          <div class="form-row">
-            <div class="col-md-4 mb-3 form-group">
-              <label for="email">Email</label>
-              <input type="email" class="form-control" formControlName="email" id="email" placeholder="enter email" required>
-              <div *ngIf="submitted && addForm.controls.email.errors" class="error">
-                <div *ngIf="addForm.controls.email.errors.required" class="text-danger">Email is required       </div>
-
               </div>
-            </div>
-          </div>
-              <button class="btn btn-success">Add user</button>
-    </form>
-
-
+              <div class="form-row">
+                   <div class="col-md-6 mb-3">
+                     <label for="validationCustomUsername">Username</label>
+                     <div class="input-group">
+                       <div class="input-group-prepend">
+                         <span class="input-group-text" id="inputGroupPrepend">@</span>
+                       </div>
+                       <input type="text" class="form-control" id="Username" formControlName="uname" placeholder="Username" aria-describedby="inputGroupPrepend" required>
+                       <div class="invalid-feedback">
+                         Please choose a username.
+                       </div>
+                     </div>
+                   </div>
+                   <div class="col-md-6 mb-3">
+                     <label for="validationCustomPassword">Password</label>
+                     <input type="password" class="form-control" id="password" formControlName="password" placeholder="password" required>
+                     <div class="valid-feedback">
+                       Looks good!
+                     </div>
+                   </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label for="validationCustomUserEmail">Email</label>
+                  <input type="email" class="form-control" id="email" formControlName="email" placeholder="enter email" required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+                   <div class="col-md-6 mb-3">
+                     <label for="validationCustomPassword">Phone</label>
+                     <input type="text" class="form-control" id="phone" formControlName="phone" placeholder="enter phone number" required>
+                     <div class="valid-feedback">
+                       Looks good!
+                     </div>
+                   </div>
+              </div>
+                  <button class="btn btn-success">Add user</button>
+        </form>
+  </div>
 </div>

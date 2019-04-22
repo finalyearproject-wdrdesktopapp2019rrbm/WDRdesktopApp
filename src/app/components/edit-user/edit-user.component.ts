@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { UserService } from '../services/user/user.service';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
-import { User } from '../models/user/user.model';
+import { User } from '../models/user/user';
 
 
 @Component({
@@ -13,7 +13,7 @@ import { User } from '../models/user/user.model';
 })
 export class EditUserComponent implements OnInit {
 
-  user: User;
+  user: User[];
   editForm: FormGroup;
   submitted: boolean = false;
   constructor(private formBuilder: FormBuilder,private router: Router, private userService: UserService) { }
@@ -35,10 +35,9 @@ export class EditUserComponent implements OnInit {
 
 
     this.userService.getUserById(+userId).subscribe(data => {
-      console.log(data);
+      this.user = data;
+      console.log(this.user);
       this.editForm.patchValue(data);
-      console.log(userId);
-
     });
 
 
@@ -58,15 +57,6 @@ export class EditUserComponent implements OnInit {
         error => {
           alert(error);
         });
-
-    // if(this.editForm.valid){
-    //   this.userService.updateUser(this.editForm.value)
-    //   .subscribe(data => {
-    //     console.log(data);
-    //     this.router.navigate(['users']);
-    //   });
-    //
-    // }
   }
 
 }

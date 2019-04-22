@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { UserService } from '../services/user/user.service';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import {User }  from '../models/user/user';
 
 
 @Component({
@@ -14,6 +15,20 @@ export class RegisterUsersComponent implements OnInit {
   addForm: FormGroup;
   submitted: boolean = false;
 
+  @HostBinding('class') classes ='row';
+  user: User = {
+    Userid:0,
+    station:'',
+    FirstName: '',
+    SurName: '',
+    UserName: '',
+    UserEmail: '',
+    UserPassword: '',
+    UserRole: '',
+    UserPhone: '',
+    Active:  ''
+};
+
   constructor(private formBuilder: FormBuilder, private router: Router, private userService: UserService) { }
 
 
@@ -21,9 +36,13 @@ export class RegisterUsersComponent implements OnInit {
   ngOnInit() {
 
     this.addForm = this.formBuilder.group({
-      username: ['', Validators.required],
+      fname: ['', Validators.required],
+      sname: ['', Validators.required],
+      uname: ['', Validators.required],
       email: ['', Validators.required],
-      password: ['', Validators.required]
+      password: ['', Validators.required],
+      uRole: ['', Validators.required],
+      phone: ['', Validators.required],
     });
   }
 
@@ -43,6 +62,5 @@ export class RegisterUsersComponent implements OnInit {
 
   }
 
-  // addUser(user)
 
 }
