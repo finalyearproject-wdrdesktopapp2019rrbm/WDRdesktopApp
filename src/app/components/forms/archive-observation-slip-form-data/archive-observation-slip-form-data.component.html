@@ -1,0 +1,1660 @@
+<html>
+  <aside class="right-side">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+      Archive Observation Slip Form
+      <small> Page</small>
+  </h1>
+  <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li class="active">Archive Observation Slip Form</li>
+  </ol>
+  </section>
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+      <form [formGroup]="archiveObservationSlipFormData" (ngSubmit)="submitTest()">
+
+          <!-- Section 1 -->
+          <div ><h4>Station & CLouds Info:</h4>
+            <table id="example1" class="table table-bordered table-striped">
+              <tr>
+              <td colspan = "4">
+
+                    <div class="input-group">
+                      <span class="input-group-addon">Station Name</span>
+                    <select name="station_archiveobservationslipformdata" id="stationManager"   class="form-control" placeholder="Select Station">
+                          <option value="">Select Stations</option>
+
+                                  <option value=""></option>
+                      </select>
+                    </div>
+                </td>
+                <td colspan = "4">
+
+                    <div class="input-group">
+                      <span class="input-group-addon"> Station Number</span>
+                       <input type="text" name="stationNo_archiveobservationslipformdata"  class="form-control" id="stationNoManager" readonly class="form-control" value="" readonly="readonly" >
+                    </div>
+
+                  </td>
+                  <td colspan = "4">
+
+                      <div class="input-group">
+                        <span class="input-group-addon">Station Name</span>
+                        <input type="text" name="station_archiveobservationslipformdata" id="station_archiveobservationslipformdata"  class="form-control" value=""  readonly class="form-control" >
+
+                      </div>
+
+                  </td>
+                  <td colspan = "4">
+
+                      <div class="input-group">
+                        <span class="input-group-addon"> Station Number</span>
+                         <input type="text" name="stationNo_archiveobservationslipformdata"  class="form-control" id="stationNo_archiveobservationslipformdata" readonly class="form-control" value="" readonly="readonly" >
+                      </div>
+
+                    </td>
+
+                    <td colspan = "4">
+
+                        <div class="input-group">
+                          <span class="input-group-addon">Select Date</span>
+                          <input type="text" name="date_archiveobservationslipformdata"  class="form-control compulsory" placeholder="Enter select date" id="date">
+                        </div>
+
+                    </td>
+                  </tr>
+                  <tr>
+                      <td colspan = "4">
+                         <div class="input-group">
+                          <span class="input-group-addon">TIME</span>
+                          <select name="time_archiveobservationslipformdata" id="time_archiveobservationslipformdata"  class="form-control compulsory">
+                            <option value=""></option>
+                            <option value="0000Z">0000Z</option>
+                            <option value="0100Z">0100Z</option>
+                            <option value="0200Z">0200Z</option>
+                            <option value="0300Z">0300Z</option>
+                            <option value="0400Z">0400Z</option>
+                            <option value="0500Z">0500Z</option>
+                            <option value="0600Z">0600Z</option>
+                            <option value="0700Z">0700Z</option>
+                            <option value="0800Z">0800Z</option>
+                            <option value="0900Z">0900Z</option>
+                            <option value="1000Z">1000Z</option>
+                            <option value="1100Z">1100Z</option>
+                            <option value="1200Z">1200Z</option>
+                            <option value="1300Z">1300Z</option>
+                            <option value="1400Z">1400Z</option>
+                            <option value="1500Z">1500Z</option>
+                            <option value="1600Z">1600Z</option>
+                            <option value="1700Z">1700Z</option>
+                            <option value="1800Z">1800Z</option>
+                            <option value="1900Z">1900Z</option>
+                            <option value="2000Z">2000Z</option>
+                            <option value="2100Z">2100Z</option>
+                            <option value="2200Z">2200Z</option>
+                            <option value="2300Z">2300Z</option>
+                          </select>
+                        </div>
+                      </td>
+                      <td colspan="4">
+
+                          <div class="input-group">
+                            <span class="input-group-addon">Total amount of all clouds</span>
+                             <select name="totalamountofallclouds_archiveobservationslipformdata"  id="totalamountofallclouds_archiveobservationslipformdata"  onkeyup="allowIntegerInputOnly(this)" class="form-control"  placeholder=" Enter total amount of all clouds" >
+                              <option value="">--Select Total Amount Of All Clouds </option>
+                              <option value="0">0</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                            </select>
+                          </div>
+
+                      </td>
+                      <td colspan="4">
+
+
+                          <div class="input-group">
+                            <span class="input-group-addon">Total amount of low clouds</span>
+                             <select name="totalamountoflowclouds_archiveobservationslipformdata" id="totalamountoflowclouds_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control "  placeholder="Enter total amount of low clouds" >
+                              <option value="">--Select Total Amount of Low Clouds </option>
+                              <option value="0">0</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+
+
+                            </select>
+                          </div>
+
+                      </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan = "4">
+                          <b>Low</b>
+                        </td>
+                        <td colspan = "4">
+                          <b>Medium</b>
+                        </td>
+                        <td colspan = "4">
+                          <b>High</b>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><b>type</b></td> <td><b>oktas</b></td> <td><b>height</b></td> <td><b>clcode</b></td> <td><b>type</b></td> <td><b>oktas</b></td>
+                        <td><b>height</b></td> <td><b>clcode</b></td> <td><b>type</b></td> <td><b>oktas</b></td> <td><b>height</b></td> <td><b>clcode</b></td>
+
+                      </tr>
+                      <!-- Type 1 clouds -->
+                      <tr>
+                          <td>
+                          <select  name="TypeOfLowClouds1_archiveobservationslipformdata"  id="TypeOfLowClouds1_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter Type of LOW Cloud" >
+                          <option value=""></option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+
+                          </select>
+                          </td>
+
+                          <td>
+                             <select name="OktasOfLowClouds1_archiveobservationslipformdata" id="OktasOfLowClouds1_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)" class="form-control" placeholder="Enter OKTAS  for LOW CLOUD" >
+                            <option value=""></option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+
+
+                          </select>
+                          </td>
+
+                          <td>
+                            <input type="text" name="HeightOfLowClouds1_archiveobservationslipformdata"  id="HeightLowClouds1_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="0" style = 'width:70px;'>
+                          </td>
+
+                          <td>
+                             <select  name="CLCODEOfLowClouds1_archiveobservationslipformdata"  id="CLCODEOfLowClouds1_archiveobservationslipformdata" onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder=" Enter CLCODE of  LOW CLOUD " >
+                            <option value=""></option>
+                            <option value="Sc">Sc</option>
+                            <option value="St">St</option>
+                            <option value="Cu">Cu</option>
+                            <option value="Cb">Cb</option>
+
+                          </select>
+                          </td>
+
+                          <td>
+                            <select name="TypeOfMediumClouds1_archiveobservationslipformdata"  id="TypeOfMediumClouds1_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter TYPE OF MEDIUM CLOUD" >
+                            <option value=""></option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            </select>
+                          </td>
+
+                          <td>
+                             <select name="OktasOfMediumClouds1_archiveobservationslipformdata" id="OktasOfMediumClouds1_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter OKTAS  OF MEDIUM CLOUD" >
+                            <option value=""> </option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            </select>
+                          </td>
+
+                          <td>
+                             <input type="text" name="HeightOfMediumClouds1_archiveobservationslipformdata"  id="HeightOfMediumClouds1_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="0" style = "width:70px;">
+                          </td>
+
+                          <td>
+                            <select name="CLCODEOfMediumClouds1_archiveobservationslipformdata"  id="CLCODEOfMediumClouds1_archiveobservationslipformdata" onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder=" Enter CL CODE MEDIUM CLOUD " >
+                            <option value=""> </option>
+                            <option value="Ac">Ac</option>
+                            <option value="As">As</option>
+                            <option value="Ns">Ns</option>
+                            </select>
+                          </td>
+                          <td>
+                             <select name="TypeOfHighClouds1_archiveobservationslipformdata"  id="TypeOfHighClouds1_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter TYPE OF HIGH CLOUD" >
+                              <option value=""> </option>
+                              <option value="0">0</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                              <option value="9">9</option>
+                            </select>
+                          </td>
+                          <td>
+                            <select name="OktasOfHighClouds1_archiveobservationslipformdata" id="OktasOfHighClouds1_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter OKTAS OF HIGH CLOUD" >
+                              <option value=""> </option>
+                              <option value="0">0</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input type="text" name="HeightOfHighClouds1_archiveobservationslipformdata"  id="HeightOfHighClouds1_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="0" style = "width:70px;">
+                          </td>
+                          <td>
+                             <select name="CLCODEOfHighClouds1_archiveobservationslipformdata"  id="CLCODEOfHighClouds1_archiveobservationslipformdata" onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder=" Enter CLCODE OF MEDIUM CLOUD " >
+                              <option value=""></option>
+                              <option value="Cl">Cl</option>
+                              <option value="Cc">Cc</option>
+                              <option value="Cs">Cs</option>
+
+                            </select>
+                          </td>
+                        </tr>
+
+                          <!--  Type 2 clouds -->
+                          <tr>
+                              <td>
+                                 <select  name="TypeOfLowClouds2_archiveobservationslipformdata"  id="TypeOfLowClouds2_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter Type of LOW CLOUD" >
+                                <option value=""></option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+
+                                </select>
+                              </td>
+
+                              <td>
+                                 <select name="OktasOfLowClouds2_archiveobservationslipformdata" id="OktasOfLowClouds2_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)" class="form-control" placeholder="Enter OKTAS OF LOW CLOUD" >
+                                <option value=""> </option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                              </select>
+                              </td>
+
+                              <td>
+                                 <input type="text" name="HeightOfLowClouds2_archiveobservationslipformdata"  id="HeightOfLowClouds2_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="0" style = "width:70px;">
+                              </td>
+                              <td>
+                                 <select  name="CLCODEOfLowClouds2_archiveobservationslipformdata"  id="CLCODEOfLowClouds2_archiveobservationslipformdata" onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder=" Enter CLCODE of LOW CLOUD " >
+                                <option value=""> </option>
+                                <option value="Sc">Sc</option>
+                                <option value="St">St</option>
+                                <option value="Cu">Cu</option>
+                                <option value="Cb">Cb</option>
+                              </select>
+                              </td>
+                              <td>
+                                  <select name="TypeOfMediumClouds2_archiveobservationslipformdata"  id="TypeOfMediumClouds2_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter TYPE OF MEDIUM CLOUD" >
+                                <option value=""></option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                </select>
+                              </td>
+                              <td>
+                                <select name="OktasOfMediumClouds2_archiveobservationslipformdata" id="OktasOfMediumClouds2_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter OKTAS OF MEDIUM CLOUD" >
+                                <option value=""> </option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                </select>
+                              </td>
+                              <td>
+                                 <input type="text" name="HeightOfMediumClouds2_archiveobservationslipformdata"  id="HeightOfMediumClouds2_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="0" style = "width: 70px">
+                              </td>
+                              <td>
+                                 <select name="CLCODEOfMediumClouds2_archiveobservationslipformdata"  id="CLCODEOfMediumClouds2_archiveobservationslipformdata" onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder=" Enter CL CODE OF MEDIUM CLOUD " >
+                                <option value=""> </option>
+                                <option value="Ac">Ac</option>
+                                <option value="As">As</option>
+                                <option value="Ns">Ns</option>
+                                </select>
+                              </td>
+                              <td>
+                                  <select name="TypeOfHighClouds2_archiveobservationslipformdata"  id="TypeOfHighClouds2_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter TYPE OF HIGH CLOUD" >
+                                  <option value=""> </option>
+                                  <option value="0">0</option>
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                  <option value="6">6</option>
+                                  <option value="7">7</option>
+                                  <option value="8">8</option>
+                                  <option value="9">9</option>
+                                </select>
+                              </td>
+                              <td>
+                                 <select name="OktasOfHighClouds2_archiveobservationslipformdata" id="OktasOfHighClouds2_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter OKTAS OF HIGH CLOUD" >
+                                  <option value=""> </option>
+                                  <option value="0">0</option>
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                  <option value="6">6</option>
+                                  <option value="7">7</option>
+                                  <option value="8">8</option>
+                                </select>
+                              </td>
+                              <td>
+                                <input type="text" name="HeightOfHighClouds2_archiveobservationslipformdata"  id="HeightOfHighClouds2_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="0" style = "width:70px;">
+                              </td>
+                              <td>
+                                 <select name="CLCODEOfHighClouds2_archiveobservationslipformdata"  id="CLCODEOfHighClouds2_archiveobservationslipformdata" onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder=" Enter CL CODE MEDIUM CLOUD " >
+                                  <option value=""></option>
+                                  <option value="Cl">Cl</option>
+                                  <option value="Cc">Cc</option>
+                                  <option value="Cs">Cs</option>
+                                </select>
+                              </td>
+                            </tr>
+                            <!-- Type 3 clouds -->
+                            <tr>
+                                <td>
+                                   <select  name="TypeOfLowClouds3_archiveobservationslipformdata"  id="TypeOfLowClouds3_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter Type of low Cloud" >
+                                  <option value=""></option>
+                                  <option value="0">0</option>
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                  <option value="6">6</option>
+                                  <option value="7">7</option>
+                                  <option value="8">8</option>
+                                  <option value="9">9</option>
+
+                                </select>
+                                </td>
+
+                                <td>
+                                   <select name="OktasOfLowClouds3_archiveobservationslipformdata" id="OktasOfLowClouds3_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)" class="form-control" placeholder="Enter OKTAS of LOW CLOUD" >
+                                  <option value=""> </option>
+                                  <option value="0">0</option>
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                  <option value="6">6</option>
+                                  <option value="7">7</option>
+                                  <option value="8">8</option>
+                                </select>
+                                </td>
+
+                                <td>
+                                   <input type="text" name="HeightOfLowClouds3_archiveobservationslipformdata"  id="HeightLowClouds3_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="0" style = "width: 70px;">
+                                </td>
+
+                                <td>
+                                   <select  name="CLCODEOfLowClouds3_archiveobservationslipformdata"  id="CLCODEOfLowClouds3_archiveobservationslipformdata" onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder=" Enter CLCODE of LOW CLOUD " >
+                                  <option value=""> </option>
+                                  <option value="Sc">Sc</option>
+                                  <option value="St">St</option>
+                                  <option value="Cu">Cu</option>
+                                  <option value="Cb">Cb</option>
+
+                                </select>
+                                </td>
+                                <td>
+                                  <select name="TypeOfMediumClouds3_archiveobservationslipformdata"  id="TypeOfMediumClouds3_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter TYPE OF MEDIUM CLOUD" >
+                                  <option value=""></option>
+                                  <option value="0">0</option>
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                  <option value="6">6</option>
+                                  <option value="7">7</option>
+                                  <option value="8">8</option>
+                                  <option value="9">9</option>
+                                  </select>
+                                </td>
+                                <td>
+                                  <select name="OktasOfMediumClouds3_archiveobservationslipformdata" id="OktasOfMediumClouds3_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter OKTAS OF MEDIUM CLOUD" >
+                                  <option value=""> </option>
+                                  <option value="0">0</option>
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                  <option value="6">6</option>
+                                  <option value="7">7</option>
+                                  <option value="8">8</option>
+                                  </select>
+                                </td>
+                                <td>
+                                  <input type="text" name="HeightOfMediumClouds3_archiveobservationslipformdata"  id="HeightOfMediumClouds3_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="0" style = "width:70px;">
+                                </td>
+                                <td>
+                                   <select name="CLCODEOfMediumClouds3_archiveobservationslipformdata"  id="CLCODEOfMediumClouds3_archiveobservationslipformdata" onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder=" Enter CL CODE OF MEDIUM CLOUD " >
+                                     <option value=""> </option>
+                                    <option value="Ac">Ac</option>
+                                    <option value="As">As</option>
+                                    <option value="Ns">Ns</option>
+                                  </select>
+                                </td>
+                                <td>
+                                   <select name="TypeOfHighClouds3_archiveobservationslipformdata"  id="TypeOfHighClouds3_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter TYPE HIGH CLOUD" >
+                                    <option value=""></option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                  </select>
+                                </td>
+                                <td>
+                                    <select name="OktasOfHighClouds3_archiveobservationslipformdata" id="OktasOfHighClouds3_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter OKTAS HIGH CLOUD" >
+                                  <option value=""> </option>
+                                  <option value="0">0</option>
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                  <option value="6">6</option>
+                                  <option value="7">7</option>
+                                  <option value="8">8</option>
+                                </select>
+                                </td>
+                                <td>
+                                   <input type="text" name="HeightOfHighClouds3_archiveobservationslipformdata"  id="HeightOfHighClouds3_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="0" style = "width:70px;">
+                                </td>
+                                <td>
+                                   <select name="CLCODEOfHighClouds3_archiveobservationslipformdata"  id="CLCODEOfHighClouds3_archiveobservationslipformdata" onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder=" Enter CL CODE MEDIUM CLOUD " >
+                                    <option value=""></option>
+                                    <option value="Cl">Cl</option>
+                                    <option value="Cc">Cc</option>
+                                    <option value="Cs">Cs</option>
+                                  </select>
+                                </td>
+                              </tr>
+                              <tr>
+                                  <td colspan="6">
+                                    <div class="input-group">
+                                      <span class="input-group-addon">Cloud Searchlight Alidade Reading</span>
+                                      <input type="text" name="cloudsearchlight_archiveobservationslipformdata" id="cloudsearchlight_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter Cloud Searchlight Alidade Reading" >
+                                    </div>
+                                  </td>
+                                  <td colspan="6">
+                                    <div class="input-group">
+                                    <span class="input-group-addon">Rainfall(mm)</span>
+                                    <input type="text" name="rainfall_archiveobservationslipformdata" id="rainfall_archiveobservationslipformdata"   class="form-control" placeholder="Enter Rainfall(mm)" >
+                                  </div>
+                                  </td>
+                                </tr>
+            </table>
+
+          </div>
+
+           <!-- Section 2 -->
+			  <div >
+            <table id="example1" class="table table-bordered table-striped">
+                <tr>
+                    <td >
+                      <div class="input-group">
+                      <span class="input-group-addon">Dry Bulb</span>
+                      <input type="text" name="drybulb_archiveobservationslipformdata" id="drybulb_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter Dry Bulb" >
+                    </div>
+                    </td>
+                    <td align = "center"><b>Rainfall & Temperature:</b></td>
+                    <td>
+                      <div class="input-group">
+                      <span class="input-group-addon">Wet Bulb</span>
+                      <input type="text" name="wetbulb_archiveobservationslipformdata" id="wetbulb_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter Wet Bulb" >
+                    </div>
+                    </td>
+                  </tr>
+                  <tr>
+                      <td><b>MAX</b></td> <td><b>MIN</b></td> <td><b>PICHE</b></td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                          <div class="input-group">
+                          <span class="input-group-addon">MAX Read</span>
+                           <input type="text" name="maxRead_archiveobservationslipformdata"  id="maxRead_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter MAX READ" >
+                          </div> <br>
+
+                           <div class="input-group">
+                            <span class="input-group-addon">MAX Reset</span>
+                            <input type="text" name="maxReset_archiveobservationslipformdata" id="maxReset_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter MAX RESET" >
+                          </div>
+                        </td>
+
+                        <td>
+                           <div class="input-group">
+                            <span class="input-group-addon">MIN Read</span>
+                             <input type="text" name="minRead_archiveobservationslipformdata"  id="minRead_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter MIN READ" >
+                          </div><br>
+
+                          <div class="input-group">
+                            <span class="input-group-addon">MIN Reset</span>
+                             <input type="text" name="minReset_archiveobservationslipformdata" id="minReset_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter MIN RESET" >
+                          </div>
+                        </td>
+
+                        <td>
+                           <div class="input-group">
+                            <span class="input-group-addon">PICHE Read</span>
+                            <input type="text" name="picheRead_archiveobservationslipformdata"  id="picheRead_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter PICHE READ" >
+                          </div> <br>
+
+                           <div class="input-group">
+                            <span class="input-group-addon">PICHE Reset</span>
+                            <input type="text" name="picheReset_archiveobservationslipformdata" id="picheReset_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter PICHE RESET" >
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                          <td colspan = "3"><b> marks</b></td>
+                        </tr>
+                        <tr>
+                            <td>
+                              <div class="input-group">
+                              <span class="input-group-addon">THERMO</span>
+                               <input type="text" name="timemarksThermo_archiveobservationslipformdata"  id="timemarksThermo_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter TIME MARKS THERMO" >
+                              </div>
+                            </td>
+                            <td>
+                              <div class="input-group">
+                              <span class="input-group-addon">HYGRO</span>
+                              <input type="text" name="timemarksHygro_archiveobservationslipformdata" id="timemarksHygro_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter TIME MARKS HYGRO" >
+                            </div>
+                            </td>
+                            <td>
+                              <div class="input-group">
+                              <span class="input-group-addon">RAIN REC</span>
+                              <input type="text" name="timemarksRainRec_archiveobservationslipformdata" id="timemarksRainRec_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter TIME MARKS RAIN REC" >
+                            </div>
+                            </td>
+                          </tr>
+            </table>
+        </div>
+
+         <!-- Section 3 -->
+			  <div>
+            <b>Weather Info:</b>
+            <table id="example1" class="table table-bordered table-striped">
+                <tr>
+                    <td>
+                     <div class="input-group">
+                            <span class="input-group-addon">PRESENT WEATHER</span>
+                            <input type="text" name="presentweather_archiveobservationslipformdata" id="presentweather_archiveobservationslipformdata" onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder="Enter PRESENT WEATHER" >
+
+                        </div>
+                    </td>
+                    <td>
+                      <div class="input-group">
+                        <span class="input-group-addon"> M.S.L.Pr(mb) or 850mb. Ht.(gpm)</span>
+                        <input type="text" name="MSLPR_archiveobservationslipformdata" id="MSLPR_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter M.S.L.Pr(mb) or 850mb. Ht.(gpm)" >
+                      </div>
+
+                    </td>
+                  </tr>
+
+                  <tr>
+                      <td>
+                        <div class="input-group">
+                        <span class="input-group-addon">VISIBILITY</span>
+                        <input type="text" name="visibility_archiveobservationslipformdata" id="visibility_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter VISIBILITY" >
+                      </div>
+                      </td>
+                      <td>
+                       <div class="input-group">
+                        <span class="input-group-addon">GUSTING(KTS)</span>
+                         <input type="text" name="gusting_archiveobservationslipformdata" id="gusting_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter GUSTING (KTS)" >
+                      </div>
+                      </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align = "center"><b>wind</b></td>
+                      </tr>
+                      <tr>
+                          <td>
+                             <div class="input-group">
+                              <span class="input-group-addon">WIND DIRECTION</span>
+                               <input type="text" name="winddirection_archiveobservationslipformdata" id="winddirection_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter WIND DIRECTION" >
+                            </div>
+                          </td>
+                          <td>
+                             <div class="input-group">
+                              <span class="input-group-addon">WIND SPEED(KTS)</span>
+                              <input type="text" name="windspeed_archiveobservationslipformdata" id="windspeed_archiveobservationslipformdata" onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder="Enter WIND SPEED(KTS)" >
+                            </div>
+                          </td>
+                        </tr>
+            </table>
+        </div>
+
+         <!-- Section 4 -->
+			  <div ><h2>More Info:</h2>
+          <table id="example1" class="table table-bordered table-striped">
+              <tr>
+                  <td>
+                    <div class="input-group">
+                      <span class="input-group-addon">Attd.Thermo.(C)</span>
+                       <input type="text" name="attdThermo_archiveobservationslipformdata" id="attdThermo_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter ATTD.THERMO." >
+                    </div> <br>
+
+                    <div class="input-group">
+                      <span class="input-group-addon">Pr.As Read(C)</span>
+                      <input type="text" name="prAsRead_archiveobservationslipformdata" id="prAsRead_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter Pr.As Read" >
+                    </div>
+                  </td>
+                  <td>
+                    <div class="input-group">
+                      <span class="input-group-addon">Correction</span>
+                      <input type="text" name="correction_archiveobservationslipformdata" id="correction_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter Correction" >
+                    </div> <br>
+
+                    <div class="input-group">
+                      <span class="input-group-addon">C.L.P(mb)</span>
+                      <input type="text" name="CLP_archiveobservationslipformdata" id="CLP_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter C.L.P(mb)" >
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align = "center">Time marks</td>
+                  </tr>
+                  <tr>
+                      <td>
+                         <div class="input-group">
+                          <span class="input-group-addon">TIME MARKS BAROGRAPH</span>
+                           <input type="text" name="timeMarksBarograph_archiveobservationslipformdata" id="timeMarksBarograph_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter TIME MARKS BAROGRAPH" >
+                        </div>
+                      </td>
+                      <td>
+                         <div class="input-group">
+                          <span class="input-group-addon">TIME MARKS ANEMOGRAPH</span>
+                           <input type="text" name="timeMarksAnemograph_archiveobservationslipformdata" id="timeMarksAnemograph_archiveobservationslipformdata" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter TIME MARKS ANEMOGRAPH" >
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                        <td>
+                          <div class="input-group">
+                            <span class="input-group-addon">Other T/MARKS </span>
+                            <input type="text" name="otherTMarks_archiveobservationslipformdata" id="otherTMarks_archiveobservationslipformdata" onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder="Enter Other T/MARKS" >
+                          </div>
+                        </td>
+                        <td>
+                           <div class="input-group">
+                            <span class="input-group-addon">Remarks or any other Observations </span>
+                             <input type="text" name="remarks_archiveobservationslipformdata" id="remarks_archiveobservationslipformdata" onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder="Enter Remarks or any other Observations" >
+                          </div>
+                        </td>
+                      </tr>
+          </table>
+        </div>
+        <div class="clearfix"></div>
+        <div style="overflow:auto;">
+            <div style="float:right;">
+              <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+              <button type="button" id="nextBtn" onclick="nextPrev(1)" name="postarchiveobservationslipformdata_button">Next</button>
+            </div>
+          </div>
+           <!-- Circles which indicates the steps of the form: -->
+           <div style="text-align:center;margin-top:40px;">
+              <span class="step"></span>
+              <span class="step"></span>
+              <span class="step"></span>
+              <span class="step"></span>
+            </div>
+
+      </form>
+ </div>
+
+ <div class="row">
+    <form action='index.php/ArchiveObservationSlipFormData/UpdateArchiveObservationSlipFormData' id="regForm" method="post" enctype="multipart/form-data">
+      <script language="javascript">
+          function allowIntegerInputOnly(inputvalue) {
+              //var invalidChars = /[^0-9]/gi
+              var integerOnly =/[^0-9\.]/gi;  // integers and decimals //
+              if(integerOnly.test(inputvalue.value)) {
+                  inputvalue.value = inputvalue.value.replace(integerOnly,"");
+              }
+          }
+
+          function allowCharactersInputOnly(inputvalue) {
+              //var invalidChars = /[^0-9]/gi
+              var charsOnly =/[^A-Za-z]/gi;  // integers and decimals // /[^0-9\.]/gi;
+              if(charsOnly.test(inputvalue.value)) {
+                  inputvalue.value = inputvalue.value.replace(charsOnly,"");
+              }
+          }
+      </script>
+      <!-- Section 1 -->
+      <div ><h4>Station & CLouds Info:</h4>
+        <table id="example1" class="table table-bordered table-striped">
+          <tr>
+              <td colspan = "4">
+
+                  <div class="input-group">
+                    <span class="input-group-addon">Station Name</span>
+                  <select name="station" id="stationManager"   class="form-control" placeholder="Select Station">
+                        <option value=""></option>
+
+                                <option value=""></option>
+
+
+                    </select>
+                  </div>
+              </td>
+              <td colspan = "4">
+
+                  <div class="input-group">
+                    <span class="input-group-addon"> Station Number</span>
+                     <input type="text" name="stationNo"  class="form-control" id="stationNoManager" readonly class="form-control" value="" readonly="readonly" >
+
+           </div>
+
+                </td>
+                <td colspan = "4">
+
+                    <div class="input-group">
+                      <span class="input-group-addon">Station Name</span>
+                      <input type="text" name="station" id="station"  class="form-control" value=""  readonly class="form-control" >
+
+                    </div>
+
+                </td>
+                <td colspan = "4">
+
+                  <div class="input-group">
+                    <span class="input-group-addon"> Station Number</span>
+                     <input type="text" name="stationNo"  class="form-control" id="stationNo_archiveobservationslipformdata" readonly class="form-control" value="" readonly="readonly" >
+                  </div>
+
+                </td>
+          </tr>
+          <tr>
+              <td colspan = "4">
+                  <div class="input-group">
+                   <span class="input-group-addon">TIME</span>
+                    <input type="text" name="timeRecorded"  class="form-control" id="timeRecorded" readonly class="form-control" value="" readonly="readonly" >
+                 </div>
+               </td>
+               <td colspan="4">
+
+                   <div class="input-group">
+                     <span class="input-group-addon">Total amount of all clouds</span>
+                      <select name="totalamountofallclouds" onkeyup="allowIntegerInputOnly(this)"   id="totalamountofallclouds"  class="form-control"  placeholder=" Enter total amount of all clouds" >
+                       <option value=""> </option>
+                       <option value="">--Select Total Amount Of All Clouds </option>
+                       <option value="0">0</option>
+                       <option value="1">1</option>
+                       <option value="2">2</option>
+                       <option value="3">3</option>
+                       <option value="4">4</option>
+                       <option value="5">5</option>
+                       <option value="6">6</option>
+                       <option value="7">7</option>
+                       <option value="8">8</option>
+                     </select>
+                   </div>
+
+               </td>
+               <td colspan="4">
+
+
+                  <div class="input-group">
+                    <span class="input-group-addon">Total amount of low clouds</span>
+                      <select name="totalamountoflowclouds" onkeyup="allowIntegerInputOnly(this)"  id="totalamountoflowclouds"  class="form-control"  placeholder="Enter total amount of all clouds" >
+                      <option value=""> </option>
+                      <option value="">--Select Total Amount of Low Clouds </option>
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+
+
+                    </select>
+                  </div>
+
+              </td>
+          </tr>
+          <tr>
+              <td colspan = "4">
+                <b>Low</b>
+              </td>
+              <td colspan = "4">
+                <b>Medium</b>
+              </td>
+              <td colspan = "4">
+                <b>High</b>
+              </td>
+            </tr>
+            <tr>
+                <td><b>type</b></td> <td><b>oktas</b></td> <td><b>height</b></td> <td><b>clcode</b></td> <td><b>type</b></td> <td><b>oktas</b></td>
+                <td><b>height</b></td> <td><b>clcode</b></td> <td><b>type</b></td> <td><b>oktas</b></td> <td><b>height</b></td> <td><b>clcode</b></td>
+
+              </tr>
+
+              <!-- Type 1 clouds -->
+
+              <tr>
+                  <td>
+                      <select  name="TypeOfLowClouds1"  id="TypeOfLowClouds1" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter Type of LOW CLOUD" >
+                                 <option value=""></option>
+                     <option value="0">0</option>
+                     <option value="1">1</option>
+                     <option value="2">2</option>
+                     <option value="3">3</option>
+                     <option value="4">4</option>
+                     <option value="5">5</option>
+                     <option value="6">6</option>
+                     <option value="7">7</option>
+                     <option value="8">8</option>
+                     <option value="9">9</option>
+
+                     </select>
+                     </td>
+                     <td>
+                        <select name="OktasOfLowClouds1" id="OktasOfLowClouds1" onkeyup="allowIntegerInputOnly(this)" class="form-control" placeholder="Enter OKTAS of LOW CLOUD" >
+                        <option value=""></option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+
+
+                      </select>
+                      </td>
+                      <td>
+                          <select name="OktasOfLowClouds1" id="OktasOfLowClouds1" onkeyup="allowIntegerInputOnly(this)" class="form-control" placeholder="Enter OKTAS of LOW CLOUD" >
+                          <option value=""></option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+
+
+                        </select>
+                        </td>
+
+                        <td>
+                           <select  name="TypeOfMediumClouds1"  id="TypeOfMediumClouds1" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter Type of Medium Cloud" >
+                                    <option value=""> </option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          </select>
+                        </td>
+                        <td>
+                            <select name="OktasOfMediumClouds1" id="OktasOfMediumClouds1" onkeyup="allowIntegerInputOnly(this)" class="form-control" placeholder="Enter OKTAS MEDIUM CLOUD" >
+                                     <option value=""></option>
+                           <option value="0">0</option>
+                           <option value="1">1</option>
+                           <option value="2">2</option>
+                           <option value="3">3</option>
+                           <option value="4">4</option>
+                           <option value="5">5</option>
+                           <option value="6">6</option>
+                           <option value="7">7</option>
+                           <option value="8">8</option>
+                           </select>
+                         </td>
+
+                         <td>
+                            <input type="text" name="HeightOfMediumClouds1"  id="HeightOfMediumClouds1" value="" onkeyup="allowIntegerInputOnly(this)"  class="form-control"style = "width:70px;" >
+                         </td>
+                         <td>
+                            <select  name="CLCODEOfMediumClouds1"  id="CLCODEOfMediumClouds1"  onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder=" Enter CL CODE OF MEDIUM CLOUD " >
+                           <option value=""> </option>
+                           <option value="Ac">Ac</option>
+                           <option value="As">As</option>
+                           <option value="Ns">Ns</option>
+                           </select>
+                         </td>
+                         <td>
+                             <select  name="TypeOfHighClouds1"  id="TypeOfHighClouds1" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter Type of HIGH Cloud" >
+                             <option value=""> </option>
+                             <option value="0">0</option>
+                             <option value="1">1</option>
+                             <option value="2">2</option>
+                             <option value="3">3</option>
+                             <option value="4">4</option>
+                             <option value="5">5</option>
+                             <option value="6">6</option>
+                             <option value="7">7</option>
+                             <option value="8">8</option>
+                             <option value="9">9</option>
+                           </select>
+                         </td>
+                         <td>
+                            <select name="OktasOfHighClouds1" id="OktasOfHighClouds1" onkeyup="allowIntegerInputOnly(this)" class="form-control" placeholder="Enter OKTAS HIGH CLOUD" >
+                              <option value=""> </option>
+                              <option value="0">0</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                            </select>
+                          </td>
+                          <td>
+                             <input type="text" name="HeightOfHighClouds1"  id="HeightOfHighClouds1" value="" onkeyup="allowIntegerInputOnly(this)"  class="form-control" style = "width:70px;" >
+                          </td>
+                          <td>
+                              <select  name="CLCODEOfHighClouds1"  id="CLCODEOfHighClouds1"  onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder=" Enter CL CODE HIGH CLOUD " >
+                                  <option value=""> </option>
+                                  <option value="Cl">Cl</option>
+                                  <option value="Cc">Cc</option>
+                                  <option value="Cs">Cs</option>
+
+                                </select>
+                          </td>
+              </tr>
+
+                <!--  Type 2 clouds -->
+
+                <tr>
+                    <td>
+                        <select  name="TypeOfLowClouds2"  id="TypeOfLowClouds2" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter Type of LOW Cloud" >
+                       <option value=""> </option>
+                       <option value="0">0</option>
+                       <option value="1">1</option>
+                       <option value="2">2</option>
+                       <option value="3">3</option>
+                       <option value="4">4</option>
+                       <option value="5">5</option>
+                       <option value="6">6</option>
+                       <option value="7">7</option>
+                       <option value="8">8</option>
+                       <option value="9">9</option>
+
+                       </select>
+                     </td>
+                     <td>
+                        <select name="OktasOfLowClouds2" id="OktasOfLowClouds2" onkeyup="allowIntegerInputOnly(this)" class="form-control" placeholder="Enter OKTAS of LOW CLOUD" >
+                        <option value=""> </option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                      </select>
+                      </td>
+                      <td>
+                          <input type="text" name="HeightOfLowClouds2"  id="HeightOfLowClouds2" value="" onkeyup="allowIntegerInputOnly(this)"  class="form-control" style = "width:60px;" >
+                    </td>
+                    <td>
+                        <select  name="CLCODEOfLowClouds2"  id="CLCODEOfLowClouds2"  onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder=" Enter CLCODE OF LOW CLOUD " >
+                                 <option value=""> </option>
+                       <option value="Sc">Sc</option>
+                       <option value="St">St</option>
+                       <option value="Cu">Cu</option>
+                       <option value="Cb">Cb</option>
+                     </select>
+                     </td>
+                     <td>
+                        <select  name="TypeOfMediumClouds2"  id="TypeOfMediumClouds2" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter Type of Medium Cloud" >
+                       <option value=""> </option>
+                       <option value="0">0</option>
+                       <option value="1">1</option>
+                       <option value="2">2</option>
+                       <option value="3">3</option>
+                       <option value="4">4</option>
+                       <option value="5">5</option>
+                       <option value="6">6</option>
+                       <option value="7">7</option>
+                       <option value="8">8</option>
+                       <option value="9">9</option>
+                       </select>
+                     </td>
+                     <td>
+                        <select name="OktasOfMediumClouds2" id="OktasOfMediumClouds2" onkeyup="allowIntegerInputOnly(this)" class="form-control" placeholder="Enter OKTAS MEDIUM CLOUD" >
+                        <option value=""> </option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        </select>
+                      </td>
+                      <td>
+                        <input type="text" name="HeightOfMediumClouds2"  id="HeightOfMediumClouds2" value="" onkeyup="allowIntegerInputOnly(this)"  class="form-control" style = "width: 70px">
+                      </td>
+                      <td>
+                          <select  name="CLCODEOfMediumClouds2"  id="CLCODEOfMediumClouds2"  onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder=" Enter CL CODE OF MEDIUM CLOUD " >
+                         <option value=""> </option>
+                         <option value="Ac">Ac</option>
+                         <option value="As">As</option>
+                         <option value="Ns">Ns</option>
+                         </select>
+                       </td>
+                       <td>
+                            <select  name="TypeOfHighClouds2"  id="TypeOfHighClouds2" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter Type of HIGH Cloud" >
+                           <option value=""></option>
+                           <option value="0">0</option>
+                           <option value="1">1</option>
+                           <option value="2">2</option>
+                           <option value="3">3</option>
+                           <option value="4">4</option>
+                           <option value="5">5</option>
+                           <option value="6">6</option>
+                           <option value="7">7</option>
+                           <option value="8">8</option>
+                           <option value="9">9</option>
+                         </select>
+                       </td>
+                       <td>
+                          <select name="OktasOfHighClouds2" id="OktasOfHighClouds2" onkeyup="allowIntegerInputOnly(this)" class="form-control" placeholder="Enter OKTAS  OF HIGH CLOUD" >
+                           <option value=""> </option>
+                           <option value="0">0</option>
+                           <option value="1">1</option>
+                           <option value="2">2</option>
+                           <option value="3">3</option>
+                           <option value="4">4</option>
+                           <option value="5">5</option>
+                           <option value="6">6</option>
+                           <option value="7">7</option>
+                           <option value="8">8</option>
+                         </select>
+                       </td>
+                       <td>
+                          <input type="text" name="HeightOfHighClouds2"  id="HeightOfHighClouds2" value="" onkeyup="allowIntegerInputOnly(this)"  class="form-control" style = "width:70px;">
+                       </td>
+                       <td>
+                          <select  name="CLCODEOfHighClouds2"  id="CLCODEOfHighClouds2"  onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder=" Enter CL CODE OF HIGH CLOUD " >
+                                    <option value=""> </option>
+                            <option value="Cl">Cl</option>
+                            <option value="Cc">Cc</option>
+                            <option value="Cs">Cs</option>
+                          </select>
+                        </td>
+                </tr>
+
+                <!-- Type 3 clouds -->
+                <tr>
+                    <td>
+                        <select  name="TypeOfLowClouds3"  id="TypeOfLowClouds3" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter Type of LOW Cloud" >
+                       <option value=""> </option>
+                       <option value="0">0</option>
+                       <option value="1">1</option>
+                       <option value="2">2</option>
+                       <option value="3">3</option>
+                       <option value="4">4</option>
+                       <option value="5">5</option>
+                       <option value="6">6</option>
+                       <option value="7">7</option>
+                       <option value="8">8</option>
+                       <option value="9">9</option>
+
+                     </select>
+                     </td>
+                     <td>
+                        <select name="OktasOfLowClouds3" id="OktasOfLowClouds3" onkeyup="allowIntegerInputOnly(this)" class="form-control" placeholder="Enter OKTAS of LOW CLOUD" >
+                        <option value=""> </option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                      </select>
+                      </td>
+
+                      <td>
+                        <input type="text" name="HeightOfLowClouds3"  id="HeightOfLowClouds3" value="" onkeyup="allowIntegerInputOnly(this)"  class="form-control" style = "width: 60px;">
+                      </td>
+                      <td>
+                          <select  name="CLCODEOfLowClouds3"  id="CLCODEOfLowClouds3"  onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder=" Enter CLCODE OF LOW CLOUD " >
+                          <option value=""> </option>
+                          <option value="Sc">Sc</option>
+                          <option value="St">St</option>
+                          <option value="Cu">Cu</option>
+                          <option value="Cb">Cb</option>
+
+                        </select>
+                        </td>
+                        <td>
+                           <select  name="TypeOfMediumClouds3"  id="TypeOfMediumClouds3" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter Type of Medium Cloud" >
+                          <option value=""> </option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          </select>
+                        </td>
+                        <td>
+                            <select name="OktasOfMediumClouds3" id="OktasOfMediumClouds3" onkeyup="allowIntegerInputOnly(this)" class="form-control" placeholder="Enter OKTAS MEDIUM CLOUD" >
+                           <option value=""> </option>
+                           <option value="0">0</option>
+                           <option value="1">1</option>
+                           <option value="2">2</option>
+                           <option value="3">3</option>
+                           <option value="4">4</option>
+                           <option value="5">5</option>
+                           <option value="6">6</option>
+                           <option value="7">7</option>
+                           <option value="8">8</option>
+                           </select>
+                         </td>
+                         <td>
+                            <input type="text" name="HeightOfMediumClouds3"  id="HeightOfMediumClouds3" value="" onkeyup="allowIntegerInputOnly(this)"  class="form-control" style = "width:70px;">
+                          </td>
+                          <td>
+                              <select  name="CLCODEOfMediumClouds3"  id="CLCODEOfMediumClouds3"  onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder=" Enter CL CODE OF MEDIUM CLOUD " >
+                               <option value=""> </option>
+                               <option value="Ac">Ac</option>
+                               <option value="As">As</option>
+                               <option value="Ns">Ns</option>
+                             </select>
+                           </td>
+                           <td>
+                              <select  name="TypeOfHighClouds3"  id="TypeOfHighClouds3" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter Type of HIGH Cloud" >
+                               <option value=""> </option>
+                               <option value="0">0</option>
+                               <option value="1">1</option>
+                               <option value="2">2</option>
+                               <option value="3">3</option>
+                               <option value="4">4</option>
+                               <option value="5">5</option>
+                               <option value="6">6</option>
+                               <option value="7">7</option>
+                               <option value="8">8</option>
+                               <option value="9">9</option>
+                             </select>
+                           </td>
+                           <td>
+                              <input type="text" name="HeightOfHighClouds3"  id="HeightOfHighClouds3" value="" onkeyup="allowIntegerInputOnly(this)"  class="form-control" style = "width:70px;">
+                            </td>
+                            <td>
+                                <select  name="CLCODEOfHighClouds3"  id="CLCODEOfHighClouds3"  onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder=" Enter CL CODE OF HIGH CLOUD " >
+                                 <option value=""> </option>
+                                 <option value="Cl">Cl</option>
+                                 <option value="Cc">Cc</option>
+                                 <option value="Cs">Cs</option>
+                               </select>
+                             </td>
+                </tr>
+                <tr>
+                    <td colspan="6">
+                      <div class="input-group">
+                        <span class="input-group-addon">Cloud Searchlight Alidade Reading</span>
+                         <input type="text" name="cloudsearchlight" onkeyup="allowIntegerInputOnly(this)" value="" id="cloudsearchlight"  class="form-control" placeholder="Enter Cloud Searchlight Alidade Reading" >
+                      </div>
+                    </td>
+                    <td colspan="6">
+                      <div class="input-group">
+                      <span class="input-group-addon">Rainfall(mm)</span>
+                      <input type="text" name="rainfall"  value="" id="rainfall"  class="form-control" placeholder="Enter Rainfall(mm)" >
+                    </div>
+                    </td>
+                  </tr>
+        </table>
+
+      </div>
+       <!-- Section 2 -->
+       <div >
+          <table id="example1" class="table table-bordered table-striped">
+              <tr>
+                  <td >
+                    <div class="input-group">
+                    <span class="input-group-addon">Dry Bulb</span>
+                     <input type="text" name="drybulb" onkeyup="allowIntegerInputOnly(this)" value="" id="drybulb"  class="form-control" placeholder="Enter Dry Bulb" >
+                  </div>
+                  </td>
+                  <td align = "center"><b>Rainfall & Temperature:</b></td>
+                  <td>
+                    <div class="input-group">
+                    <span class="input-group-addon">Wet Bulb</span>
+                    <input type="text" name="wetbulb" onkeyup="allowIntegerInputOnly(this)" value="" id="wetbulb"  class="form-control" placeholder="Enter Wet Bulb" >
+                  </div>
+                  </td>
+                </tr>
+                <tr>
+                    <td><b>MAX</b></td> <td><b>MIN</b></td> <td><b>PICHE</b></td>
+
+                  </tr>
+                  <tr>
+                      <td>
+                        <div class="input-group">
+                        <span class="input-group-addon">MAX Read</span>
+                        <input type="text" name="maxRead"  onkeyup="allowIntegerInputOnly(this)" value="" id="maxRead"  class="form-control" placeholder="Enter MAX READ" >
+                        </div> <br>
+
+                         <div class="input-group">
+                          <span class="input-group-addon">MAX Reset</span>
+                           <input type="text" name="maxReset" onkeyup="allowIntegerInputOnly(this)"  value=""id="maxReset"  class="form-control" placeholder="Enter MAX RESET" >
+                        </div>
+                      </td>
+
+                      <td>
+                         <div class="input-group">
+                          <span class="input-group-addon">MIN Read</span>
+                           <input type="text" name="minRead" onkeyup="allowIntegerInputOnly(this)" value="" id="minRead"  class="form-control" placeholder="Enter MIN READ" >
+                        </div><br>
+
+                        <div class="input-group">
+                          <span class="input-group-addon">MIN Reset</span>
+                           <input type="text" name="minReset" onkeyup="allowIntegerInputOnly(this)" value="" id="minReset"  class="form-control" placeholder="Enter MIN RESET" >
+                        </div>
+                      </td>
+
+                      <td>
+                         <div class="input-group">
+                          <span class="input-group-addon">PICHE Read</span>
+                           <input type="text" name="picheRead" onkeyup="allowIntegerInputOnly(this)"  value="" id="picheRead"  class="form-control" placeholder="Enter PICHE READ" >
+                        </div> <br>
+
+                         <div class="input-group">
+                          <span class="input-group-addon">PICHE Reset</span>
+                           <input type="text" name="picheReset" onkeyup="allowIntegerInputOnly(this)" value="" id="picheReset"  class="form-control" placeholder="Enter PICHE RESET" >
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                        <td colspan = "3"><b>Time marks</b></td>
+                      </tr>
+                      <tr>
+                          <td>
+                            <div class="input-group">
+                            <span class="input-group-addon">THERMO</span>
+                             <input type="text" name="timemarksThermo" onkeyup="allowIntegerInputOnly(this)"  value="" id="timemarksThermo"  class="form-control" placeholder="Enter TIME MARKS THERMO" >
+                            </div>
+                          </td>
+                          <td>
+                            <div class="input-group">
+                            <span class="input-group-addon">HYGRO</span>
+                            <input type="text" name="timemarksHygro" onkeyup="allowIntegerInputOnly(this)" value="" id="timemarksHygro"  class="form-control" placeholder="Enter TIME MARKS HYGRO" >
+                          </div>
+                          </td>
+                          <td>
+                            <div class="input-group">
+                            <span class="input-group-addon">RAIN REC</span>
+                            <input type="text" name="timemarksRainRec" onkeyup="allowIntegerInputOnly(this)" value="" id="timemarksRainRec"  class="form-control" placeholder="Enter TIME MARKS RAIN REC" >
+                            </div>
+                          </td>
+                        </tr>
+          </table>
+       </div>
+
+        <!-- Section 3 -->
+        <div >
+            <b>Weather Info:</b>
+            <table id="example1" class="table table-bordered table-striped">
+                <tr>
+                    <td>
+                     <div class="input-group">
+                            <span class="input-group-addon">PRESENT WEATHER</span>
+                            <input type="text" name="presentweather" onkeyup="allowCharactersInputOnly(this)"  id="presentweather" value=""  class="form-control" placeholder="Enter PRESENT WEATHER" >
+
+                        </div>
+                    </td>
+                    <td>
+                      <div class="input-group">
+                        <span class="input-group-addon">M.S.L.Pr(mb) or 850mb. Ht.(gpm)</span>
+                        <input type="text" name="MSLPR" onkeyup="allowIntegerInputOnly(this)" value="" id="MSLPR"  class="form-control" placeholder="Enter M.S.L.Pr(mb) or 850mb. Ht.(gpm)" >
+                      </div>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                      <div class="input-group">
+                      <span class="input-group-addon">VISIBILITY</span>
+                      <input type="text" name="visibility" onkeyup="allowIntegerInputOnly(this)" value="" id="visibility"  class="form-control" placeholder="Enter VISIBILITY" >
+                    </div>
+                    </td>
+                    <td>
+                     <div class="input-group">
+                      <span class="input-group-addon">GUSTING(KTS)</span>
+                       <input type="text" name="gusting" onkeyup="allowIntegerInputOnly(this)" value="" id="gusting"  class="form-control" placeholder="Enter GUSTING (KTS)" >
+                    </div>
+                    </td>
+                  </tr>
+                  <tr>
+                      <td colspan="2" align = "center"><b>wind</b></td>
+                    </tr>
+                    <tr>
+                        <td>
+                           <div class="input-group">
+                            <span class="input-group-addon">WIND DIRECTION</span>
+                             <input type="text" name="winddirection"  onkeyup="allowIntegerInputOnly(this)" value="" id="winddirection"  class="form-control"  placeholder="Enter WIND DIRECTION" >
+                          </div>
+                        </td>
+                        <td>
+                           <div class="input-group">
+                            <span class="input-group-addon">WIND SPEED(KTS)</span>
+                             <input type="text" name="windspeed" onkeyup="allowCharactersInputOnly(this)" value="" id="windspeed"  class="form-control"  placeholder="Enter WIND SPEED(KTS)" >
+                          </div>
+                        </td>
+                      </tr>
+            </table>
+        </div>
+
+         <!-- Section 4 -->
+			  <div class = "tab"><h2>More Info:</h2>
+          <table id="example1" class="table table-bordered table-striped">
+              <tr>
+                  <td>
+                    <div class="input-group">
+                      <span class="input-group-addon">Attd.Thermo.(C)</span>
+                       <input type="text" name="attdThermo" onkeyup="allowIntegerInputOnly(this)" value="" id="attdThermo"  class="form-control" placeholder="Enter ATTD.THERMO." >
+                    </div> <br>
+
+                    <div class="input-group">
+                      <span class="input-group-addon">Pr.As Read(C)</span>
+                      <input type="text" name="prAsRead" onkeyup="allowIntegerInputOnly(this)" value="" id="prAsRead"  class="form-control" placeholder="Enter Pr.As Read" >
+                    </div>
+                  </td>
+                  <td>
+                    <div class="input-group">
+                      <span class="input-group-addon">Correction</span>
+                      <input type="text" name="correction" onkeyup="allowIntegerInputOnly(this)" value="" id="correction"  class="form-control" placeholder="Enter Correction" >
+                    </div> <br>
+
+                    <div class="input-group">
+                      <span class="input-group-addon">C.L.P(mb)</span>
+                      <input type="text" name="CLP" onkeyup="allowIntegerInputOnly(this)" value="" id="CLP"  class="form-control" placeholder="Enter C.L.P(mb)" >
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align = "center">Time marks</td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                       <div class="input-group">
+                        <span class="input-group-addon">TIME MARKS BAROGRAPH</span>
+                         <input type="text" name="timeMarksBarograph" onkeyup="allowIntegerInputOnly(this)"  value="" id="timeMarksBarograph"  class="form-control" placeholder="Enter TIME MARKS BAROGRAPH" >
+                      </div>
+                    </td>
+                    <td>
+                       <div class="input-group">
+                        <span class="input-group-addon">TIME MARKS ANEMOGRAPH</span>
+                        <input type="text" name="timeMarksAnemograph" onkeyup="allowIntegerInputOnly(this)" value="" id="timeMarksAnemograph"  class="form-control" placeholder="Enter TIME MARKS ANEMOGRAPH" >
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                      <td>
+                        <div class="input-group">
+                          <span class="input-group-addon">Other T/MARKS </span>
+                          <input type="text" name="otherTMarks" onkeyup="allowCharactersInputOnly(this)" value="" id="otherTMarks"  class="form-control" placeholder="Enter Other T/MARKS" >
+                        </div>
+                      </td>
+                      <td>
+                         <div class="input-group">
+                          <span class="input-group-addon">Remarks or any other Observations </span>
+                           <input type="text" name="remarks" onkeyup="allowCharactersInputOnly(this)"  value="" id="remarks"  class="form-control" placeholder="Enter Remarks or any other Observations" >
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                        <td colspan = "2" align = "center">
+                          <div class="input-group">
+                            <span class="input-group-addon">Approved</span>
+
+                            <select name="approval" id="approval" disabled  class="form-control" >
+                              <option value=""></option>
+                              <option value="TRUE">TRUE</option>
+                              <option value="FALSE">FALSE</option>
+                            </select>
+                            <input type="hidden" name="approval" value="">
+
+                               <select name="approval" id="approval"  class="form-control" >
+                              <option value=""></option>
+                              <option value="TRUE">TRUE</option>
+                              <option value="FALSE">FALSE</option>
+                            </select>
+
+                          </div>
+                        </td>
+                      </tr>
+          </table>
+        </div>
+
+        <div class="clearfix"></div>
+        <div style="overflow:auto;">
+            <div style="float:right;">
+              <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+              <button type="button" id="nextBtn" onclick="nextPrev(1)" name="updatearchiveobservationslipformdata_button">Next</button>
+            </div>
+          </div>
+
+          <!-- Circles which indicates the steps of the form: -->
+          <div style="text-align:center;margin-top:40px;">
+              <span class="step"></span>
+              <span class="step"></span>
+              <span class="step"></span>
+              <span class="step"></span>
+            </div>
+
+    </form>
+  </div>
+
+  <div class="row">
+      <div class="col-xs-3"><a class="btn btn-primary no-print" href="">
+              <i class="fa fa-plus"></i> Add Archive Observation Slip</a>
+
+
+      </div>
+
+  </div>
+
+  <br>
+  <div class="row">
+      <div class="col-xs-12">
+
+          <div class="box">
+
+              <div class="box-header">
+                  <h3 class="box-title"> Archive Observation Slip Form</h3>
+              </div>
+          <!-- /.box-header -->
+          <div class="box-body table-responsive" style="overflow:auto">
+              <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                      <tr>
+                          <th>No</th>
+                          <th>Date</th>
+                          <th>Station</th>
+                          <th>Station No</th>
+                          <th>TIME</th>
+                          <th>Dry Bulb</th>
+                          <th>Wet Bulb</th>
+                          <th>Present Weather</th>
+                          <th>Visibility</th>
+                          <th>Wind Direction</th>
+                          <th>Wind Speed</th>
+
+                          <th>Rainfall (mm)</th>
+                          <th>Gusting </th>
+                          <th>Max Read</th>
+                          <th>Min Read</th>
+                          <th>Piche Read</th>
+
+
+                              <th>Approved</th>
+                              <th>By</th>
+                              <th class="no-print">Action</th>
+
+                      </tr>
+                  </thead>
+                  <tbody>
+
+                      <tr>
+                          <td ></td>
+                          <td ></td>
+                          <td ></td>
+                          <td ></td>
+                          <td ></td>
+                          <td ></td>
+                          <td ></td>
+                          <td ></td>
+                          <td ></td>
+                          <td ></td>
+                          <td></td>
+                          <td></td>
+
+
+                          <td ></td>
+                          <td ></td>
+                          <td></td>
+                          <td></td>
+
+                       <td></td>
+
+                       <td></td>
+                       <td class="no-print">
+        <table>
+                           <tr><td>
+                              <a class="btn btn-primary" href="" style="cursor:pointer;"><li class="fa fa-edit"></li> Edit</a>
+                              </td>
+
+        <td>
+
+        <form method="post" action=""> <input type="hidden" name="id" value="" ><input type="hidden" name="approve" value="TRUE" ><button class="btn btn-success"  type="submit"  ><li class='fa fa-check'></li>Approve</button></form>
+        </td>
+         </tr>
+       </table>
+     </td>
+
+                      </tr>
+
+
+              </tbody>
+            </table>
+
+            <br><br>
+            <button onClick="print();" class="btn btn-primary no-print"><i class="fa fa-print"></i> PRINT</button>
+
+          </div>
+      </div>
+    </div>
+  </div>
+
+ </section>
+
+</aside>
+
+    </html>

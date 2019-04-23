@@ -41,7 +41,6 @@ import { DatamanagerComponent } from './components/datamanager/datamanager.compo
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { ObservationslipComponent } from './components/forms/observationslip/observationslip.component';
-import { StationComponent } from './components/forms/station/station.component';
 import { ElementsComponent } from './components/forms/elements/elements.component';
 import { InstrumentsComponent } from './components/forms/instruments/instruments.component';
 import { ArchiveObservationslipComponent } from './components/archiveForm/archive-observationslip/archive-observationslip.component';
@@ -50,7 +49,9 @@ import { ArchivedekadalformreportdataComponent } from './components/archiveForm/
 import { UsertestComponent } from './components/usertest/usertest.component';
 import { ObservationSlipFormComponent } from './components/forms/observation-slip-form/observation-slip-form.component';
 import { ObservationSlipReportComponent } from './components/forms/observation-slip-report/observation-slip-report.component';
-// import { ObservationSlipFormComponent } from './forms/observationSlipForm/observation-slip-form.component';
+import { ArchiveObservationSlipFormDataComponent } from './components/forms/archive-observation-slip-form-data/archive-observation-slip-form-data.component';
+import { StationsComponent } from './components/forms/stations/stations.component';
+import { MonthlyRainfallReportComponent } from './components/forms/monthly-rainfall-report/monthly-rainfall-report.component';
 //import { FComponent } from './f/f.component';
 // import { FormsComponent } from './forms.component';
 
@@ -69,7 +70,6 @@ import { ObservationSlipReportComponent } from './components/forms/observation-s
     EditUserComponent,
     MainNavComponent,
     ObservationslipComponent,
-    StationComponent,
     ElementsComponent,
     InstrumentsComponent,
     ArchiveObservationslipComponent,
@@ -78,6 +78,10 @@ import { ObservationSlipReportComponent } from './components/forms/observation-s
     UsertestComponent,
     ObservationSlipFormComponent,
     ObservationSlipReportComponent,
+    ArchiveObservationSlipFormDataComponent,
+    StationsComponent,
+    MonthlyRainfallReportComponent,
+    // MonthlyRainfallReportComponent,
     // ObservationSlipFormComponent,
     //FComponent,
     // FormsComponent
@@ -98,7 +102,6 @@ import { ObservationSlipReportComponent } from './components/forms/observation-s
         {path: 'register-users', component:  RegisterUsersComponent  },
         {path: 'users', component:  UsersComponent  },
         {path: 'edit-user', component:  EditUserComponent  },
-        {path: 'station', component:  StationComponent   },
         {path: 'observationslip', component:  ObservationslipComponent   },
         {path: 'instrument', component:  InstrumentsComponent   },
         {path: 'elements', component:  ElementsComponent  },
@@ -107,7 +110,10 @@ import { ObservationSlipReportComponent } from './components/forms/observation-s
         {path: '', component:  LoginComponent  },
         {path: 'usertest', component:  UsertestComponent  },
         {path: 'observationSlipForm', component:  ObservationSlipFormComponent  },
-        {path: 'observationSlipReport', component:  ObservationSlipReportComponent  }
+        {path: 'observationSlipReport', component:  ObservationSlipReportComponent  },
+        {path: 'archiveObservationSlipFormData', component:  ArchiveObservationSlipFormDataComponent  },
+        {path: 'station', component:  StationsComponent  },
+        {path: 'monthlyRainfallReport', component:  MonthlyRainfallReportComponent  }
 
 
       ]),
