@@ -42,6 +42,7 @@ import { DatamanagerComponent } from './components/datamanager/datamanager.compo
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { FilterPipe } from './components/pipes/filter.pipe';
+import { UserUpdateComponent } from './components/user-update/user-update.component';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { FilterPipe } from './components/pipes/filter.pipe';
     DatamanagerComponent,
     EditUserComponent,
     MainNavComponent,
-    FilterPipe
+    FilterPipe,
+    UserUpdateComponent
   ],
   imports: [
     BrowserModule,

@@ -6,12 +6,13 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DatamanagerComponent } from './components/datamanager/datamanager.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { LoginComponent } from './components/login/login.component';
+import { UserUpdateComponent } from './components/user-update/user-update.component';
 
 const routes: Routes = [
   {path: 'register-users', component:  RegisterUsersComponent  },
-  {path: 'register-users/edit/:id', component:  RegisterUsersComponent  },
   {path: 'users', component:  UsersComponent  },
-  {path: 'edit-user', component:  EditUserComponent  }
+  {path: 'edit-user', component:  EditUserComponent  },
+  {path: 'edit/:id', component:  UserUpdateComponent  }
 
 ];
 
