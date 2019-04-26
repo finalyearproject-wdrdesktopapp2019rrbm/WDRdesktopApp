@@ -42,7 +42,7 @@ export class EditUserComponent implements OnInit {
 
   ngOnInit() {
 
-    const userId = localStorage.getItem('editUserId');
+    const userId = JSON.parse(localStorage.getItem('editUserId'));
 
     if(!userId) {
       alert('Invalid action.');

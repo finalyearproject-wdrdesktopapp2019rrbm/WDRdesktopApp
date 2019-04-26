@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {first} from 'rxjs/operators';
+import { User } from '../models/user/user';
 import {AuthService, AlertService } from '../services/allServices';
 
 // import {AuthService } from "../services/auth/auth.service";
@@ -17,6 +18,8 @@ export class LoginComponent implements OnInit {
   submitted: boolean = false;
    invalidLogin: boolean = false;
    loginData: any ={}
+   user: any = {};
+   returnUrl= '';
 
   constructor(
     private formBuilder: FormBuilder,
@@ -31,6 +34,7 @@ export class LoginComponent implements OnInit {
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
+    this.returnUrl = '/main-nav';
   }
 
 
@@ -41,17 +45,23 @@ export class LoginComponent implements OnInit {
     }
     this.authService.loginUser(this.loginForm.value)
     .subscribe(  data => {
-      const user = data.json();
-      if ( user.length > 0) {
-        this.router.navigate(['home']);
-
+      this.user = data.json();
+      console.log(this.user)
+     
+      if ( this.user.length > 0) {
+      
+        console.log(this.user.length);
+        localStorage.setItem('isLoggedIn', "true");
+        localStorage.setItem('loggedinUser', JSON.stringify(this.user));
+        this.router.navigate([this.returnUrl]);
+      
       } else {
         this.invalidLogin = true;
-
+      
       }
-
-
     });
   }
+
+
 
 }

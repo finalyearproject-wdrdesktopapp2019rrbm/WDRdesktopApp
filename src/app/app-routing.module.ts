@@ -9,10 +9,10 @@ import { LoginComponent } from './components/login/login.component';
 import { UserUpdateComponent } from './components/user-update/user-update.component';
 
 const routes: Routes = [
-  {path: 'register-users', component:  RegisterUsersComponent  },
-  {path: 'users', component:  UsersComponent  },
-  {path: 'edit-user', component:  EditUserComponent  },
-  {path: 'edit/:id', component:  UserUpdateComponent  }
+  // {path: 'register-users', component:  RegisterUsersComponent  },
+  // {path: 'users', component:  UsersComponent  },
+  // {path: 'edit-user', component:  EditUserComponent  },
+  // {path: 'edit/:id', component:  UserUpdateComponent  }
 
 ];
 

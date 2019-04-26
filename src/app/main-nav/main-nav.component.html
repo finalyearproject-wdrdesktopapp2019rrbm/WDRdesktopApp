@@ -9,7 +9,6 @@
     <mat-nav-list>
       <a mat-list-item routerLink="/register-users">Add Users</a>
       <a mat-list-item routerLink="/users">View Users</a>
-      <a mat-list-item routerLink="/alltasks">View Tasks</a>
       <a mat-list-item href="#"></a>
     </mat-nav-list>
   </mat-sidenav>
@@ -23,9 +22,22 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>WDR desktop app</span>
-    </mat-toolbar>
+      <span>WDR desktop app </span>
+
+      <div>
+          <h1 class="text-center pl-5" *ngIf="loggedInUser"> Welcome  
+              <b  class="pl-1" *ngFor="let user of loggedInUser">{{user.UserRole}}, {{user.UserName}}</b> 
+              <span class="pl-3">
+                  <a class="btn btn-danger" routerLink="" >logout</a>
+              </span>
+            </h1>
+        
+              
+      </div>
+      
+        </mat-toolbar>
     <!-- Add Content Here -->
+   <h1 class="text-center pt-4"> Your welcome <b *ngFor="let user of loggedInUser">{{user.UserRole}}, {{user.UserName}}</b></h1>
 
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -76,7 +76,7 @@ import { AlertService } from './components/services/allServices';
         {path: 'users', component:  UsersComponent  },
         {path: 'edit-user', component:  EditUserComponent  },
         {path: 'home', component:  HomeComponent  },
-        {path: 'app', component:   AppComponent  },
+        {path: 'main-nav', component:   MainNavComponent  },
         {path: '', component:  LoginComponent  }
 
 
