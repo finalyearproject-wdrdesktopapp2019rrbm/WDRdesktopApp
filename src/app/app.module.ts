@@ -44,6 +44,8 @@ import { MainNavComponent } from './main-nav/main-nav.component';
 import { FilterPipe } from './components/pipes/filter.pipe';
 import { UserUpdateComponent } from './components/user-update/user-update.component';
 import { AlertService } from './components/services/allServices';
+import { ObservationslipComponent } from './components/forms/observationslip/observationslip.component';
+import { StationComponent } from './components/forms/station/station.component';
 
 
 @NgModule({
@@ -58,7 +60,9 @@ import { AlertService } from './components/services/allServices';
     EditUserComponent,
     MainNavComponent,
     FilterPipe,
-    UserUpdateComponent
+    UserUpdateComponent,
+    ObservationslipComponent,
+    StationComponent
   ],
   imports: [
     BrowserModule,
@@ -76,6 +80,8 @@ import { AlertService } from './components/services/allServices';
         {path: 'users', component:  UsersComponent  },
         {path: 'edit-user', component:  EditUserComponent  },
         {path: 'home', component:  HomeComponent  },
+        { path: 'add-station', component: StationComponent },
+        { path: 'add-observationslip', component: ObservationslipComponent },
         {path: 'main-nav', component:   MainNavComponent  },
         {path: '', component:  LoginComponent  }
 
