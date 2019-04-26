@@ -69,14 +69,14 @@ import { UserUpdateComponent } from './components/user-update/user-update.compon
     ReactiveFormsModule,
     RouterModule.forRoot(
       [
-        // {path: 'datamanager', component:  DatamanagerComponent  },
-        // {path: 'dashboard', component:  DashboardComponent, canActivate: [AuthGuard] },
-        // {path: 'register-users', component:  RegisterUsersComponent  },
-        // {path: 'users', component:  UsersComponent  },
-        // {path: 'edit-user', component:  EditUserComponent  },
-        // {path: 'home', component:  HomeComponent  },
-        // {path: 'app', component:   AppComponent  },
-        // {path: 'login', component:  LoginComponent  }
+        {path: 'datamanager', component:  DatamanagerComponent  },
+        {path: 'dashboard', component:  DashboardComponent, canActivate: [AuthGuard] },
+        {path: 'register-users', component:  RegisterUsersComponent  },
+        {path: 'users', component:  UsersComponent  },
+        {path: 'edit-user', component:  EditUserComponent  },
+        {path: 'home', component:  HomeComponent  },
+        {path: 'app', component:   AppComponent  },
+        {path: '', component:  LoginComponent  }
 
 
       ]),

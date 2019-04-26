@@ -27,10 +27,22 @@ export class RegisterUsersComponent implements OnInit {
     UserPassword: '',
     UserRole: '',
     UserPhone: '',
-    Active:  ''
+    Active:  '',
+    LoggedOn: '',
+    Reset: '',
+    LastPasswdChange: '',
+    LastLoggedIn: '',
+    CreatedBy: '',
+    CreationDate: ''
+
+
 };
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private userService: UserService, private activatedRoute: ActivatedRoute) { }
+  constructor( 
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private userService: UserService,
+    private activatedRoute: ActivatedRoute) { }
 
 
 

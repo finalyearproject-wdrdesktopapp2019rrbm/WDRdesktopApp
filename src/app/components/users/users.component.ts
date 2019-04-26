@@ -42,8 +42,8 @@ export class UsersComponent implements OnInit {
     localStorage.removeItem("editUserId");
     let userID = user.Userid.toString();
     localStorage.setItem("editUserId", userID);
-    // this.router.navigate(['edit-user']);
-      this.router.navigate(['update-user']);
+    this.router.navigate(['edit-user']);  
+      // this.router.navigate(['update-user']);
   };
 
   addUser(): void {

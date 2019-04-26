@@ -13,8 +13,9 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   submitted: boolean = false;
    invalidLogin: boolean = false;
+   loginData: any ={}
 
-  constructor(private formBuilder:  FormBuilder, private router: Router, private auhService: AuthService) { }
+  constructor(private formBuilder:  FormBuilder, private router: Router, private authService: AuthService) { }
 
 
 
@@ -28,14 +29,22 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    if(this.loginForm.invalid) {
+    if (this.loginForm.invalid) {
       return;
     }
-    if(this.loginForm.controls.username.value == 'test' && this.loginForm.controls.password.value == 'test'){
-      this.router.navigate(['main-nav']);
-    } else {
-      this.invalidLogin = true;
-    }
+    this.authService.loginUser(this.loginForm.value)
+    .subscribe(  data => {
+      const user = data.json();
+      if ( user.length > 0) {
+        this.router.navigate(['home']);
+
+      } else {
+        this.invalidLogin = true;
+
+      }
+
+
+    });
   }
 
 }

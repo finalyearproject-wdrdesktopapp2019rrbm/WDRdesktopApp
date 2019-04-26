@@ -1,9 +1,12 @@
 <div class="card">
   <div class="card-body">
-    <form [formGroup]="angForm" novalidate>
+    <!-- <form [formGroup]="angForm" novalidate> -->
+    <form #editForm="ngForm" novalidate>
       <div class="form-group">
+
+        {{user | json}}
         <label class="col-md-4">Username</label>
-        <input type="text" class="form-control" formControlName="UserName" #UserName [(ngModel)] = "user.UserName" />
+        <input type="text" class="form-control" name="UserName" [(ngModel)] = "user.UserName" />
       </div>
       <div *ngIf="angForm.controls['UserName'].invalid && (angForm.controls['UserName'].dirty || angForm.controls['UserName'].touched)" class="alert alert-danger">
         <div *ngIf="angForm.controls['UserName'].errors.required">

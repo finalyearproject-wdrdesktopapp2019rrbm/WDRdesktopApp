@@ -13,19 +13,16 @@ import { User } from '../models/user/user';
   styleUrls: ['./edit-user.component.css']
 })
 export class EditUserComponent implements OnInit {
-
-  user: User[];
-  editForm: FormGroup;
-  submitted: boolean = false;
-
-  editUser: any = {};
-  angForm: FormGroup;
+  uname ='kajs';
+  submitted = false;
+  editUser = new User(1, 'Kampala', 'thankU', 'heks', 'mike','pass',
+  'Observer', 'k@gmail.com', '03284','n','yes','o', 'now','no','mik','hj');
   _angForm: FormGroup;
+  userModel = new User(1, 'Kampala', 'thankU', 'heks', 'mike','pass',
+  'Observer', 'k@gmail.com', '03284','n','yes','o', 'now','no','mik','hj');
 
-  userForm = new FormGroup({
-    email:  new FormControl(''),
-    uname :  new FormControl('')
-  })
+
+
 
   constructor(
     private formBuilder: FormBuilder,
@@ -41,13 +38,7 @@ export class EditUserComponent implements OnInit {
             UserName: ['', Validators.required ],
             UserEmail: ['', Validators.required ]
           });
-
-          console.log(this.editUser);
         }
-
-  email = new FormControl('');
-  uname = new FormControl('');
-
 
   ngOnInit() {
 
@@ -68,43 +59,43 @@ export class EditUserComponent implements OnInit {
 
 
     this.userService.getUserById(+userId).subscribe(data => {
-      this.user = data;
-      this.editUser = data;
-      // console.log(this.editUser);
-      // this.editForm.patchValue(data);
+      // this.editUser = data;
+      this.uname = 'gtdd'
+      console.log(this.editUser);
+      // this.editUser.patchValue(data);
     }, err=>console.log(err));
+
+
 
     // this.email.setValue('ankit@appdividend.com')
     // this.uname.setValue('kams')
-    //
-
   }
 
   // get the form short name to access  the form field
-  get f() { return this.editForm.controls; }
+  // get f() { return this.editForm.controls; }
 
   onSubmit() {
     this.submitted = true;
-    this.userService.updateUser(this.editForm.value)
-      .pipe(first())
-      .subscribe(
-        data => {
-          this.router.navigate(['users']);
-        },
-        error => {
-          alert(error);
-        });
+    // this.userService.updateUser(this.editForm.value)
+    //   .pipe(first())
+    //   .subscribe(
+    //     data => {
+    //       this.router.navigate(['users']);
+    //     },
+    //     error => {
+    //       alert(error);
+    //     });
   }
 
   ////
 
 
-  updateUserDetails(UserName){
-    const obj = {
-      UserName: UserName
+  updateUserDetails(UserName) {
+    // const obj = {
+    //   UserName: UserName
 
-    }
-    console.log('here');
+    // }
+    // console.log('here');
 
   }
 

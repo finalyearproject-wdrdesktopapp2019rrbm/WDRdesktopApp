@@ -1,15 +1,32 @@
+
 <div class="card">
   <div class="card-body">
-    <form [formGroup]="_angForm" novalidate>
+    <!-- <form name="_angForm" #fs="ngForm" novalidate> -->
+        <form #userForm="ngForm">
+
+          <hr>
+          {{userModel | json}}
+          <hr>
+          {{ editUser | json}}
+
+          <hr>
+          {{testModel | json}}
+
       <div class="form-group">
-        <label class="col-md-4">UserName</label>
-        <input type="text" class="form-control" formControlName="UserName" #UserName [(ngModel)] = "editUser.UserName" />
+        <label class="col-md-4">Test UserName</label>
+        <input type="text" class="form-control" name="UserName"  [(ngModel)]="editUser.UserName" />
       </div>
-      <div *ngIf="_angForm.controls['UserName'].invalid && (_angForm.controls['UserName'].dirty || _angForm.controls['UserName'].touched)" class="alert alert-danger">
+      <hr>
+
+      <div class="form-group">
+          <label class="col-md-4">UserName</label>
+          <!-- <input type="text" class="form-control" name="UserName"  [(ngModel)]="editUser.UserName" /> -->
+        </div>
+      <!-- <div *ngIf="_angForm.controls['UserName'].invalid && (_angForm.controls['UserName'].dirty || _angForm.controls['UserName'].touched)" class="alert alert-danger">
         <div *ngIf="angForm.controls['UserName'].errors.required">
           User Name is required.
         </div>
-      </div>
+      </div> -->
 
       <!-- <div class="form-group">
         <label class="col-md-4">Business Name </label>
@@ -81,7 +98,7 @@
   </div> -->
 
 
-<form>
+<!-- <form>
   <div class="container">
     <div class="form-group">
       <label>
@@ -104,7 +121,7 @@
   </div>
 
 
-</form>
+</form> -->
 <!-- <div class="container-fluid pt-5 card" >
     <div class="col-md mx-auto card-body" >
       <div class="card rounded-0">
