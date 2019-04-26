@@ -1,0 +1,123 @@
+
+<div class="container-fluid pt-5">
+    <div class="col-md mx-auto" >
+      <!-- <div class="card rounded-0">
+        <div class="card-header">
+          <h2 class="text-center mb-0 text-primary">Add User</h2>
+        </div>
+      </div> -->
+      <!-- <a routerLink="/main-nav" class="btn fa fa-home"> Home</a> -->
+      <div class="jumbotron">
+          <h2 class="text-center text-primary">WDR Add Observationslip</h2>
+        </div>
+          <p>
+            <a routerLink="/main-nav" class="btn fa fa-home"> Home</a>
+            <!-- <a routerLink="/register-users" class="btn fa fa-user-plus"> Add user </a> -->
+          </p>
+
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-row">
+           <div class="col-md-6 mb-3">
+           <label class="my-1 mr-2" for="UserRole">User Role</label>
+           <select class="custom-select my-1 mr-sm-2" name="uRole" [(ngModel)]="user.UserRole" class="form-control" required>
+             <option selected>Select user's role</option>
+             <option value="Observer">Observer</option>
+             <option value="OC">OC</option>
+           </select>
+         </div>
+         <div class="col-md-6 mb-3">
+         <label class="my-1 mr-2" for="station">Station</label>
+         <select class="custom-select my-0 mr-sm-2" [(ngModel)]="user.station" name="station">
+           <option selected>Select a station</option>
+           <option value="1">Makerere Station</option>
+           <option value="2">Kampala</option>
+           <option value="3">Fort Portal</option>
+         </select>
+       </div>
+        </div>
+            <div class="form-row">
+                   <div class="col-md-6 mb-3">
+                     <label for="validationCustom01">First name</label>
+                     <input type="text" class="form-control" name="fname" [(ngModel)]="user.FirstName" placeholder="First name"  required>
+                     <div class="valid-feedback">
+                       Looks good!
+                     </div>
+                   </div>
+                   <div class="col-md-6 mb-3">
+                     <label for="validationCustomSurname">Surname</label>
+                     <input type="text" class="form-control" name="SurName" [(ngModel)]="user.SurName" placeholder="surname"  required>
+                     <div class="valid-feedback">
+                       Looks good!
+                     </div>
+                   </div>
+              </div>
+              <div class="form-row">
+                   <div class="col-md-6 mb-3">
+                     <label for="validationCustomUsername">Username</label>
+                     <div class="input-group">
+                       <div class="input-group-prepend">
+                         <span class="input-group-text" id="inputGroupPrepend">@</span>
+                       </div>
+                       <input type="text" class="form-control" name="UserName" [(ngModel)]="user.UserName" placeholder="Username" aria-describedby="inputGroupPrepend" required>
+                       <div class="invalid-feedback">
+                         Please choose a username.
+                       </div>
+                     </div>
+                   </div>
+                   <div class="col-md-6 mb-3">
+                     <label for="validationCustomPassword">Password</label>
+                     <input type="password" class="form-control" name="UserPassword" [(ngModel)]="user.UserPassword"  placeholder="password" required>
+                     <div class="valid-feedback">
+                       Looks good!
+                     </div>
+                   </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label for="validationCustomUserEmail">Email</label>
+                  <input type="email" class="form-control" name="UserEmail" [(ngModel)]="user.UserEmail" placeholder="enter email" required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+                   <div class="col-md-6 mb-3">
+                     <label for="validationCustomPassword">Phone</label>
+                     <input type="text" class="form-control" name="UserPhone" [(ngModel)]="user.UserPhone"  placeholder="enter phone number" required>
+                     <div class="valid-feedback">
+                       Looks good!
+                     </div>
+                   </div>
+              </div>
+              <div class="">
+                <p class="text-center">Preview</p>
+                <table class="container">
+
+                    <thead>
+
+                      <th>User role</th>
+                      <th>Station</th>
+                      <th>First name</th>
+                      <th>Surname</th>
+                      <th>Username</th>
+                      <th>email</th>
+                      <th>Phone</th>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>{{user.UserRole}}</td>
+                        <td>{{user.station}}</td>
+                        <td>{{user.FirstName}}</td>
+                        <td>{{user.SurName}}</td>
+                        <td>{{user.UserName}}</td>
+                        <td>{{user.UserEmail}}</td>
+                        <td>{{user.UserPhone}}</td>
+                      </tr>
+                    </tbody>
+
+                </table>
+
+              </div>
+                  <button class="btn btn-success">Add Observationslip</button>
+        </form>
+  </div>
+</div>
