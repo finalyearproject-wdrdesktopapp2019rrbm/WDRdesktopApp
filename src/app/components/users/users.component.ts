@@ -22,8 +22,9 @@ export class UsersComponent implements OnInit {
     //option two
     this.userService.getUsers()
     .subscribe( data => {
+      // console.log(data);
       this.users = data;
-      console.log(this.users)
+      // console.log(this.users)
     });
 
   }
@@ -42,7 +43,7 @@ export class UsersComponent implements OnInit {
     localStorage.removeItem("editUserId");
     let userID = user.Userid.toString();
     localStorage.setItem("editUserId", userID);
-    this.router.navigate(['edit-user']);  
+    this.router.navigate(['edit-user']);
       // this.router.navigate(['update-user']);
   };
 

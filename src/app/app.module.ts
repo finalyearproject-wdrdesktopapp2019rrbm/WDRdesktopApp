@@ -46,6 +46,7 @@ import { UserUpdateComponent } from './components/user-update/user-update.compon
 import { AlertService } from './components/services/allServices';
 import { ObservationslipComponent } from './components/forms/observationslip/observationslip.component';
 import { StationComponent } from './components/forms/station/station.component';
+import { ViewObservationslipformsComponent } from './components/forms/view-observationslipforms/view-observationslipforms.component';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { StationComponent } from './components/forms/station/station.component';
     FilterPipe,
     UserUpdateComponent,
     ObservationslipComponent,
-    StationComponent
+    StationComponent,
+    ViewObservationslipformsComponent
   ],
   imports: [
     BrowserModule,
@@ -82,6 +84,7 @@ import { StationComponent } from './components/forms/station/station.component';
         {path: 'home', component:  HomeComponent  },
         { path: 'add-station', component: StationComponent },
         { path: 'add-observationslip', component: ObservationslipComponent },
+        { path: 'view-observationslipForms', component: ViewObservationslipformsComponent},
         {path: 'main-nav', component:   MainNavComponent  },
         {path: '', component:  LoginComponent  }
 
