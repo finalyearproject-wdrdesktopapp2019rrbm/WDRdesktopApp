@@ -43,6 +43,7 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { FilterPipe } from './components/pipes/filter.pipe';
 import { UserUpdateComponent } from './components/user-update/user-update.component';
+import { AlertService } from './components/services/allServices';
 
 
 @NgModule({
@@ -97,7 +98,7 @@ import { UserUpdateComponent } from './components/user-update/user-update.compon
     FormsModule
   ],
    exports: [CommonModule, MatToolbarModule, MatButtonModule, MatCardModule, MatInputModule, MatDialogModule, MatTableModule],
-  providers: [DataService, AuthGuard, UserService],
+  providers: [DataService, AuthGuard, UserService, AlertService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
