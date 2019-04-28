@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { UserService } from '../services/user/user.service';
 import { first } from 'rxjs/operators';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import {User } from '../models/user/user';
 
 
 @Component({
@@ -11,20 +12,52 @@ import { Router } from '@angular/router';
   styleUrls: ['./register-users.component.css']
 })
 export class RegisterUsersComponent implements OnInit {
-
-  constructor(private formBuilder: FormBuilder, private router: Router, private userService: UserService) { }
-
   addForm: FormGroup;
+  submitted: boolean = false;
+
+  @HostBinding('class') classes ='row';
+
+  user: User = {
+    Userid:0,
+    station:'',
+    FirstName: '',
+    SurName: '',
+    UserName: '',
+    UserEmail: '',
+    UserPassword: '',
+    UserRole: '',
+    UserPhone: '',
+    Active:  '',
+    LoggedOn: '',
+    Reset: '',
+    LastPasswdChange: '',
+    LastLoggedIn: '',
+    CreatedBy: '',
+    CreationDate: ''
+
+
+};
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private userService: UserService,
+    private activatedRoute: ActivatedRoute) { }
+
+
 
   ngOnInit() {
-
-    this.addForm = this.formBuilder.group({
-      id: [],
-      firstname: ['', Validators.required],
-      username: ['', Validators.required],
-      email: ['', Validators.required],
-      password: ['', Validators.required]
-    });
+      const params = this.activatedRoute.snapshot.params;
+      console.log(params);
+    // this.addForm = this.formBuilder.group({
+    //   fname: ['', Validators.required],
+    //   sname: ['', Validators.required],
+    //   uname: ['', Validators.required],
+    //   email: ['', Validators.required],
+    //   password: ['', Validators.required],
+    //   uRole: ['', Validators.required],
+    //   phone: ['', Validators.required],
+    // });
   }
 
   onSubmit(){

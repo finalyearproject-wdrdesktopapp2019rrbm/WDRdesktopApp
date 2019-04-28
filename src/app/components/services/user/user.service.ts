@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import  { User } from '../../models/user/user.model';
+import  { User } from '../../models/user/user';
 
 @Injectable({
   providedIn: 'root'
@@ -27,8 +27,7 @@ export class UserService {
   }
 
   updateUser(user: User) {
-    alert(user);
-    return this.http.put(this.baseUrl + '/' + user.id, user);
+    return this.http.put(this.baseUrl + '/' + user.Userid, user);
   }
 
 

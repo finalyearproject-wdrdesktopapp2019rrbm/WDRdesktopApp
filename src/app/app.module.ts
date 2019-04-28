@@ -2,9 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {RouterModule} from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
-// import { AngularFontAwesomeModule } from 'angular-font-awesome';
-// import { MaterialModule } from './material.module';
+import { FormsModule } from '@angular/forms';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatGridListModule,
@@ -47,7 +48,8 @@ import { InstrumentsComponent } from './components/forms/instruments/instruments
 import { ArchiveObservationslipComponent } from './components/archiveForm/archive-observationslip/archive-observationslip.component';
 import { ArchivemonthlyrainfallformreportdataComponent } from './components/archiveForm/archivemonthlyrainfallformreportdata/archivemonthlyrainfallformreportdata.component';
 import { ArchivedekadalformreportdataComponent } from './components/archiveForm/archivedekadalformreportdata/archivedekadalformreportdata.component';
-
+import { ViewObservationslipformsComponent } from './components/forms/view-observationslipforms/view-observationslipforms.component'
+import { AlertService } from './components/services/allServices';
 
 
 
@@ -68,7 +70,8 @@ import { ArchivedekadalformreportdataComponent } from './components/archiveForm/
     InstrumentsComponent,
     ArchiveObservationslipComponent,
     ArchivemonthlyrainfallformreportdataComponent,
-    ArchivedekadalformreportdataComponent
+    ArchivedekadalformreportdataComponent,
+    ViewObservationslipformsComponent  
   ],
   imports: [
     BrowserModule,
@@ -80,7 +83,6 @@ import { ArchivedekadalformreportdataComponent } from './components/archiveForm/
     ReactiveFormsModule,
     RouterModule.forRoot(
       [
-
         {path: 'datamanager', component:  DatamanagerComponent  },
         {path: 'dashboard', component:  DashboardComponent, canActivate: [AuthGuard] },
         {path: 'register-users', component:  RegisterUsersComponent  },
@@ -91,6 +93,9 @@ import { ArchivedekadalformreportdataComponent } from './components/archiveForm/
         {path: 'instrument', component:  InstrumentsComponent   },
         {path: 'elements', component:  ElementsComponent  },
         {path: 'home', component:  HomeComponent  },
+        { path: 'add-station', component: StationComponent },
+        { path: 'add-observationslip', component: ObservationslipComponent },
+        { path: 'view-observationslipForms', component: ViewObservationslipformsComponent},
         {path: 'main-nav', component:   MainNavComponent  },
         {path: '', component:  LoginComponent  }
 
@@ -108,10 +113,12 @@ import { ArchivedekadalformreportdataComponent } from './components/archiveForm/
     MatInputModule,
     MatTableModule,
     MatToolbarModule,
-    MatSidenavModule
+    MatSidenavModule,
+    HttpModule,
+    FormsModule
   ],
    exports: [CommonModule, MatToolbarModule, MatButtonModule, MatCardModule, MatInputModule, MatDialogModule, MatTableModule],
-  providers: [DataService, AuthGuard, UserService],
+  providers: [DataService, AuthGuard, UserService, AlertService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
