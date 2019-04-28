@@ -33,23 +33,10 @@
         <td>{{user.UserEmail}}</td>
         <td>{{user.UserPhone}}</td>
         <td>{{user.CreatedBy}}</td>
-<<<<<<< HEAD
-        <td>
-        <!-- <a class="btn" (click)="showForEdit(employee)">
-          <i class="fa fa-pencil-square-o"></i>
-        </a>
-        <a class="btn text-danger" (click)="onDelete(employee.EmployeeID)">
-          <i class="fa  fa-trash-o"></i>
-        </a> -->
-      </td>
-        <td><button class="btn btn-sm btn-secondary" (click)="deleactivateUser(user)">Deactivate</button></td><td>
-          <button class="btn btn-sm  btn-info" (click)="editUser(user)" style="margin-left: 20px;"> Edit</button></td>
-=======
         <td><button class="btn btn-sm btn-primary" (click)="deleteUser(user)"><i class="fa fa-edit"></i> Deactivate </button></td><td>
           <button class="btn btn-sm  btn-info" (click)="editUser(user)" style="margin-left: 20px;" > <i class="fa fa-edit"></i> Edit</button>
           <!-- <a [routerLink]="['/edit', user.Userid]" class="btn btn-primary" >Edit 2</a> -->
         </td>
->>>>>>> update
       </tr>
       </tbody>
     </table>
