@@ -28,6 +28,8 @@
     "@ngrx/effects": "^7.4.0",
     "@ngrx/store": "^7.4.0",
     "@ngrx/store-devtools": "^7.4.0",
+    "ag-grid": "^18.1.2",
+    "ag-grid-angular": "^20.2.0",
     "angular-font-awesome": "^3.1.2",
     "bootstrap": "^4.3.1",
     "core-js": "^2.5.4",

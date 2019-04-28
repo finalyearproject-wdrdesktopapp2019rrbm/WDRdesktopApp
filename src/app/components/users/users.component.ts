@@ -11,20 +11,14 @@ import { UserService } from '../services/user/user.service';
 })
 export class UsersComponent implements OnInit {
     users: User[];
-    // _users: User[];
   constructor(private router: Router, private userService: UserService, private dataService: DataService) { }
 
   ngOnInit() {
-  //option one to return use data
-    // return this.dataService.getUsers()
-    // .subscribe(data => this.users$ = data);
 
-    //option two
     this.userService.getUsers()
     .subscribe( data => {
-      // console.log(data);
+      console.log(data);
       this.users = data;
-      // console.log(this.users)
     });
 
   }
@@ -33,7 +27,6 @@ export class UsersComponent implements OnInit {
   deleteUser(user: User): void {
     this.userService.deleteUser(user.Userid)
     .subscribe( data => {
-      // this.users = this.users.filter( u => u !== user);
       this.users = this.users.filter( u => u !== user);
     })
   };
@@ -44,7 +37,6 @@ export class UsersComponent implements OnInit {
     let userID = user.Userid.toString();
     localStorage.setItem("editUserId", userID);
     this.router.navigate(['edit-user']);
-      // this.router.navigate(['update-user']);
   };
 
   addUser(): void {
