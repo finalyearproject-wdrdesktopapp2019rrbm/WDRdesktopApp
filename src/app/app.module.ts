@@ -4,8 +4,6 @@ import {RouterModule} from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatGridListModule,
@@ -21,7 +19,7 @@ import {
     } from '@angular/material';
 import { MatListModule } from '@angular/material/list';
 import { LayoutModule } from '@angular/cdk/layout';
-import {ReactiveFormsModule} from "@angular/forms";
+import {ReactiveFormsModule, FormsModule} from "@angular/forms";
 
 //services
 import { DataService } from './components/services/data/data.service';
@@ -48,8 +46,13 @@ import { InstrumentsComponent } from './components/forms/instruments/instruments
 import { ArchiveObservationslipComponent } from './components/archiveForm/archive-observationslip/archive-observationslip.component';
 import { ArchivemonthlyrainfallformreportdataComponent } from './components/archiveForm/archivemonthlyrainfallformreportdata/archivemonthlyrainfallformreportdata.component';
 import { ArchivedekadalformreportdataComponent } from './components/archiveForm/archivedekadalformreportdata/archivedekadalformreportdata.component';
-import { ViewObservationslipformsComponent } from './components/forms/view-observationslipforms/view-observationslipforms.component'
+import { UsertestComponent } from './components/usertest/usertest.component';
+import { ObservationSlipFormComponent } from './components/forms/observation-slip-form/observation-slip-form.component';
+import { ObservationSlipReportComponent } from './components/forms/observation-slip-report/observation-slip-report.component';
+import { ViewObservationslipformsComponent } from './components/forms/view-observationslipforms/view-observationslipforms.component';
 import { AlertService } from './components/services/allServices';
+
+
 
 
 
@@ -71,7 +74,10 @@ import { AlertService } from './components/services/allServices';
     ArchiveObservationslipComponent,
     ArchivemonthlyrainfallformreportdataComponent,
     ArchivedekadalformreportdataComponent,
-    ViewObservationslipformsComponent  
+    UsertestComponent,
+    ObservationSlipFormComponent,
+    ObservationSlipReportComponent,
+    ViewObservationslipformsComponent 
   ],
   imports: [
     BrowserModule,
@@ -97,7 +103,11 @@ import { AlertService } from './components/services/allServices';
         { path: 'add-observationslip', component: ObservationslipComponent },
         { path: 'view-observationslipForms', component: ViewObservationslipformsComponent},
         {path: 'main-nav', component:   MainNavComponent  },
-        {path: '', component:  LoginComponent  }
+        {path: '', component:  LoginComponent  },
+        {path: 'usertest', component:  UsertestComponent  },
+        {path: 'observationSlipForm', component:  ObservationSlipFormComponent  },
+        {path: 'observationSlipReport', component:  ObservationSlipReportComponent  },
+        {path: 'view-observationslipforms', component: ViewObservationslipformsComponent }
 
 
       ]),

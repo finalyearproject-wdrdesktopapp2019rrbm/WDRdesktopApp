@@ -1,0 +1,402 @@
+<html>
+  <head>
+      <!-- <link rel="icon" href="img/wimea-icon.png" > -->
+      <title>Weather | </title>
+  </head>
+  <body class="skin-blue">
+
+      <header class="header">
+          <span class="logo">
+              <!-- Add the class icon to your logo image or logo icon to add the margining -->
+              WIMEA-ICT
+          </span>
+          <!-- Header Navbar: style can be found in header.less -->
+          <nav class="navbar navbar-static-top" role="navigation">
+              <!-- Sidebar toggle button-->
+              <!-- <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </a> -->
+
+              <div class="navbar-right pull-right"style="margin-left:80%;" >
+
+
+               <ul class="nav navbar-nav">
+                      <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <span class="label label-pill label-danger count" style="border-radius:10px;"></span>
+                      <span class="glyphicon glyphicon-bell" style="font-size:18px;"></span></a>
+                      <ul id="ips" class="dropdown-menu dropdown-menu1">
+                      </ul>
+                      </li>
+
+               </ul>
+
+
+          <ul class="nav navbar-nav" >
+                      <!-- Messages: style can be found in dropdown.less-->
+
+                      <li class="user user-menu">
+                          <a style="color : white;">
+                              <span >
+
+                  </span>
+                          </a>
+                      </li>
+
+                  </ul>
+
+                  <ul class="nav navbar-nav " style="float: right;" >
+                      <!-- Messages: style can be found in dropdown.less-->
+
+                      <li class="user user-menu">
+                          <a style="color : white;" >
+                              <i class="fa fa-sign-out"></i>
+                              <span >Sign out</span>
+                          </a>
+                      </li>
+
+                  </ul>
+              </div>
+          </nav>
+      </header>
+      <div class="wrapper row-offcanvas row-offcanvas-left">
+          <!-- Left side column. contains the logo and sidebar -->
+          <aside class="left-side sidebar-offcanvas">
+              <!-- sidebar: style can be found in sidebar.less -->
+              <section class="sidebar">
+                  <!-- Sidebar user panel -->
+                  <div class="user-panel">
+                      <div class="pull-left image">
+                          <img src="../../../assets/WIMEA LOGO.png" class="img-circle" alt="User Image" />
+                      </div>
+                      <div class="pull-left info">
+                          <p>Hello, </p>
+
+                          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                      </div>
+                  </div>
+
+                  <!-- sidebar menu: : style can be found in sidebar.less -->
+                  <ul class="sidebar-menu">
+
+
+                      <li class="active">
+                          <a href="">
+                              <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                          </a>
+                      </li>
+
+
+
+
+                      <li class="treeview">
+                          <a href="#">
+                              <i class="fa fa-bars"></i> <span> Forms</span>
+                              <i class="fa fa-angle-left pull-right"></i>
+                          </a>
+
+
+                          <ul class="treeview-menu">
+                             <li><a href=""><i class="fa fa-angle-double-right"></i> manual observations data</a></li>
+                            </ul>
+
+                          <ul class="treeview-menu">
+
+                             <li><a href=""><i class="fa fa-angle-double-right"></i> MS observation data</a></li>
+                              <li><a href=""><i class="fa fa-angle-double-right"></i> AWS observation data</a></li>
+                          </ul>
+
+                      </li>
+
+
+                      <li class="treeview">
+                          <a href="#">
+                              <i class="fa fa-bars"></i> <span> Archive Forms</span>
+                              <i class="fa fa-angle-left pull-right"></i>
+                          </a>
+
+
+                   <ul class="treeview-menu">
+                  <li><a href=""><i class="fa fa-angle-double-right"></i>Observation Slip Form</a></li>
+                               </ul>
+
+                          <ul class="treeview-menu">
+                              <li><a href=""><i class="fa fa-angle-double-right"></i>Observation Slip Form</a></li>
+                              <li><a href=""><i class="fa fa-angle-double-right"></i>Weather Summary Form</a></li>
+
+                              <li><a href=""><i class="fa fa-angle-double-right"></i>Metar Form</a></li>
+                              <li><a href=""><i class="fa fa-angle-double-right"></i>Synoptic Form</a></li>
+                              <li><a href=""><i class="fa fa-angle-double-right"></i>Dekadal Form</a></li>
+                              <li><a href=""><i class="fa fa-angle-double-right"></i> Archive  Rainfall</a></li>
+
+                          </ul>
+
+
+                      <li class="treeview">
+                          <a href="#">
+                              <i class="fa fa-bars"></i> <span> Archived Form Reports</span>
+                              <i class="fa fa-angle-left pull-right"></i>
+                          </a>
+
+                          <ul class="treeview-menu">
+                              <li><a href=""><i class="fa fa-angle-double-right"></i> Observation Slip Report</a></li>
+                              <li><a href=""><i class="fa fa-angle-double-right"></i> Weather Summary Report</a></li>
+                              <li><a href=""><i class="fa fa-angle-double-right"></i> Metar Report</a></li>
+                              <li><a href=""><i class="fa fa-angle-double-right"></i> Synoptic Report</a></li>
+                              <li><a href=""><i class="fa fa-angle-double-right"></i> Dekadal Report</a></li>
+                              <li><a href=""><i class="fa fa-angle-double-right"></i> Monthly  Rainfall Report</a></li>
+                              <li><a href=""><i class="fa fa-angle-double-right"></i> Annual  Rainfall Report</a></li>
+
+                          </ul>
+                      </li>
+
+                      <li class="treeview">
+                          <a href="#">
+                              <i class="fa fa-bars"></i> <span> Archive Scanned Forms</span>
+                              <i class="fa fa-angle-left pull-right"></i>
+                          </a>
+
+
+                          <ul class="treeview-menu">
+                              <li><a href=""><i class="fa fa-angle-double-right"></i> Observation Slip Form</a></li>
+                              <li><a href=""><i class="fa fa-angle-double-right"></i>  Metar Form</a></li>
+
+                              <li><a href=""><i class="fa fa-angle-double-right"></i> Weather Summary Form</a></li>
+                              <li><a href=""><i class="fa fa-angle-double-right"></i>Synoptic Form</a></li>
+
+                              <li><a href=""><i class="fa fa-angle-double-right"></i>Dekadal Form</a></li>
+                              <li><a href=""><i class="fa fa-angle-double-right"></i>Monthly Rainfall Form</a></li>
+
+                              <li><a href=""><i class="fa fa-angle-double-right"></i>Annual Rainfall Form</a></li>
+
+                          </ul>
+                      </li>
+
+                      <li class="treeview">
+                          <a href="#">
+                              <i class="fa fa-bars"></i> <span> Search Scanned Forms</span>
+                              <i class="fa fa-angle-left pull-right"></i>
+                          </a>
+
+
+                          <ul class="treeview-menu">
+                              <li><a href=""><i class="fa fa-angle-double-right"></i>Observation Slip Form</a></li>
+                              <li><a href=""><i class="fa fa-angle-double-right"></i>Metar Form</a></li>
+
+                              <li><a href=""><i class="fa fa-angle-double-right"></i>Weather Summary Form</a></li>
+                              <li><a href=""><i class="fa fa-angle-double-right"></i>Synoptic Form</a></li>
+
+                              <li><a href=""><i class="fa fa-angle-double-right"></i>Dekadal Form</a></li>
+                              <li><a href=""><i class="fa fa-angle-double-right"></i>Monthly Rainfall Form</a></li>
+
+                              <li><a href=""><i class="fa fa-angle-double-right"></i>Annual Rainfall Form</a></li>
+
+                          </ul>
+                      </li>
+
+                          <li class="treeview">
+                              <a href="#">
+                                  <i class="fa fa-bars"></i> <span> Reports</span>
+                                  <i class="fa fa-angle-left pull-right"></i>
+                              </a>
+
+                              <ul class="treeview-menu">
+                                  <li><a href=""><i class="fa fa-angle-double-right"></i> Observation Slip Report</a></li>
+                                  <li><a href=""><i class="fa fa-angle-double-right"></i> Metar Report</a></li>
+                                  <li><a href=""><i class="fa fa-angle-double-right"></i> Speci Report</a></li>
+
+                                  <li><a href=""><i class="fa fa-angle-double-right"></i> Rainfall temp Report</a></li>
+                                <li><a href=""><i class="fa fa-angle-double-right"></i> Weather Summary Report</a></li>
+                                  <li><a href=""><i class="fa fa-angle-double-right"></i> Dekadal Report</a></li>
+                                  <li><a href=""><i class="fa fa-angle-double-right"></i> Synoptic Report</a></li>
+
+                                  <li><a href=""><i class="fa fa-angle-double-right"></i> Monthly Rainfall Report</a></li>
+                                  <li><a href=""><i class="fa fa-angle-double-right"></i> Annual Rainfall Report</a></li>
+                    <li><a href=""><i class="fa fa-angle-double-right"></i> Customized Rainfall Report</a></li>
+                              </ul>
+                          </li>
+
+                          <li class="treeview">
+                              <a href="#">
+                                  <i class="fa fa-bars"></i> <span> Users</span>
+                                  <i class="fa fa-angle-left pull-right"></i>
+                              </a>
+
+                              <ul class="treeview-menu">
+                                  <li><a href=""><i class="fa fa-angle-double-right"></i> Users</a></li>
+                                  <li><a href=""><i class="fa fa-angle-double-right"></i> User Logs</a></li>
+                              </ul>
+                          </li>
+
+
+                          <li class="treeview">
+                              <a href="#">
+                                  <i class="fa fa-bars"></i> <span> System Data</span>
+                                  <i class="fa fa-angle-left pull-right"></i>
+                              </a>
+
+                              <ul class="treeview-menu">
+
+                                  <li><a href=""><i class="fa fa-angle-double-right"></i> Stations</a></li>
+                                  <li><a href=""><i class="fa fa-angle-double-right"></i> Instruments</a></li>
+                                  <li><a href=""><i class="fa fa-angle-double-right"></i> Elements</a></li>
+
+                                  <li><a href="" ><i class="fa fa-angle-double-right"></i>Add New Station</a></li>
+
+                              </ul>
+                          </li>
+
+
+                  </ul>
+              </section>
+              <!-- /.sidebar -->
+          </aside>
+
+          <div id='popupwindow'>
+      <div style="z-index:200;" id="myModal2"  data-backdrop="false" class="modal">
+                      <div class="modal-content">
+                      <div class="modal-header">
+                          <button  type="button" class="close" data-dismiss="modal">&times;
+                          </button><h3 id="title1" class="modal-title"></h3></div><div id="popbody" class="modal-body">
+                          </div><div id="footer"class="modal-footer">
+
+                      </div></div></div>
+
+
+      </div>
+
+
+
+
+      <!-- the above section is for header -->
+      <aside class="right-side">
+          <section class="content-header">
+              <h1>
+                  Users
+                  <small> Page</small>
+              </h1>
+              <ol class="breadcrumb">
+                  <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                  <li class="active">Users</li>
+
+
+              </ol>
+          </section>
+          <section class="content" >
+          <!-- <div class="row"> -->
+              <form  [formGroup]="testForm" (ngSubmit)="submitTest()">
+                  <div class="modal-body">
+                      <div id="output"></div>
+
+                      <div class="col-lg-6">
+                          <div class="form-group">
+                              <div class="input-group">
+                                  <span class="input-group-addon">First Name</span>
+                                  <input type="text" name="user_firstname" id="user_firstname" onkeyup="allowCharactersInputOnly(this)"   required class="form-control"  required placeholder="Enter user's name">
+                                  <input type="hidden" name="checkduplicateEntryOnAddUserStationInformation_hiddentextfield" id="checkduplicateEntryOnAddUserStationInformation_hiddentextfield" required class="form-control">
+
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <div class="input-group">
+                                  <span class="input-group-addon">SurName</span>
+                                  <input type="text" name="user_surname"  id="user_surname" onkeyup="allowCharactersInputOnly(this)"  required class="form-control"   required placeholder="Enter user's name">
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                              <div class="input-group">
+                                  <span class="input-group-addon"> User Email</span>
+                                  <input type="email" name="user_email" id="user_email" required class="form-control" required placeholder="Enter user's email">
+                              </div>
+                          </div>
+
+
+
+                          <div class="form-group">
+                              <div class="input-group">
+                                  <span class="input-group-addon">User Phone</span>
+                                  <input maxlength='10' type="text" name="user_phone" id="user_phone" onkeyup="allowIntegerInputOnly(this)" required class="form-control" required placeholder="Enter user's contact ">
+                              </div>
+                          </div>
+
+                      </div>
+
+
+                      <div class="col-lg-6">
+
+
+
+
+
+
+                              <div class="form-group">
+                                  <div class="input-group">
+                                      <span class="input-group-addon"> User Role</span>
+                                      <select name="user_Role_AssignedBy_OC"  id="user_Role_AssignedBy_OC"  required class="form-control" placeholder="Select Role">
+                                          <option value="">--Select User Roles--</option>
+                                          <option value="Observer">Observer</option>
+                                          <option value="ObserverArchive">ObserverArchive</option>
+                                          <option value="ObserverDataEntrant">ObserverDataEntrant</option>
+
+                                      </select>
+                                  </div>
+                              </div>
+
+
+
+                              <div class="form-group">
+                                  <div class="input-group">
+                                      <span class="input-group-addon">Station</span>
+                                      <input type="text" name="user_station_OC" id="user_station_OC" value="" readonly="readonly" required class="form-control">
+
+                                  </div>
+                              </div>
+
+                              <div class="form-group">
+                                  <div class="input-group">
+                                      <span class="input-group-addon"> Station Number</span>
+                                      <input type="text" name="user_stationNo_OC" id="user_stationNo_OC" required class="form-control"  readonly class="form-control" value="" readonly="readonly" >
+                                  </div>
+                              </div>
+
+                              <div class="form-group">
+                                  <div class="input-group">
+                                      <span class="input-group-addon">Region</span>
+                                      <input type="text" name="user_stationRegion_AssignedBy_Manager"
+                                       id="user_stationRegion_AssignedBy_Manager"
+                                      required class="form-control"  readonly class="form-control" value="" readonly="readonly" >
+                                  </div>
+                              </div>
+
+
+                      </div>
+                      <div class="clearfix"></div>
+                  </div>
+                  <div class="modal-footer clearfix">
+                      <button type="submit" id="saveStationUserDetails_button" name="saveStationUserDetails_button" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Add User</button>
+                     <a href="" class="btn btn-danger pull-left"><i class="fa fa-times"></i> Cancel</a>
+
+
+                 </div>
+             </form>
+          <!-- </div> -->
+          </section>
+          </aside>
+
+
+          <!-- footer -->
+        </div>
+          <div class="bottom text-center">
+              <span class="center" >Powered by &copy; WIMEA-ICT. 2016. All Rights Reserved
+
+
+                </span>
+          </div>
+
+  </body>
+</html>
+

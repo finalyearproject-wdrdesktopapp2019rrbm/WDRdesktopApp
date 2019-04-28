@@ -1,0 +1,1240 @@
+
+<html>
+    <head>
+        <!-- <link rel="icon" href="img/wimea-icon.png" > -->
+        <title>Weather | </title>
+    </head>
+    <body class="skin-blue">
+
+
+        <aside class="right-side" xmlns="" xmlns="">
+          <!-- Content Header (Page header) -->
+          <section class="content-header">
+              <h1>
+                  Observation/Raw Data
+                  <small> Page</small>
+              </h1>
+              <ol class="breadcrumb">
+                  <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                  <li class="active">Observation/Raw Data</li>
+
+              </ol>
+          </section>
+
+           <!-- Main content -->
+        <section>
+
+            <div class="row">
+            <form   [formGroup]="observationSlipForm" (ngSubmit)="submitTest()">
+
+              <!-- Section 1 -->
+            <!-- <div class="tab">
+                <table>
+                    <tr>
+                   <td colspan = "4">
+
+                       <div class="input-group">
+                         <span class="input-group-addon">Station Name</span>
+                         <input type="text" name="station_observationslipform" id="station_observationslipform" required class="form-control" value=""  readonly class="form-control" >
+
+                       </div>
+
+                   </td>
+                   <td colspan = "4">
+
+                     <div class="input-group">
+                       <span class="input-group-addon"> Station Number</span>
+                       <input type="text" name="stationNo_observationslipform" id="stationNo_observationslipform" required class="form-control"  readonly class="form-control" value="" readonly="readonly" >
+                     </div>
+
+                   </td>
+                 </tr>
+                 </table>
+            </div> -->
+
+            <!-- <div class="tab"> -->
+            <table>
+              <tr>
+            <td colspan = "4">
+                <div class="input-group">
+                    <span class="input-group-addon">Station Name</span>
+                    <input type="text" name="station_observationslipform" id="station_observationslipform" required class="form-control" value=""  readonly class="form-control" >
+
+                  </div>
+            </td>
+
+            <td colspan = "4">
+                <div class="input-group">
+                    <span class="input-group-addon"> Station Number</span>
+                    <input type="text" name="stationNo_observationslipform" id="stationNo_observationslipform" required class="form-control"  readonly class="form-control" value="" readonly="readonly" >
+                  </div>
+                 </td>
+                 <td colspan = "4">
+
+                    <div class="input-group">
+                      <span class="input-group-addon">Select Date</span>
+                      <input type="text" name="date_observationslipform" id="date" required class="form-control compulsory"
+                                         placeholder="Enter select date" value="" autocomplete='off'>
+                    </div>
+
+                </td>
+          </tr>
+
+          <tr>
+              <td colspan="6">
+                  <div class="input-group"   >
+                      <span class="input-group-addon">Time category</span>
+                      <select name="metar_speci" id="metar_speci" required class="form-control compulsory" onchange="chooseSpeciOrMetar()">
+                        <option value="metar">normal</option>
+                        <option value="speci">speci</option>
+
+                      </select>
+                    </div>
+
+                </td>
+                <td colspan="6">
+
+                    <div class="input-group" id="metartimeId"  >
+                        <span class="input-group-addon">NORMAL TIME</span>
+                        <select name="metar_time_observationslipform" id="metar_time_observationslipform"  class="form-control compulsory">
+                          <option value=""> </option>
+                          <option value="00:00Z">00:00Z</option>
+                          <option value="00:30Z">00:30Z</option>
+                          <option value="01:00Z">01:00Z</option>
+                          <option value="01:30Z">01:30Z</option>
+                          <option value="02:00Z">02:00Z</option>
+                          <option value="02:30Z">02:30Z</option>
+                          <option value="03:00Z">03:00Z</option>
+                          <option value="03:30Z">03:30Z</option>
+                          <option value="04:00Z">04:00Z</option>
+                          <option value="04:30Z">04:30Z</option>
+                          <option value="05:00Z">05:00Z</option>
+                          <option value="05:30Z">05:30Z</option>
+                          <option value="06:00Z">06:00Z</option>
+                          <option value="06:30Z">06:30Z</option>
+                          <option value="07:00Z">07:00Z</option>
+                          <option value="07:30Z">07:30Z</option>
+                          <option value="08:00Z">08:00Z</option>
+                          <option value="08:30Z">08:30Z</option>
+                          <option value="09:00Z">09:00Z</option>
+                          <option value="09:30Z">09:30Z</option>
+                          <option value="10:00Z">10:00Z</option>
+                          <option value="10:30Z">10:30Z</option>
+                          <option value="11:00Z">11:00Z</option>
+                          <option value="11:30Z">11:30Z</option>
+                          <option value="12:00Z">12:00Z</option>
+                          <option value="12:30Z">12:30Z</option>
+                          <option value="13:00Z">13:00Z</option>
+                          <option value="13:30Z">13:30Z</option>
+                          <option value="14:00Z">14:00Z</option>
+                          <option value="14:30Z">14:30Z</option>
+                          <option value="15:00Z">15:00Z</option>
+                          <option value="15:30Z">15:30Z</option>
+                          <option value="16:00Z">16:00Z</option>
+                          <option value="16:30Z">16:30Z</option>
+                          <option value="17:00Z">17:00Z</option>
+                          <option value="17:30Z">17:30Z</option>
+                          <option value="18:00Z">18:00Z</option>
+                          <option value="18:30Z">18:30Z</option>
+                          <option value="19:00Z">19:00Z</option>
+                          <option value="19:30Z">19:30Z</option>
+                          <option value="20:00Z">20:00Z</option>
+                          <option value="20:30Z">20:30Z</option>
+                          <option value="21:00Z">21:00Z</option>
+                          <option value="21:30Z">21:30Z</option>
+                          <option value="22:00Z">22:00Z</option>
+                          <option value="22:30Z">22:30Z</option>
+                          <option value="23:00Z">23:00Z</option>
+                          <option value="23:30Z">23:30Z</option>
+                        </select>
+                        <input type="hidden" name="diff" id="diff" value=""/>
+                      </div>
+                        <div class="input-group" id="specitimeId" style="display:none;">
+                        <span class="input-group-addon">SPECI TIME</span>
+
+                          <div class="input-group bootstrap-timepicker timepicker">
+                            <input id="timepicker1" type="text" name="speci_time_observationslipform" id="time_observationslipform"  class="form-control compulsory">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                          </div>
+                          <span ng-hide="Timerequired" class="validator">Time required please</span>
+
+                        <script type="text/javascript">
+                                    $('#timepicker1').timepicker();
+                                </script>
+                      </div>
+
+                  </td>
+          </tr>
+          <tr>
+              <td colspan="6">
+
+                  <div class="input-group">
+                    <span class="input-group-addon">Total amount of all clouds</span>
+                    <select name="totalamountofallclouds_observationslipform"  id="totalamountofallclouds_observationslipform"  onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder=" Enter total amount of All clouds" required>
+                      <option value="">--Select Total Amount Of All Clouds </option>
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                    </select>
+                  </div>
+              </td>
+              <td colspan="6">
+
+
+                  <div class="input-group">
+                    <span class="input-group-addon">Total amount of low clouds</span>
+                    <select  name="totalamountoflowclouds_observationslipform" id="totalamountoflowclouds_observationslipform" onkeyup="allowIntegerInputOnly(this)"   class="form-control"  placeholder="Enter total amount of Low clouds" >
+                      <option value="">--Select Total Amount of Low Clouds </option>
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+
+
+                    </select>
+                  </div>
+              </td>
+          </tr>
+          <tr>
+              <td colspan = "4">
+                <b>Low</b>
+              </td>
+              <td colspan = "4">
+                <b>Medium</b>
+              </td>
+              <td colspan = "4">
+                <b>High</b>
+              </td>
+            </tr>
+            <tr>
+                <td><b>type</b></td> <td><b>oktas</b></td> <td><b>height</b></td> <td><b>clcode</b></td> <td><b>type</b></td> <td><b>oktas</b></td>
+                <td><b>height</b></td> <td><b>clcode</b></td> <td><b>type</b></td> <td><b>oktas</b></td> <td><b>height</b></td> <td><b>clcode</b></td>
+
+              </tr>
+
+              <!-- Type 1 clouds -->
+
+              <tr>
+                  <td>
+                  <select  name="TypeOfLowClouds1_observationslipform"  id="TypeOfLowClouds1_observationslipform" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter Type of LOW Cloud" >
+                  <option value=""></option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+
+                  </select>
+                  </td>
+
+                  <td>
+                    <select name="OktasOfLowClouds1_observationslipform" id="OktasOfLowClouds1_observationslipform" onkeyup="allowIntegerInputOnly(this)" class="form-control" placeholder="Enter OKTAS  for LOW CLOUD" >
+                    <option value=""></option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+
+
+                  </select>
+                  </td>
+
+                  <td>
+                    <input type="text" name="HeightOfLowClouds1_observationslipform"  id="HeightLowClouds1_observationslipform" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="0" style = 'width:70px;'>
+                  </td>
+
+                  <td>
+                    <select  name="CLCODEOfLowClouds1_observationslipform"  id="CLCODEOfLowClouds1_observationslipform" onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder=" Enter CLCODE of  LOW CLOUD " >
+                    <option value=""></option>
+                    <option value="Sc">Sc</option>
+                    <option value="St">St</option>
+                    <option value="Cu">Cu</option>
+                    <option value="Cb">Cb</option>
+
+                  </select>
+                  </td>
+
+                  <td>
+                    <select name="TypeOfMediumClouds1_observationslipform"  id="TypeOfMediumClouds1_observationslipform" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter TYPE OF MEDIUM CLOUD" >
+                    <option value=""></option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    </select>
+                  </td>
+
+                  <td>
+                    <select name="OktasOfMediumClouds1_observationslipform" id="OktasOfMediumClouds1_observationslipform" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter OKTAS  OF MEDIUM CLOUD" >
+                    <option value=""> </option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    </select>
+                  </td>
+
+                  <td>
+                    <input type="text" name="HeightOfMediumClouds1_observationslipform"  id="HeightOfMediumClouds1_observationslipform" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder=" 0 " style = "width:70px;">
+                  </td>
+
+                  <td>
+                    <select name="CLCODEOfMediumClouds1_observationslipform"  id="CLCODEOfMediumClouds1_observationslipform" onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder=" Enter CL CODE MEDIUM CLOUD " >
+                    <option value=""> </option>
+                    <option value="Ac">Ac</option>
+                    <option value="As">As</option>
+                    <option value="Ns">Ns</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select name="TypeOfHighClouds1_observationslipform"  id="TypeOfHighClouds1_observationslipform" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter TYPE OF HIGH CLOUD" >
+                      <option value=""> </option>
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                    </select>
+                  </td>
+                  <td>
+                     <select name="OktasOfHighClouds1_observationslipform" id="OktasOfHighClouds1_observationslipform" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter OKTAS OF HIGH CLOUD" >
+                      <option value=""> </option>
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                    </select>
+                  </td>
+                  <td>
+                     <input type="text" name="HeightOfHighClouds1_observationslipform"  id="HeightOfHighClouds1_observationslipform" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder=" 0 " style = "width:70px;">
+                  </td>
+                  <td>
+                    <select name="CLCODEOfHighClouds1_observationslipform"  id="CLCODEOfHighClouds1_observationslipform" onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder=" Enter CLCODE OF MEDIUM CLOUD " >
+                      <option value=""></option>
+                      <option value="Cl">Cl</option>
+                      <option value="Cc">Cc</option>
+                      <option value="Cs">Cs</option>
+
+                    </select>
+                  </td>
+                </tr>
+
+                <!--  Type 2 clouds -->
+
+                <tr>
+                    <td>
+                      <select  name="TypeOfLowClouds2_observationslipform"  id="TypeOfLowClouds2_observationslipform" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter Type of LOW CLOUD" >
+                      <option value=""></option>
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+
+                      </select>
+                    </td>
+
+                    <td>
+                      <select name="OktasOfLowClouds2_observationslipform" id="OktasOfLowClouds2_observationslipform" onkeyup="allowIntegerInputOnly(this)" class="form-control" placeholder="Enter OKTAS OF LOW CLOUD" >
+                      <option value=""> </option>
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                    </select>
+                    </td>
+
+                    <td>
+                      <input type="text" name="HeightOfLowClouds2_observationslipform"  id="HeightOfLowClouds2_observationslipform" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="0" style = "width:70px;">
+
+                    </td>
+                    <td>
+                      <select  name="CLCODEOfLowClouds2_observationslipform"  id="CLCODEOfLowClouds2_observationslipform" onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder=" Enter CLCODE of LOW CLOUD " >
+                      <option value=""> </option>
+                      <option value="Sc">Sc</option>
+                      <option value="St">St</option>
+                      <option value="Cu">Cu</option>
+                      <option value="Cb">Cb</option>
+                    </select>
+                    </td>
+                    <td>
+                      <select name="TypeOfMediumClouds2_observationslipform"  id="TypeOfMediumClouds2_observationslipform" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter TYPE OF MEDIUM CLOUD" >
+                      <option value=""></option>
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select name="OktasOfMediumClouds2_observationslipform" id="OktasOfMediumClouds2_observationslipform" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter OKTAS OF MEDIUM CLOUD" >
+                      <option value=""> </option>
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      </select>
+                    </td>
+                    <td>
+                       <input type="text" name="HeightOfMediumClouds2_observationslipform"  id="HeightOfMediumClouds2_observationslipform" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder=" 0 "  style = "width: 70px">
+                    </td>
+                    <td>
+                       <select name="CLCODEOfMediumClouds2_observationslipform"  id="CLCODEOfMediumClouds2_observationslipform" onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder=" Enter CL CODE OF MEDIUM CLOUD " >
+                      <option value=""> </option>
+                      <option value="Ac">Ac</option>
+                      <option value="As">As</option>
+                      <option value="Ns">Ns</option>
+
+
+                      </select>
+                    </td>
+                    <td>
+                       <select name="TypeOfHighClouds2_observationslipform"  id="TypeOfHighClouds2_observationslipform" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter TYPE OF HIGH CLOUD" >
+                        <option value=""> </option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                      </select>
+                    </td>
+                    <td>
+                       <select name="OktasOfHighClouds2_observationslipform" id="OktasOfHighClouds2_observationslipform" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter OKTAS OF HIGH CLOUD" >
+                        <option value=""> </option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                      </select>
+                    </td>
+                    <td>
+                      <input type="text" name="HeightOfHighClouds2_observationslipform"  id="HeightOfHighClouds2_observationslipform" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder=" 0 " style = "width:70px;">
+                    </td>
+                    <td>
+                       <select name="CLCODEOfHighClouds2_observationslipform"  id="CLCODEOfHighClouds2_observationslipform" onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder=" Enter CL CODE MEDIUM CLOUD " >
+                        <option value=""></option>
+                        <option value="Cl">Cl</option>
+                        <option value="Cc">Cc</option>
+                        <option value="Cs">Cs</option>
+                      </select>
+                    </td>
+                  </tr>
+
+                   <!-- Type 3 clouds -->
+                   <tr>
+                      <td>
+                        <select  name="TypeOfLowClouds3_observationslipform"  id="TypeOfLowClouds3_observationslipform" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter Type of low Cloud" >
+                        <option value=""></option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+
+                      </select>
+                      </td>
+
+                      <td>
+                        <select name="OktasOfLowClouds3_observationslipform" id="OktasOfLowClouds3_observationslipform" onkeyup="allowIntegerInputOnly(this)" class="form-control" placeholder="Enter OKTAS of LOW CLOUD" >
+                        <option value=""> </option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                      </select>
+                      </td>
+
+                      <td>
+                        <input type="text" name="HeightOfLowClouds3_observationslipform"  id="HeightLowClouds3_observationslipform" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder=" 0 "  style = "width: 70px;">
+                      </td>
+
+                      <td>
+                        <select  name="CLCODEOfLowClouds3_observationslipform"  id="CLCODEOfLowClouds3_observationslipform" onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder=" Enter CLCODE of LOW CLOUD " >
+                        <option value=""> </option>
+                        <option value="Sc">Sc</option>
+                        <option value="St">St</option>
+                        <option value="Cu">Cu</option>
+                        <option value="Cb">Cb</option>
+
+                      </select>
+                      </td>
+                      <td>
+                        <select name="TypeOfMediumClouds3_observationslipform"  id="TypeOfMediumClouds3_observationslipform" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter TYPE OF MEDIUM CLOUD" >
+                        <option value=""></option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        </select>
+                      </td>
+                      <td>
+                        <select name="OktasOfMediumClouds3_observationslipform" id="OktasOfMediumClouds3_observationslipform" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter OKTAS OF MEDIUM CLOUD" >
+                        <option value=""> </option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        </select>
+                      </td>
+                      <td>
+                         <input type="text" name="HeightOfMediumClouds3_observationslipform"  id="HeightOfMediumClouds3_observationslipform" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder=" 0 " style = "width:70px;">
+                      </td>
+                      <td>
+                         <select name="CLCODEOfMediumClouds3_observationslipform"  id="CLCODEOfMediumClouds3_observationslipform" onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder=" Enter CL CODE OF MEDIUM CLOUD " >
+                           <option value=""> </option>
+                          <option value="Ac">Ac</option>
+                          <option value="As">As</option>
+                          <option value="Ns">Ns</option>
+                        </select>
+                      </td>
+                      <td>
+                         <select name="TypeOfHighClouds3_observationslipform"  id="TypeOfHighClouds3_observationslipform" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter TYPE HIGH CLOUD" >
+                          <option value=""></option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                        </select>
+                      </td>
+                      <td>
+                        <select name="OktasOfHighClouds3_observationslipform" id="OktasOfHighClouds3_observationslipform" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter OKTAS HIGH CLOUD" >
+                        <option value=""> </option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                      </select>
+                      </td>
+                      <td>
+                        <input type="text" name="HeightOfHighClouds3_observationslipform"  id="HeightOfHighClouds3_observationslipform" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder=" 0 " style = "width:70px;">
+                      </td>
+                      <td>
+                         <select name="CLCODEOfHighClouds3_observationslipform"  id="CLCODEOfHighClouds3_observationslipform" onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder=" Enter CL CODE MEDIUM CLOUD " >
+                          <option value=""></option>
+                          <option value="Cl">Cl</option>
+                          <option value="Cc">Cc</option>
+                          <option value="Cs">Cs</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">
+                          <div class="input-group">
+                            <span class="input-group-addon">Cloud Searchlight Alidade Reading</span>
+                            <input type="text" name="cloudsearchlight_observationslipform" id="cloudsearchlight_observationslipform" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter Cloud Searchlight Alidade Reading" >
+                          </div>
+                        </td>
+                        <td colspan="6">
+                          <div class="input-group">
+                          <span class="input-group-addon">Rainfall(mm)</span>
+                          <input type="text" name="rainfall_observationslipform" id="rainfall_observationslipform"   class="form-control" placeholder="Enter Rainfall(mm)" >
+                        </div>
+                        </td>
+                      </tr>
+            </table>
+
+                <!-- Section 2 -->
+                <div>
+                    <table id="example1" class="table table-bordered table-striped">
+                      <tr>
+                        <td>
+                          <div class="input-group">
+                            <span class="input-group-addon">Unit of Wind Speed</span>
+                            <select  name="UnitOfWindSpeed_mff" id="UnitOfWindSpeed_mff" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter the Unit of Wind Speed" >
+                              <option value=""></option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+
+
+
+                            </select>
+                          </div>
+                        </td>
+                        <td>
+                           <div class="input-group">
+                            <span class="input-group-addon">Ind. or omission of precipitation</span>
+                            <select name="IndOrOmissionOfPrecipitation_mff" id="IndOrOmissionOfPrecipitation_mff" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter the Ind. or omission of precipitation " >
+                              <option value=""></option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+
+                            </select>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>
+                          <div class="input-group">
+                            <span class="input-group-addon">Type of station/present & past weather</span>
+                            <select name="TypeOfStation_Present_Past_Weather_mff" id="TypeOfStation_Present_Past_Weather_mff" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter the Type of station/present & past weather" >
+                              <option value=""></option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+
+                            </select>
+                          </div>
+                        </td>
+                        <td>
+                           <div class="input-group">
+                            <span class="input-group-addon">Height Of Lowest Cloud</span>
+                            <select  name="heightOfLowestCloud_mff" id="heightOfLowestCloud_mff" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter the Height Of The Lowest Cloud" >
+                              <option value=""></option>
+
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                              <option value="9">9</option>
+                              <option value="10">10</option>
+
+                            </select>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                           <div class="input-group">
+                            <span class="input-group-addon">Standard isobaric surface</span>
+                            <input type="text" name="StandardIsobaricSurface_mff"  value="" id="StandardIsobaricSurface_mff" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter the Standard isobaric surface" >
+                          </div>
+                        </td>
+                        <td>
+
+                          <div class="input-group">
+                            <span class="input-group-addon">Geopotential Of Standard Isobaric Surface</span>
+                            <input type="text"  name="gpm_mff" id="gpm_mff"  value="" class="form-control"  placeholder="Enter the Geopotential Of Standard Isobaric Surface" >
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="input-group">
+                            <span class="input-group-addon">Duration Of Period Of Precipitation</span>
+                            <input type="text"  name="dopop_mff" id="dopop_mff"   value="" class="form-control" placeholder="Enter the Duration Of Period Of Precipitation" >
+                          </div>
+                        </td>
+                        <td>
+
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                <!-- Section 6 -->
+                <div>
+                    <table id="example1" class="table table-bordered table-striped">
+                        <tr>
+                            <td>
+                              <div class="input-group">
+                              <span class="input-group-addon">Grass Mininum temperature</span>
+                              <input type="text"  name="gmt_mff" id="gmt_mff" value=""  class="form-control" placeholder=" Enter Grass Mininum temperature " >
+                            </div>
+                            </td>
+                            <td>
+                              <div class="input-group">
+                                <span class="input-group-addon">Character and Intensity of Precipitation</span>
+                                <input type="text"  name="CI_OfPrecipitation_mff" id="CI_OfPrecipitation_mff"  value=""  class="form-control"  placeholder=" Enter Character and Intensity of Precipitation" >
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                <div class="input-group">
+                                  <span class="input-group-addon">Beginning or End of Precipitation</span>
+                                  <input type="text"  name="BE_OfPrecipitation_mff" value="" id="BE_OfPrecipitation_mff"    class="form-control"    placeholder="Enter Beginning or End of Precipitation" >
+                                </div>
+                              </td>
+                              <td>
+                                 <div class="input-group">
+                                  <span class="input-group-addon">Indicator of type of intrumentation</span>
+                                  <input type="text"  name="IndicatorOfTypeOfIntrumentation_mff" value=""id="IndicatorOfTypeOfIntrumentation_mff"    class="form-control"    placeholder="Enter the Indicator of type of intrumentation" >
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                 <div class="input-group">
+                                  <span class="input-group-addon">Sign of Pressure Change</span>
+                                  <input type="text"  name="SignOfPressureChange_mff" value="" id="SignOfPressureChange_mff"    class="form-control"    placeholder="Enter the Sign of Pressure Change" >
+                                </div>
+                              </td>
+                              <td>
+                                <div class="input-group">
+                                  <span class="input-group-addon">Supplementary Information</span>
+                                  <input type="text"  name="supplementaryinformation_mff" value="" id="supplementaryinformation_mff" onkeyup="allowCharactersInputOnly(this)"  class="form-control"   placeholder="Enter Supplementary Information" >
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                  <div class="input-group">
+                                    <span class="input-group-addon">Vapour Pressure</span>
+                                    <input type="text" name="VapourPressure_mff"value=""  id="VapourPressure_mff" onkeyup="allowIntegerInputOnly(this)"  class="form-control"   placeholder="Enter the Vapour Pressure" >
+                                  </div>
+                                </td>
+                                <td>
+                                  <div class="input-group">
+                                    <span class="input-group-addon">TH GRAPH</span>
+                                    <input type="text"  name="thgraph_mff" value=""  id="thgraph_mff"   class="form-control"  placeholder=" Enter TH GRAPH" >
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td colspan = "1">
+                                    <span class="input-group-addon">TREND</span>
+                                    <textarea  name="Trend_mff" value=""  class="form-control" style="height:40px;" id="Trend_mff" onkeyup=""></textarea>
+                                </td>
+                                <td>
+                                  <div>
+                                      <span class="input-group-addon">Approved</span>
+                                      <select name="approval" id="approval" disabled  class="form-control" >
+                                          <option value=""></option>
+                                          <option value="TRUE">TRUE</option>
+                                          <option value="FALSE">FALSE</option>
+                                        </select>
+                                        <input type="hidden" name="approval" value="">
+                                        <select>
+                                            <option value="></option>
+                                            <option value=">TRUE">TRUE</option>
+                                            <option value="FALSE">FALSE</option>
+                                        </select>
+                                  </div>
+                                </td>
+                              </tr>
+                    </table>
+                  </div>
+                  <div style="overflow:auto;">
+                      <div style="float:right;">
+                        <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                        <button type="button" id="nextBtn" onclick="nextPrev(1)" name="postObservationSlipFormData_button">Next</button>
+                      </div>
+                    </div>
+<!-- Circles which indicates the steps of the form: -->
+<div style="text-align:center;margin-top:40px;">
+<span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+      </div>
+      <div id="myModal"  data-backdrop="false" class="modal ">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Are you sure you want submit?</h4>
+          </div>
+          <div class="modal-footer">
+          <button style="color:white;float:left;" type="button" id="closex" class="btn btn-primary" onclick='goback()' ><li class="glyphicon glyphicon-remove"></li> &nbsp; Back</button>
+            <button style="color:white;" type="button" id="yesgo" class="btn btn-primary" style="color:#006400; float:right;" onclick="gosubmit() "><li class="glyphicon glyphicon-ok"></li> &nbsp; Yes</button>
+          </div>
+          </div>
+
+          </div>
+            </form>
+            </div>
+            <div class="col-xs-3"><a class="btn btn-primary no-print"
+              href="index.php/ObservationSlipForm/DisplayNewObservationSlipForm/">
+                  <i class="fa fa-plus"></i> Add new Observation</a>
+          </div>
+
+          <br><br>
+          <form action="" id="datepickForm" method="post"  enctype="multipart/form-data">
+
+            <div class="col-xs-2">
+              <div class="col-xs-2">
+                  <div class="form-group">
+                      <div class="input-group">
+                          <span class="input-group-addon">Select Week</span>
+                          <input type="week" name="week" id="week" value="" class="form-control summonth" placeholder="Please select the date" >
+
+                      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="col-xs-2">
+            </div>
+            <div class="col-xs-3">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon">From Date</span>
+                        <input type="text" name="datefrom" id="datefrom" value=""  class="form-control summonth" style="background-color:smokewhite; color: black;" placeholder="Please select the date" readonly >
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-2">
+            </div>
+            <div class="col-xs-3">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"> To Date</span>
+                        <input type="text" name="dateto" id="dateto"  value=""   class="form-control summonth" style="background-color:smokewhite; color: black;" placeholder="Please select the date" readonly >
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-1">
+              <input type="submit" name="datesub"  id="datesub" style="visibility:hidden;" />
+            </div>
+
+          </form>
+          <div class="row">
+              <div class="col-xs-12">
+
+                  <div class="box">
+                      <div class="box-header">
+                      </div>
+
+                      <div class="box-body table-responsive" style="overflow:auto;">
+                          <table id="example4" class="table table-bordered table-fixed table-striped">
+                              <thead>
+                              <tr>
+                                <th style="position: absolute;height:96px;width:68px;background-color:white;
+                                  z-index: 99;">ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                  <th style="width:65px"></th>
+                                  <span > <th>Submission Time</th></span>
+                                  <th>Date</th>
+                                  <th>Station</th>
+                                  <th>TIME</th>
+                                  <th>Amount of all Clouds</th>
+                                  <th>Amount of low Clouds</th>
+                                  <th>Type Of Low Clouds1</th>
+                                  <th>Oktas Of Low Clouds1</th>
+                                  <th>Height Of Low Clouds1</th>
+                                  <th>CLCODE Of Low Clouds1</th>
+                                  <th>Type Of Low Clouds2</th>
+                                  <th>Oktas Of Low Clouds2</th>
+                                  <th>Height Of Low Clouds2</th>
+                                  <th>CLCODE Of Low Clouds2</th>
+                                  <th>CLCODE Of Low Clouds3</th>
+                                  <th>Type Of Medium Clouds1</th>
+                                  <th>Oktas Of Medium Clouds1</th>
+                                  <th>Height Of Medium Clouds1</th>
+                                  <th>CLCODE Of Medium Clouds1</th>
+                                  <th>Oktas Of Medium Clouds2</th>
+                                  <th>Height Of Medium Clouds2</th>
+                                  <th>CLCODE Of Medium Clouds2</th>
+                                  <th>Type Of Medium Clouds3</th>
+                                  <th>Oktas Of Medium Clouds3</th>
+                                  <th>Height Of Medium Clouds3</th>
+                                  <th>CLCODE Of Medium Clouds3</th>
+                                  <th>Oktas Of High Clouds1</th>
+                                  <th>Height Of High Clouds1</th>
+                                  <th>CLCODE Of High Clouds1</th>
+                                  <th>Type Of High Clouds2</th>
+                                  <th>Oktas Of High Clouds2</th>
+                                  <th>Height Of High Clouds2</th>
+                                  <th>CLCODE Of High Clouds2</th>
+                                  <th>Type Of High Clouds3</th>
+                                  <th>Oktas Of High Clouds3</th>
+                                  <th>Height Of High Clouds3</th>
+                                  <th>CLCODE Of High Clouds3</th>
+                                  <th>Cloud Search LightReading</th>
+                                  <th>Rainfall (mm)</th>
+                                  <th>Dry Bulb</th>
+                                  <th>Wet Bulb</th>
+                                  <th>Max Reset</th>
+                                  <th>Max Reset</th>
+                                  <th>Min Read</th>
+                                  <th>Piche Read</th>
+                                  <th>Piche Reset</th>
+                                  <th>Time Marks Thermo</th>
+                                  <th>Time Marks Hygro</th>
+                                  <th>Time Marks RainRec</th>
+                                  <th>Present Weather</th>
+                                  <th>Present Weather Code</th>
+                                  <th>Past Weather</th>
+                                  <th>Visibility</th>
+                                  <th>Wind Direction</th>
+                                  <th>Wind Speed</th>
+
+                                  <th>Gusting</th>
+                                  <th>AttdThermo</th>
+                                  <th>PrAsRead</th>
+                                  <th>Correction</th>
+                                  <th>CLP</th>
+                                  <th>MSLPr</th>
+                                  <th>Time Marks Barograph</th>
+                                  <th>Time Marks Anemograph</th>
+                                  <th>Other TMarks</th>
+                                  <th>Soil Moisture</th>
+                                  <th>Soil Temperature</th>
+                                  <th>sunshine duration</th>
+                                  <th>trend</th>
+                                  <th>windrun</th>
+                                  <th>Minimum temperature</th>
+                    <th>Maximum temperature</th>
+                                  <th>specitime</th>
+                                  <th>UnitOfWindSpeed</th>
+                                  <th>IndOrOmissionOfPrecipitation</th>
+                                  <th>TypeOfStation_Present_Past_Weather</th>
+                                  <th>HeightOfLowestCloud</th>
+                                  <th>StandardIsobaricSurface</th>
+                                  <th>GPM</th>
+                                  <th>DurationOfPeriodOfPrecipitation</th>
+                                  <th>GrassMinTemp</th>
+                                  <th>CI_OfPrecipitation</th>
+                                  <th>BE_OfPrecipitation</th>
+                                  <th>IndicatorOfTypeOfIntrumentation</th>
+                                  <th>SignOfPressureChange</th>
+                                  <th>Supp_Info</th>
+                                  <th>VapourPressure</th>
+                                  <th>T_H_Graph</th>
+                                  <th>DeviceType</th>
+                                  <th>By</th>
+                                  <th>Remarks</th>
+                                  <th>Approved</th>
+                              </tr>
+                              </thead>
+                              </table>
+                              <div>
+                                <table>
+                                  <thead>
+                                    <tr>
+                                        <th style="position: absolute;height:96px;width:68px;background-color:white;
+                                        z-index: 99;">ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                        <span > <th>Submission Time</th></span>
+                                        <th>Date</th>
+                                  <th>Station</th>
+                                  <th>TIME</th>
+                                  <th>Amount of all Clouds</th>
+                                  <th>Amount of low Clouds</th>
+                                  <th>Type Of Low Clouds1</th>
+                                  <th>Oktas Of Low Clouds1</th>
+                                  <th>Height Of Low Clouds1</th>
+                                  <th>CLCODE Of Low Clouds1</th>
+                                  <th>Type Of Low Clouds2</th>
+                                  <th>Oktas Of Low Clouds2</th>
+                                  <th>Height Of Low Clouds2</th>
+                                  <th>CLCODE Of Low Clouds2</th>
+                                  <th>CLCODE Of Low Clouds3</th>
+                                  <th>Type Of Medium Clouds1</th>
+                                  <th>Oktas Of Medium Clouds1</th>
+                                  <th>Height Of Medium Clouds1</th>
+                                  <th>CLCODE Of Medium Clouds1</th>
+                                  <th>Oktas Of Medium Clouds2</th>
+                                  <th>Height Of Medium Clouds2</th>
+                                  <th>CLCODE Of Medium Clouds2</th>
+                                  <th>Type Of Medium Clouds3</th>
+                                  <th>Oktas Of Medium Clouds3</th>
+                                  <th>Height Of Medium Clouds3</th>
+                                  <th>CLCODE Of Medium Clouds3</th>
+                                  <th>Oktas Of High Clouds1</th>
+                                  <th>Height Of High Clouds1</th>
+                                  <th>CLCODE Of High Clouds1</th>
+                                  <th>Type Of High Clouds2</th>
+                                  <th>Oktas Of High Clouds2</th>
+                                  <th>Height Of High Clouds2</th>
+                                  <th>CLCODE Of High Clouds2</th>
+                                  <th>Type Of High Clouds3</th>
+                                  <th>Oktas Of High Clouds3</th>
+                                  <th>Height Of High Clouds3</th>
+                                  <th>CLCODE Of High Clouds3</th>
+                                  <th>Cloud Search LightReading</th>
+                                  <th>Rainfall (mm)</th>
+                                  <th>Dry Bulb</th>
+                                  <th>Wet Bulb</th>
+                                  <th>Max Reset</th>
+                                  <th>Max Reset</th>
+                                  <th>Min Read</th>
+                                  <th>Piche Read</th>
+                                  <th>Piche Reset</th>
+                                  <th>Time Marks Thermo</th>
+                                  <th>Time Marks Hygro</th>
+                                  <th>Time Marks RainRec</th>
+                                  <th>Present Weather</th>
+                                  <th>Present Weather Code</th>
+                                  <th>Past Weather</th>
+                                  <th>Visibility</th>
+                                  <th>Wind Direction</th>
+                                  <th>Wind Speed</th>
+
+                                  <th>Gusting</th>
+                                  <th>AttdThermo</th>
+                                  <th>PrAsRead</th>
+                                  <th>Correction</th>
+                                  <th>CLP</th>
+                                  <th>MSLPr</th>
+                                  <th>Time Marks Barograph</th>
+                                  <th>Time Marks Anemograph</th>
+                                  <th>Other TMarks</th>
+                                  <th>Soil Moisture</th>
+                                  <th>Soil Temperature</th>
+                                  <th>sunshine duration</th>
+                                  <th>trend</th>
+                                  <th>windrun</th>
+                    <th>Minimum temperature</th>
+                    <th>Maximum temperature</th>
+                                  <th>specitime</th>
+                                  <th>UnitOfWindSpeed</th>
+                                  <th>IndOrOmissionOfPrecipitation</th>
+                                  <th>TypeOfStation_Present_Past_Weather</th>
+                                  <th>HeightOfLowestCloud</th>
+                                  <th>StandardIsobaricSurface</th>
+                                  <th>GPM</th>
+                                  <th>DurationOfPeriodOfPrecipitation</th>
+                                  <th>GrassMinTemp</th>
+                                  <th>CI_OfPrecipitation</th>
+                                  <th>BE_OfPrecipitation</th>
+                                  <th>IndicatorOfTypeOfIntrumentation</th>
+                                  <th>SignOfPressureChange</th>
+                                  <th>Supp_Info</th>
+                                  <th>VapourPressure</th>
+                                  <th>T_H_Graph</th>
+                                  <th>DeviceType</th>
+                                  <th>By</th>
+                                  <th>Remarks</th>
+                                  <th>Approved</th>
+
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                        <td  style="position: absolute;height:57px;width:68px;background-color:white;
+                                        z-index: 99;"></td>
+                                         <td style="width:65px">echo "$nbsp";</td>
+                                         <td ></td>
+                                         <td ></td>
+                                         <td ></td>
+                                         <td ></td>
+                                         <td ></td>
+                                         <td ></td>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <td></td>
+                                         <td ></td>
+                                         <td ></td>
+                                         <td ></td>
+                                         <td ></td>
+                                         <td ></td>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <td ></td>
+                                         <td ></td>
+                                         <td></td>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                       <th></th>
+                       <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <th></th>
+                                         <td></td>
+                                         <th></th>
+                                         <td></td>
+                                         <td class="no-print" >
+
+                                         <table>
+                                           <tr>
+                                              <td> <a class="btn btn-primary" style="color:white;" href="" style="cursor:pointer;" onClick="" ><li class="fa fa-edit"></li> Edit </a> </td>
+                                              <td><form [formGroup]="observationSlipForm" (ngSubmit)="submitTest()"> <input type="hidden" name="id" value="" ><input type="hidden" name="approve" value="FALSE" ><button class="btn btn-danger"  type="submit" ><li class='fa fa-times'></li> Disapprove</button></form>
+                                              </td>
+                                              <!-- <td><form [formGroup]="observationSlipForm" (ngSubmit)="submitTest()"></form> <input type="hidden" name="id" value="" ><input type="hidden" name="approve" value="TRUE" ><button class="btn btn-success"  type="submit"  ><li class='fa fa-check'></li> Approve &nbsp;&nbsp;&nbsp;&nbsp;</button></form>
+                                              </td> -->
+                                              <td><form [formGroup]="observationSlipForm" (ngSubmit)="submitTest()" ><input type="hidden" name="approve" value="ENDORSE" ><button class="btn btn-success" type="submit"  ><li class='fa fa-check'></li> Endorse</button></form>
+                                              </td>
+
+                                              <!-- <tr>
+                                                  <td colspan="2" align = "center">Time marks</td>
+                                              </tr> --> -->
+
+                                            </tr>
+                                         </table>
+
+                                        </td>
+                                    </tr>
+
+                                  </tbody>
+                                </table>
+                              </div>
+
+                              <br><br>
+                              <button onClick="print();" class="btn btn-primary no-print"><i class="fa fa-print"></i> Print</button>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+
+
+            </section>
+        </aside>
+    </body>
+</html>
