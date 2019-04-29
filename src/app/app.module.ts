@@ -52,10 +52,6 @@ import { ObservationSlipReportComponent } from './components/forms/observation-s
 import { ViewObservationslipformsComponent } from './components/forms/view-observationslipforms/view-observationslipforms.component';
 import { AlertService } from './components/services/allServices';
 
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -77,7 +73,7 @@ import { AlertService } from './components/services/allServices';
     UsertestComponent,
     ObservationSlipFormComponent,
     ObservationSlipReportComponent,
-    ViewObservationslipformsComponent 
+    ViewObservationslipformsComponent
   ],
   imports: [
     BrowserModule,

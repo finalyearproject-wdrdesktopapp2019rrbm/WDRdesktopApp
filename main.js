@@ -6,11 +6,7 @@ let win
 
 function createWindow () {
   // Create the browser window.
-<<<<<<< HEAD
   win = new BrowserWindow({ width: 1200, height: 800 })
-=======
-  win = new BrowserWindow({ width: 1000, height: 600 })
->>>>>>> 82d5659f235fad1b6779779b40c65069bf205eaf
 
   // and load the index.html of the app.
   win.loadFile('dist/wdr/index.html')
