@@ -1,3 +1,151 @@
-<p>
-  station works!
-</p>
+
+<div class="container-fluid pt-5">
+    <div class="col-md mx-auto" >
+      <div class="jumbotron">
+          <h2 class="text-center text-primary">Add a new station</h2>
+        </div>
+          <p>
+            <a routerLink="/main-nav" class="btn fa fa-home"> Home</a>
+          </p>
+
+      <form (ngSubmit)="addStation()"  class="needs-validation"  novalidate>
+            <div class="form-row">
+                   <div class="col-md-6 mb-3">
+                     <label for="stationName">Station Name</label>
+                     <input type="text" class="form-control" name="stationName" [(ngModel)]="station.stationName" placeholder="Enter station name"  required>
+                     <div class="valid-feedback">
+                       Looks good!
+                     </div>
+                   </div>
+                   <div class="col-md-6 mb-3">
+                     <label for="stationNumber">Station Number</label>
+                     <input type="number" class="form-control" name="stationNumber" [(ngModel)]="station.stationNumber" placeholder="Enter station number"  required>
+                     <div class="valid-feedback">
+                       Looks good!
+                     </div>
+                   </div>
+             </div>
+
+              <div class="form-row">
+                   <div class="col-md-6 mb-3">
+                     <label for="stationRegNumber">Station Reg number</label>
+                     <input type="number" class="form-control" name="stationRegNumber" [(ngModel)]="station.stationRegNumber" placeholder="Enter station number"  required>
+                     <div class="valid-feedback">
+                       Looks good!
+                     </div>
+                   </div>
+                   <div class="col-md-6 mb-3">
+                     <label for="location">Location</label>
+                     <input type="text" class="form-control" name="location" [(ngModel)]="station.location"  placeholder="Enter station's location" required>
+                     <div class="valid-feedback">
+                       Looks good!
+                     </div>
+                   </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label for="indicator">Indicator</label>
+                  <input type="text" class="form-control" name="indicator" [(ngModel)]="station.indicator" placeholder="Enter indicator" required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+                   <div class="col-md-6 mb-3">
+                     <label for="region">Region</label>
+                     <input type="text" class="form-control" name="region" [(ngModel)]="station.region"  placeholder="Enter region" required>
+                     <div class="valid-feedback">
+                       Looks good!
+                     </div>
+                   </div>
+              </div>
+
+              <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label for="country"> Country</label>
+                  <input type="email" class="form-control" name="country" [(ngModel)]="station.country" placeholder="Enter country" required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+                   <div class="col-md-6 mb-3">
+                     <label for="latitude">Latitude</label>
+                     <input type="text" class="form-control" name="latitude" [(ngModel)]="station.latitude"  placeholder="Enter station latitude" required>
+                     <div class="valid-feedback">
+                       Looks good!
+                     </div>
+                   </div>
+              </div>
+
+              <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label for="validationCustomUserEmail">Longitude</label>
+                  <input type="number" class="form-control" name="UserEmail" [(ngModel)]="station.longitude" placeholder="Enter station's longitude" required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+                   <div class="col-md-6 mb-3">
+                     <label for="altitude">Altitude</label>
+                     <input type="number" class="form-control" name="altitude" [(ngModel)]="station.altitude"  placeholder="Enter altitude" required>
+                     <div class="valid-feedback">
+                       Looks good!
+                     </div>
+                   </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label for="status">Station status</label>
+                  <select class="custom-select my-0 mr-sm-2" [(ngModel)]="station.status" name="status">
+                    <option selected>Select a station</option>
+                    <option value="InActive">Inactive</option>
+                    <option value="Active">Active</option>
+                  </select>
+                </div>
+                   <div class="col-md-6 mb-3">
+                     <label for="stationType">Station Type</label>
+                     <input type="text" class="form-control" name="stationType" [(ngModel)]="station.stationType"  placeholder="Enter station type" required>
+                     <div class="valid-feedback">
+                       Looks good!
+                     </div>
+                   </div>
+              </div>
+              <div class="">
+                <p class="text-center">Preview</p>
+                <table class="container">
+                    <thead>
+                      <th>Station Name</th>
+                      <th>Station Number </th>
+                      <th>Station Reg Number</th>
+                      <th>Location</th>
+                      <th>Indicator</th>
+                      <th>Region</th>
+                      <th>Country</th>
+                      <th>Latitude</th>
+                      <th>Longitude</th>
+                      <th>Altitude</th>
+                      <th>Station status</th>
+                      <th>Station Type</th>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>{{station.stationName}}</td>
+                        <td>{{station.stationNumber}}</td>
+                        <td>{{station.stationRegNumber}}</td>
+                        <td>{{station.location}}</td>
+                        <td>{{station.indicator}}</td>
+                        <td>{{station.region}}</td>
+                        <td>{{station.country}}</td>
+                        <td>{{station.latitude}}</td>
+                        <td>{{station.longitude}}</td>
+                        <td>{{station.status}}</td>
+                        <td>{{station.stationType}}</td>
+                      </tr>
+                    </tbody>
+
+                </table>
+
+              </div>
+                  <button class="btn btn-success">Add user</button>
+        </form>
+  </div>
+</div>
