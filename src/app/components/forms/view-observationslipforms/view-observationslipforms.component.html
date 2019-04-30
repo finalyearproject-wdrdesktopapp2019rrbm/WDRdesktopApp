@@ -1,0 +1,226 @@
+<div class="container-fluid">
+    <div class="col-md-12 col-sm-12 col-xm-12 ">
+      <div class="jumbotron">
+        <h2 class="text-center text-primary">Observationslips</h2>
+      </div>
+        <p>
+          <!-- <a routerLink="/main-nav" class="btn fa fa-home"> Home</a> -->
+          <!-- <a routerLink="/register-users" class="btn fa fa-user-plus"> Add user </a> -->
+        </p>
+
+    <table class="table table-striped  table-responsive-md table-responsive-sm table">
+      <thead class="thead-dark">
+      <tr>
+                <!-- <th style="position: absolute;height:96px;width:68px;background-color:white; z-index: 99;">ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th> -->
+                            <!-- <th style="width:65px"></th> -->
+                           <th>Submission Time</th>
+                            <th>Date</th>
+                            <th>Station</th>
+                            <th>Amount of all Clouds</th>
+                            <th>Amount of low Clouds</th>
+                            <th>Type Of Low Clouds1</th>
+                            <th>Oktas Of Low Clouds1</th>
+                            <th>Height Of Low Clouds1</th>
+                            <th>CLCODE Of Low Clouds1</th>
+                            <th>Type Of Low Clouds2</th>
+                            <th>Oktas Of Low Clouds2</th>
+                            <th>Height Of Low Clouds2</th>
+                            <th>CLCODE Of Low Clouds2</th>
+                            <th>Type Of Low Clouds3</th>
+                            <th>Oktas Of Low Clouds3</th>
+                            <th>Height Of Low Clouds3</th>
+                            <th>CLCODE Of Low Clouds3</th>
+                            <th>Type Of Medium Clouds1</th>
+                            <th>Oktas Of Medium Clouds1</th>
+                            <th>Height Of Medium Clouds1</th>
+                            <th>CLCODE Of Medium Clouds1</th>
+                            <th>Type Of Medium Clouds2</th>
+                            <th>Oktas Of Medium Clouds2</th>
+                            <th>Height Of Medium Clouds2</th>
+                            <th>CLCODE Of Medium Clouds2</th>
+                            <th>Type Of Medium Clouds3</th>
+                            <th>Oktas Of Medium Clouds3</th>
+                            <th>Height Of Medium Clouds3</th>
+                            <th>CLCODE Of Medium Clouds3</th>
+                            <th>Type Of High Clouds1</th>
+                            <th>Oktas Of High Clouds1</th>
+                            <th>Height Of High Clouds1</th>
+                            <th>CLCODE Of High Clouds1</th>
+                            <th>Type Of High Clouds2</th>
+                            <th>Oktas Of High Clouds2</th>
+                            <th>Height Of High Clouds2</th>
+                            <th>CLCODE Of High Clouds2</th>
+                            <th>Type Of High Clouds3</th>
+                            <th>Oktas Of High Clouds3</th>
+                            <th>Height Of High Clouds3</th>
+                            <th>CLCODE Of High Clouds3</th>
+                            <th>Cloud Search LightReading</th>
+                            <th>Rainfall (mm)</th>
+                            <th>Dry Bulb</th>
+                            <th>Wet Bulb</th>
+                            <th>Max Read</th>
+                            <th>Max Reset</th>
+                            <th>Min Read</th>
+                            <th>Min Reset</th>
+                            <th>Piche Read</th>
+                            <th>Piche Reset</th>
+                            <th>Time Marks Thermo</th>
+                            <th>Time Marks Hygro</th>
+                            <th>Time Marks RainRec</th>
+                            <th>Present Weather</th>
+                            <th>Present Weather Code</th>
+                            <th>Past Weather</th>
+                            <th>Visibility</th>
+                            <th>Wind Direction</th>
+                            <th>Wind Speed</th>
+                            <th>Gusting</th>
+                            <th>AttdThermo</th>
+                            <th>PrAsRead</th>
+                            <th>Correction</th>
+                            <th>CLP</th>
+                            <th>MSLPr</th>
+                            <th>Time Marks Barograph</th>
+                            <th>Time Marks Anemograph</th>
+                            <th>Other TMarks</th>
+                            <th>Soil Moisture</th>
+                            <th>Soil Temperature</th>
+                            <th>sunshine duration</th>
+                            <th>trend</th>
+                            <th>windrun</th>
+                            <th>speci / meta  time</th>
+                            <th>UnitOfWindSpeed</th>
+                            <th>IndOrOmissionOfPrecipitation</th>
+                            <th>TypeOfStation_Present_Past_Weather</th>
+                            <th>HeightOfLowestCloud</th>
+                            <th>StandardIsobaricSurface</th>
+                            <th>GPM</th>
+                            <th>DurationOfPeriodOfPrecipitation</th>
+                            <th>GrassMinTemp</th>
+                            <th>CI_OfPrecipitation</th>
+                            <th>BE_OfPrecipitation</th>
+                            <th>IndicatorOfTypeOfIntrumentation</th>
+                            <th>SignOfPressureChange</th>
+                            <th>Supp_Info</th>
+                            <th>VapourPressure</th>
+                            <th>T_H_Graph</th>
+                            <th>DeviceType</th>
+                            <th>Submitted By</th>
+                            <th>Remarks</th>
+                            <th>Approved</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let observationslip of observationslips">
+        <td>{{observationslip.TIME}}</td>
+        <td>{{observationslip.Date}}</td>
+        <td>{{observationslip.Station}}</td>
+        <td>{{observationslip.TotalAmountOfAllClouds}}</td>
+        <td>{{observationslip.TotalAmountOfLowClouds}}</td>
+        <td>{{observationslip.TypeOfLowClouds1}}</td>
+        <td>{{observationslip.OktasOfLowClouds1}}</td>
+        <td>{{observationslip.HeightOfLowClouds1}}</td>
+        <td>{{observationslip.CLCODEOfLowClouds1}}</td>
+        <td>{{observationslip.TypeOfLowClouds2}}</td>
+        <td>{{observationslip.OktasOfLowClouds2}}</td>
+    		<td>{{observationslip.HeightOfLowClouds2}}</td>
+    	  <td>{{observationslip.CLCODEOfLowClouds2}}</td>
+    	  <td>{{observationslip.TypeOfLowClouds3}}</td>
+    	  <td>{{observationslip.OktasOfLowClouds3}}</td>
+    	  <td>{{observationslip.HeightOfLowClouds3}}</td>
+    	  <td>{{observationslip.CLCODEOfLowClouds3}}</td>
+        <td>{{observationslip.TypeOfMediumClouds1}}</td>
+        <td>{{observationslip.OktasOfMediumClouds1}}</td>
+        <td>{{observationslip.HeightOfMediumClouds1}}</td>
+        <td>{{observationslip.CLCODEOfMediumClouds1}}</td>
+        <td>{{observationslip.TypeOfMediumClouds2}}</td>
+        <td>{{observationslip.OktasOfMediumClouds2}}</td>
+        <td>{{observationslip.HeightOfMediumClouds2}}</td>
+        <td>{{observationslip.CLCODEOfMediumClouds2}}</td>
+        <td>{{observationslip.TypeOfMediumClouds3}}</td>
+        <td>{{observationslip.OktasOfMediumClouds3}}</td>
+        <td>{{observationslip.HeightOfMediumClouds3}}</td>
+        <td>{{observationslip.CLCODEOfMediumClouds3}}</td>
+        <td>{{observationslip.TypeOfHighClouds1}}</td>
+        <td>{{observationslip.OktasOfHighClouds1}}</td>
+        <td>{{observationslip.HeightOfHighClouds1}}</td>
+        <td>{{observationslip.CLCODEOfHighClouds1}}</td>
+        <td>{{observationslip.TypeOfHighClouds2}}</td>
+        <td>{{observationslip.OktasOfHighClouds2}}</td>
+        <td>{{observationslip.HeightOfHighClouds2}}</td>
+        <td>{{observationslip.CLCODEOfHighClouds2}}</td>
+        <td>{{observationslip.TypeOfHighClouds3}}</td>
+        <td>{{observationslip.OktasOfHighClouds3}}</td>
+        <td>{{observationslip.HeightOfHighClouds3}}</td>
+        <td>{{observationslip.CLCODEOfHighClouds3}}</td>
+        <td>{{observationslip.CloudSearchLightReading}}</td>
+        <td>{{observationslip.Rainfall}}</td>
+        <td>{{observationslip.Dry_Bulb}}</td>
+        <td>{{observationslip.Wet_Bulb}}</td>
+        <td>{{observationslip.Max_Read}}</td>
+        <td>{{observationslip.Max_Reset}}</td>
+        <td>{{observationslip.Min_Read}}</td>
+        <td>{{observationslip.Min_Reset}}</td>
+        <td>{{observationslip.Piche_Read}}</td>
+        <td>{{observationslip.Piche_Reset}}</td>
+        <td>{{observationslip.TimeMarksThermo}}</td>
+        <td>{{observationslip.TimeMarksHygro}}</td>
+        <td>{{observationslip.TimeMarksRainRec}}</td>
+    		<td>{{observationslip.Present_Weather}}</td>
+    		<td>{{observationslip.Present_WeatherCode}}</td>
+    		<td>{{observationslip.Past_Weather}}</td>
+        <td>{{observationslip.Visibility}}</td>
+    		<td>{{observationslip.Wind_Direction}}</td>
+    		<td>{{observationslip.Wind_Speed}}</td>
+    		<td>{{observationslip.Gusting}}</td>
+        <td>{{observationslip.AttdThermo}}</td>
+        <td>{{observationslip.PrAsRead}}</td>
+        <td>{{observationslip.Correction}}</td>
+        <td>{{observationslip.CLP}}</td>
+        <td>{{observationslip.MSLPr}}</td>
+    		<td>{{observationslip.TimeMarksBarograph}}</td>
+    		<td>{{observationslip.TimeMarksAnemograph}}</td>
+    		<td>{{observationslip.OtherTMarks}}</td>
+
+        <td>{{observationslip.SoilMoisture}}</td>
+        <td>{{observationslip.SoilTemperature}}</td>
+        <td>{{observationslip.sunduration}}</td>
+        <td>{{observationslip.trend}}</td>
+        <td>{{observationslip.windrun}}</td>
+        <td>{{observationslip.speciOrMetar}}</td>
+        <td>{{observationslip.UnitOfWindSpeed}}</td>
+        <td>{{observationslip.IndOrOmissionOfPrecipitation}}</td>
+        <td>{{observationslip.TypeOfStation_Present_Past_Weather}}</td>
+        <td>{{observationslip.HeightOfLowestCloud}}</td>
+        <td>{{observationslip.StandardIsobaricSurface}}</td>
+        <td>{{observationslip.GPM}}</td>
+        <td>{{observationslip.DurationOfPeriodOfPrecipitation}}</td>
+        <td>{{observationslip.GrassMinTemp}}</td>
+        <td>{{observationslip.CI_OfPrecipitation}}</td>
+        <td>{{observationslip.BE_OfPrecipitation}}</td>
+      	<td>{{observationslip.IndicatorOfTypeOfIntrumentation}}</td>
+      	<td>{{observationslip.SignOfPressureChange}}</td>
+      	<td>{{observationslip.Supp_Info}}</td>
+      	<td>{{observationslip.VapourPressure}}</td>
+
+        <td>{{observationslip.T_H_Graph}}</td>
+    		<td>{{observationslip.DeviceType}}</td>
+    		<td>{{observationslip.SubmittedBy}}</td>
+    		<td>{{observationslip.Remarks}}</td>
+    		<td>{{observationslip.Approved}}</td>
+
+
+
+
+
+       </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+
+
+
+</div>

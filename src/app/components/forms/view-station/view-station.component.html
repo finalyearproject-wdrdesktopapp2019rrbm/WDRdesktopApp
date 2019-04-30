@@ -1,0 +1,63 @@
+<div class="container-fluid">
+    <div class="col-md-12 col-sm-12 col-xm-12 ">
+      <div class="jumbotron">
+        <h2 class="text-center text-primary">WDR Stations</h2>
+      </div>
+        <p>
+          <a routerLink="/main-nav" class="btn fa fa-home"> Home</a>
+          <a routerLink="/add-station" class="btn fa fa-user-plus"> Add new station </a>
+        </p>
+    <table class="table table-striped  table-responsive-md table-responsive-sm table">
+      <thead class="thead-dark">
+      <tr>
+        <th>station_id</th>
+        <th>StationName</th>
+        <th>StationNumber</th>
+        <th>StationRegNumber</th>
+        <th>Location</th>
+        <th>Indicator</th>
+        <th>StationRegion</th>
+        <th>Country</th>
+        <th>Latitude</th>
+        <th>Longitude}</th>
+        <th>Altitude</th>
+        <th>StationStatus</th>
+        <th>StationType</th>
+        <th>Opened</th>
+        <th>Closed</th>
+        <th>SubmittedBy</th>
+        <th>CreationDate</th>
+        <th colspan="2" class="text-center">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let station of stations">
+     <td>{{station.station_id}}</td>
+     <td>{{station.StationName}}</td>
+     <td>{{station.StationNumber}}</td>
+     <td>{{station.StationRegNumber}}</td>
+     <td>{{station.Location}}</td>
+     <td>{{station.Indicator}}</td>
+     <td>{{station.StationRegion}}</td>
+     <td>{{station.Country}}</td>
+     <td>{{station.Latitude}}</td>
+     <td>{{station.Longitude}}</td>
+     <td>{{station.Altitude}}</td>
+     <td>{{station.StationStatus}}</td>
+     <td>{{station.StationType}}</td>
+     <td>{{station.Opened}}</td>
+     <td>{{station.Closed}}</td>
+     <td>{{station.SubmittedBy}}</td>
+     <td>{{station.CreationDate}}</td>
+
+        <!-- <td><button class="btn btn-sm btn-primary" (click)="deleteUser(user)"><i class="fa fa-edit"></i> Deactivate </button></td><td> -->
+          <!-- <button class="btn btn-sm  btn-info" (click)="editUser(user)" style="margin-left: 20px;" > <i class="fa fa-edit"></i> Edit</button> -->
+          <!-- <a [routerLink]="['/edit', user.Userid]" class="btn btn-primary" >Edit 2</a> -->
+        <!-- </td> -->
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+</div>
