@@ -6,9 +6,9 @@
 
 
 /* need to check these imports */
-/* @import "./styles/css/form.css"; */
-/* @import "./styles/css/AdminLTE.css"; */
-/* @import "./styles/css/bootstrap.css"; */
+@import "./styles/css/form.css";
+@import "./styles/css/AdminLTE.css";
+@import "./styles/css/bootstrap.css";
 @import "./styles/css/dashboard.css";
 
 html, body { height: 100%; }

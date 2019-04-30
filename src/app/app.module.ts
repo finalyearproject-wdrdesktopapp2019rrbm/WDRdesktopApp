@@ -51,6 +51,7 @@ import { ObservationSlipFormComponent } from './components/forms/observation-sli
 import { ObservationSlipReportComponent } from './components/forms/observation-slip-report/observation-slip-report.component';
 import { ViewObservationslipformsComponent } from './components/forms/view-observationslipforms/view-observationslipforms.component';
 import { AlertService } from './components/services/allServices';
+import { ViewStationComponent } from './components/forms/view-station/view-station.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +74,8 @@ import { AlertService } from './components/services/allServices';
     UsertestComponent,
     ObservationSlipFormComponent,
     ObservationSlipReportComponent,
-    ViewObservationslipformsComponent
+    ViewObservationslipformsComponent,
+    ViewStationComponent
   ],
   imports: [
     BrowserModule,
@@ -103,7 +105,8 @@ import { AlertService } from './components/services/allServices';
         {path: 'usertest', component:  UsertestComponent  },
         {path: 'observationSlipForm', component:  ObservationSlipFormComponent  },
         {path: 'observationSlipReport', component:  ObservationSlipReportComponent  },
-        {path: 'view-observationslipforms', component: ViewObservationslipformsComponent }
+        {path: 'view-observationslipforms', component: ViewObservationslipformsComponent },
+        {path: 'view-stations', component: ViewStationComponent }
 
 
       ]),

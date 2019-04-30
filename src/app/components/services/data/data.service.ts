@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Task } from '../../models/task/task';
+import { Station } from '../../models/station/station';
 
 import { Http,Headers,Response,RequestOptions } from '@angular/http';
 import 'rxjs/Rx';
@@ -9,8 +10,27 @@ import 'rxjs/Rx';
 export class DataService {
   public url:string='http://localhost:3000/Tasks';
   public formsUrl:string='http://localhost:3000/forms';
+  public stationsUrl:string='http://localhost:3000/stations';
 
   constructor(private _http: Http) { }
+  // STATION
+      //add a station
+      createStation(station: Station){
+        let body = JSON.stringify(station);
+        let headers = new Headers({ 'Content-Type': 'application/json'});
+        let options = new RequestOptions({ headers: headers });
+
+        return this._http.post(this.stationsUrl, body, options)
+        .map((response: Response) => response.json());
+      }
+
+      getStationDetails(){
+        return this._http.get(this.stationsUrl);
+      }
+
+
+
+  //OBSERVATIONSLIP
 
     getAllObservationslips(){
       return this._http.get(this.formsUrl);
@@ -28,6 +48,8 @@ export class DataService {
           return this._http.delete(this.url+item.Id,options)
           .map((response:Response)=>response.json());
     }
+
+
 
     addTask(item:Task){
 

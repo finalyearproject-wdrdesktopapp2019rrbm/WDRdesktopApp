@@ -6,6 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import {User }  from '../models/user/user';
 
 
+
 @Component({
   selector: 'app-register-users',
   templateUrl: './register-users.component.html',
@@ -38,7 +39,7 @@ export class RegisterUsersComponent implements OnInit {
 
 };
 
-  constructor( 
+  constructor(
     private formBuilder: FormBuilder,
     private router: Router,
     private userService: UserService,
