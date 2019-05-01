@@ -25,33 +25,7 @@
         <section>
 
             <div class="row">
-            <form   [formGroup]="observationSlipForm" (ngSubmit)="submitTest()">
-
-              <!-- Section 1 -->
-            <!-- <div class="tab">
-                <table>
-                    <tr>
-                   <td colspan = "4">
-
-                       <div class="input-group">
-                         <span class="input-group-addon">Station Name</span>
-                         <input type="text" name="station_observationslipform" id="station_observationslipform" required class="form-control" value=""  readonly class="form-control" >
-
-                       </div>
-
-                   </td>
-                   <td colspan = "4">
-
-                     <div class="input-group">
-                       <span class="input-group-addon"> Station Number</span>
-                       <input type="text" name="stationNo_observationslipform" id="stationNo_observationslipform" required class="form-control"  readonly class="form-control" value="" readonly="readonly" >
-                     </div>
-
-                   </td>
-                 </tr>
-                 </table>
-            </div> -->
-
+            <form   [formGroup]="observationSlipForm" (ngSubmit)="addObservationslipData()">
             <!-- <div class="tab"> -->
             <table>
               <tr>
