@@ -38,17 +38,17 @@ export class EditUserComponent implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     private userService: UserService) {
-      this.createForm();
+      // this.createForm();
 
     }
 
 
-       createForm() {
-        this._angForm = this.formBuilder.group({
-            UserName: ['', Validators.required ],
-            UserEmail: ['', Validators.required ]
-          });
-        }
+       // createForm() {
+       //  this._angForm = this.formBuilder.group({
+       //      UserName: ['', Validators.required ],
+       //      UserEmail: ['', Validators.required ]
+       //    });
+       //  }
 
   ngOnInit() {
 
@@ -75,8 +75,8 @@ export class EditUserComponent implements OnInit {
       console.log(data);
       // this.User =  data;
       // this.User.patchValue(data);
-      (userData: UserData) => this.displayUser(user),
-      (error: any)=> this.errorMessage = <any>error
+      // (userData: UserData) => this.displayUser(user),
+      // (error: any)=> this.errorMessage = <any>error
     }, err=>console.log(err));
 
 
@@ -89,7 +89,7 @@ export class EditUserComponent implements OnInit {
   // get f() { return this.editForm.controls; }
 
   onSubmit() {
-    this.submitted = true;
+    // this.submitted = true;
     // this.userService.updateUser(this.editForm.value)
     //   .pipe(first())
     //   .subscribe(
