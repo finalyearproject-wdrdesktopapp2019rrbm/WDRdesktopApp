@@ -1,145 +1,24 @@
-
-<div class="card">
-  <div class="card-body">
-    <!-- <form name="_angForm" #fs="ngForm" novalidate> -->
-        <form #userForm="ngForm">
-
-          <hr>
-          {{userModel | json}}
-          <hr>
-          {{ editUser | json}}
-
-          <hr>
-          {{testModel | json}}
-
-      <div class="form-group">
-        <label class="col-md-4">Test UserName</label>
-        <input type="text" class="form-control" name="UserName"  [(ngModel)]="editUser.UserName" />
-      </div>
-      <hr>
-
-      <div class="form-group">
-          <label class="col-md-4">UserName</label>
-          <!-- <input type="text" class="form-control" name="UserName"  [(ngModel)]="editUser.UserName" /> -->
-        </div>
-      <!-- <div *ngIf="_angForm.controls['UserName'].invalid && (_angForm.controls['UserName'].dirty || _angForm.controls['UserName'].touched)" class="alert alert-danger">
-        <div *ngIf="angForm.controls['UserName'].errors.required">
-          User Name is required.
-        </div>
-      </div> -->
-
-      <!-- <div class="form-group">
-        <label class="col-md-4">Business Name </label>
-        <input type="text" class="form-control" formControlName="business_name" #business_name [(ngModel)] = "business.business_name" />
-      </div>
-      <div *ngIf="angForm.controls['business_name'].invalid && (angForm.controls['business_name'].dirty || angForm.controls['business_name'].touched)" class="alert alert-danger">
-        <div *ngIf="angForm.controls['business_name'].errors.required">
-          Person Business is required.
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="col-md-4">Business GST Number </label>
-        <input type="text" class="form-control" formControlName="business_gst_number" #business_gst_number [(ngModel)] = "business.business_gst_number" />
-      </div>
-      <div *ngIf="angForm.controls['business_gst_number'].invalid && (angForm.controls['business_gst_number'].dirty || angForm.controls['business_gst_number'].touched)" class="alert alert-danger">
-        <div *ngIf="angForm.controls['business_gst_number'].errors.required">
-          Business GST Number is required.
-        </div>
-      </div> -->
-      <div class="form-group">
-        <button (click)="updateUserDetails(UserName.value)" [disabled]="_angForm.invalid"  class="btn btn-primary">Update User</button>
-      </div>
-    </form>
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <div class="card">
-    <div class="card-body">
-      <form [formGroup]="angForm" novalidate>
-        <div class="form-group">
-          <label class="col-md-4">Game Name</label>
-          <input type="text" class="form-control" formControlName="UserName" #Userid [(ngModel)] = "editUser.UserName" />
-        </div>
-        <div *ngIf="angForm.controls['UserName'].invalid && (angForm.controls['UserName'].dirty || angForm.controls['UserName'].touched)" class="alert alert-danger">
-          <div *ngIf="angForm.controls['UserName'].errors.required">
-            Name is required.
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label class="col-md-4">Game Price</label>
-          <input type="text" class="form-control" formControlName="price" #price [(ngModel)] = "game.price"/>
-        </div>
-        <div *ngIf="angForm.controls['price'].invalid && (angForm.controls['price'].dirty || angForm.controls['price'].touched)" class="alert alert-danger">
-          <div *ngIf="angForm.controls['price'].errors.required">
-            Price is required.
-          </div>
-        </div>
-          <div class="form-group">
-            <button (click)="updateGame(name.value, price.value)" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary">Add</button>
-          </div>
-      </form>
-    </div>
-  </div> -->
-
-
-<!-- <form>
-  <div class="container">
-    <div class="form-group">
-      <label>
-        Email:
-      </label>
-      <input type="text" [formControl]="email" />
-    </div>
-    <div class="form-group">
-      <label>
-        Email:
-      </label>
-      <input type="text" [formControl]="uname" />
-    </div>
-    <div class="form-group">
-      <button (click)="updateUser(email.value)" class="btn btn-dark">Update User</button>
-    </div>
-    <p>
-      email: {{ email.value }}
-    </p>
-  </div>
-
-
-</form> -->
-<!-- <div class="container-fluid pt-5 card" >
-    <div class="col-md mx-auto card-body" >
-      <div class="card rounded-0">
+<div class="container-fluid pt-5">
+    <div class="col-md mx-auto" >
+      <!-- <div class="card rounded-0">
         <div class="card-header">
-          <h2 class="text-center mb-0 text-primary">Edit User</h2>
+          <h2 class="text-center mb-0 text-primary">Add User</h2>
         </div>
-      </div>
+      </div> -->
+      <!-- <a routerLink="/main-nav" class="btn fa fa-home"> Home</a> -->
+      <div class="jumbotron">
+          <h2 class="text-center text-primary">WDR Edit user</h2>
+        </div>
+          <p>
+            <a routerLink="/main-nav" class="btn fa fa-home"> Home</a>
+            <!-- <a routerLink="/register-users" class="btn fa fa-user-plus"> Add user </a> -->
+          </p>
 
-
-
-
-      <form [formGroup]="angEditForm">
-
-
+      <form (ngSubmit)="onSubmit()"  class="needs-validation"  novalidate>
         <div class="form-row">
            <div class="col-md-6 mb-3">
            <label class="my-1 mr-2" for="UserRole">User Role</label>
-           <select class="custom-select my-1 mr-sm-2" name="userRole" [(ngModel)]="userEditForm.UserRole" class="form-control" required>
+           <select class="custom-select my-1 mr-sm-2" name="uRole" [(ngModel)]="user.UserRole" class="form-control" required>
              <option selected>Select user's role</option>
              <option value="Observer">Observer</option>
              <option value="OC">OC</option>
@@ -147,7 +26,7 @@
          </div>
          <div class="col-md-6 mb-3">
          <label class="my-1 mr-2" for="station">Station</label>
-         <select class="custom-select my-0 mr-sm-2" [(ngModel)]="userEditForm.station" name="station">
+         <select class="custom-select my-0 mr-sm-2" [(ngModel)]="user.station" name="station">
            <option selected>Select a station</option>
            <option value="1">Makerere Station</option>
            <option value="2">Kampala</option>
@@ -158,14 +37,14 @@
             <div class="form-row">
                    <div class="col-md-6 mb-3">
                      <label for="validationCustom01">First name</label>
-                     <input type="text" class="form-control" name="fname" [(ngModel)]="userEditForm.FirstName" placeholder="First name"  required>
+                     <input type="text" class="form-control" name="fname" [(ngModel)]="user.FirstName" placeholder="First name"  required>
                      <div class="valid-feedback">
                        Looks good!
                      </div>
                    </div>
                    <div class="col-md-6 mb-3">
                      <label for="validationCustomSurname">Surname</label>
-                     <input type="text" class="form-control" name="SurName" [(ngModel)]="userEditForm.SurName" placeholder="surname"  required>
+                     <input type="text" class="form-control" name="SurName" [(ngModel)]="user.SurName" placeholder="surname"  required>
                      <div class="valid-feedback">
                        Looks good!
                      </div>
@@ -178,7 +57,7 @@
                        <div class="input-group-prepend">
                          <span class="input-group-text" id="inputGroupPrepend">@</span>
                        </div>
-                       <input type="text" class="form-control" name="UserName" [(ngModel)]="userEditForm.UserName" placeholder="Username" aria-describedby="inputGroupPrepend" required>
+                       <input type="text" class="form-control" name="UserName" [(ngModel)]="user.UserName" placeholder="Username" aria-describedby="inputGroupPrepend" required>
                        <div class="invalid-feedback">
                          Please choose a username.
                        </div>
@@ -186,7 +65,7 @@
                    </div>
                    <div class="col-md-6 mb-3">
                      <label for="validationCustomPassword">Password</label>
-                     <input type="password" class="form-control" name="UserPassword" [(ngModel)]="userEditForm.UserPassword"  placeholder="password" required>
+                     <input type="password" class="form-control" name="UserPassword" [(ngModel)]="user.UserPassword"  placeholder="password" required>
                      <div class="valid-feedback">
                        Looks good!
                      </div>
@@ -195,14 +74,14 @@
               <div class="form-row">
                 <div class="col-md-6 mb-3">
                   <label for="validationCustomUserEmail">Email</label>
-                  <input type="email" class="form-control" name="UserEmail" [(ngModel)]="userEditForm.UserEmail" placeholder="enter email" required>
+                  <input type="email" class="form-control" name="UserEmail" [(ngModel)]="user.UserEmail" placeholder="enter email" required>
                   <div class="valid-feedback">
                     Looks good!
                   </div>
                 </div>
                    <div class="col-md-6 mb-3">
                      <label for="validationCustomPassword">Phone</label>
-                     <input type="text" class="form-control" name="UserPhone" [(ngModel)]="userEditForm.UserPhone"  placeholder="enter phone number" required>
+                     <input type="text" class="form-control" name="UserPhone" [(ngModel)]="user.UserPhone"  placeholder="enter phone number" required>
                      <div class="valid-feedback">
                        Looks good!
                      </div>
@@ -224,14 +103,13 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>{{userEditForm.UserRole}}</td>
-                        <td>{{userEditForm.station}}</td>
-                        <td>{{userEditForm.FirstName}}</td>
-                        <td>{{userEditForm.SurName}}</td>
-                        <td>{{userEditForm.UserName}}</td>
-                        <td>{{userEditForm.UserEmail}}</td>
-                        <td>{{userEditForm.UserPhone}}</td>
-
+                        <td>{{user.UserRole}}</td>
+                        <td>{{user.station}}</td>
+                        <td>{{user.FirstName}}</td>
+                        <td>{{user.SurName}}</td>
+                        <td>{{user.UserName}}</td>
+                        <td>{{user.UserEmail}}</td>
+                        <td>{{user.UserPhone}}</td>
                       </tr>
                     </tbody>
 
@@ -241,4 +119,4 @@
                   <button class="btn btn-success">Add user</button>
         </form>
   </div>
-</div> -->
+</div>

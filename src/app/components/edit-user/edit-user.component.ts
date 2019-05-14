@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding} from '@angular/core';
 import {FormControl, FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { UserService } from '../services/user/user.service';
 import { first } from 'rxjs/operators';
@@ -13,16 +13,26 @@ import { User } from '../models/user/user';
   styleUrls: ['./edit-user.component.css']
 })
 export class EditUserComponent implements OnInit {
-  uname ='kajs';
-  submitted = false;
-  editUser = new User(1, 'Kampala', 'thankU', 'heks', 'mike','pass',
-  'Observer', 'k@gmail.com', '03284','n','yes','o', 'now','no','mik','hj');
-  _angForm: FormGroup;
-  userModel = new User(1, 'Kampala', 'thankU', 'heks', 'mike','pass',
-  'Observer', 'k@gmail.com', '03284','n','yes','o', 'now','no','mik','hj');
+  @HostBinding('class') classes ='row';
 
-
-
+  user: User = {
+    Userid:0,
+    station:'1',
+    FirstName: '',
+    SurName: '',
+    UserName: '',
+    UserEmail: '',
+    UserPassword: '',
+    UserRole: '',
+    UserPhone: '',
+    Active:  '',
+    LoggedOn: '',
+    Reset: '',
+    LastPasswdChange: '',
+    LastLoggedIn: '',
+    CreatedBy: '',
+    CreationDate: ''
+  };
 
   constructor(
     private formBuilder: FormBuilder,
@@ -43,6 +53,7 @@ export class EditUserComponent implements OnInit {
   ngOnInit() {
 
     const userId = JSON.parse(localStorage.getItem('editUserId'));
+    // const param = this.route.snapshot.paramMap.get('id');
 
     if(!userId) {
       alert('Invalid action.');
@@ -58,11 +69,14 @@ export class EditUserComponent implements OnInit {
     // });
 
 
-    this.userService.getUserById(+userId).subscribe(data => {
-      // this.editUser = data;
-      this.uname = 'gtdd'
-      console.log(this.editUser);
-      // this.editUser.patchValue(data);
+    this.userService.getUserById(+userId)
+    .subscribe(data => {
+
+      console.log(data);
+      // this.User =  data;
+      // this.User.patchValue(data);
+      (userData: UserData) => this.displayUser(user),
+      (error: any)=> this.errorMessage = <any>error
     }, err=>console.log(err));
 
 

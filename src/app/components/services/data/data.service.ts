@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Task } from '../../models/task/task';
 import { Station } from '../../models/station/station';
+import { Observationslip } from '../../models/observationslip/observationslip';
 
 import { Http,Headers,Response,RequestOptions } from '@angular/http';
 import 'rxjs/Rx';
@@ -34,6 +35,15 @@ export class DataService {
 
     getAllObservationslips(){
       return this._http.get(this.formsUrl);
+    }
+    createObservationslip(observationslip: Observationslip){
+      let body = JSON.stringify(observationslip);
+      let headers = new Headers({ 'Content-Type': 'application/json'});
+      let options = new RequestOptions({ headers: headers });
+
+      return this._http.post(this.formsUrl, body, options)
+      .map((response: Response) => response.json());
+
     }
 
     getAllTasks(){
