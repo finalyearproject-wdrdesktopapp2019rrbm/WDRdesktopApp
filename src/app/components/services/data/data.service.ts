@@ -12,6 +12,8 @@ export class DataService {
   public url:string='http://localhost:3000/Tasks';
   public formsUrl:string='http://localhost:3000/forms';
   public stationsUrl:string='http://localhost:3000/stations';
+  private wimeaOnlineURL:string='http://wimea.mak.ac.ug/wdr/ionic_login/wimeaAppconnect/insert.php';
+  private wimeaOfflineURL:string='http://localhost/ionic_login/wimeaAppconnect/insert.php';
 
   constructor(private _http: Http) { }
   // STATION
@@ -45,6 +47,18 @@ export class DataService {
       .map((response: Response) => response.json());
 
     }
+
+    // createObservationslip(observationslip: Observationslip){
+    //   let body = JSON.stringify(observationslip);
+    //   let headers = new Headers({ 'Content-Type': 'application/json'});
+    //   let options = new RequestOptions({ headers: headers });
+    //   console.log(observationslip);
+    //
+    //
+    //   return this._http.post(this.wimeaOfflineURL, body, options)
+    //   .map((response: Response) => response.json());
+    //
+    // }
 
     getAllTasks(){
           return this._http.get(this.url)
