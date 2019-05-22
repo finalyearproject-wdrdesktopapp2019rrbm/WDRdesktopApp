@@ -51,6 +51,7 @@ import { ObservationSlipFormComponent } from './components/forms/observation-sli
 import { ObservationSlipReportComponent } from './components/forms/observation-slip-report/observation-slip-report.component';
 import { ViewObservationslipformsComponent } from './components/forms/view-observationslipforms/view-observationslipforms.component';
 import { AlertService } from './components/services/allServices';
+import { InternetStatusService  } from './components/services/allServices';
 import { ViewStationComponent } from './components/forms/view-station/view-station.component';
 
 @NgModule({
@@ -127,7 +128,7 @@ import { ViewStationComponent } from './components/forms/view-station/view-stati
     FormsModule
   ],
    exports: [CommonModule, MatToolbarModule, MatButtonModule, MatCardModule, MatInputModule, MatDialogModule, MatTableModule],
-  providers: [DataService, AuthGuard, UserService, AlertService],
+  providers: [DataService, AuthGuard, UserService, AlertService,InternetStatusService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
