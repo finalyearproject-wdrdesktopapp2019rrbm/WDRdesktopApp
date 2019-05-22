@@ -2,7 +2,9 @@ import { Component, OnInit, HostBinding} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import {  Router } from '@angular/router';
 import { DataService } from '../../services/allServices';
+import { InternetStatusService } from '../../services/allServices';
 import { Observationslip } from '../../models/observationslip/observationslip';
+import { ConnectionService } from 'ng-connection-service';
 
 @Component({
   selector: 'app-observation-slip-form',
@@ -12,7 +14,8 @@ import { Observationslip } from '../../models/observationslip/observationslip';
 export class ObservationSlipFormComponent implements OnInit {
 
   @HostBinding('class') classes ='row';
-
+  status = 'ONLINE';
+  isConnected = true;
 
   observationslip:Observationslip = {
     Date: '2019-06-01',
@@ -123,9 +126,23 @@ export class ObservationSlipFormComponent implements OnInit {
 constructor(
   private formBuilder: FormBuilder,
   private dataService: DataService,
-  private router: Router
-) {}
+  private router: Router,
+  private internetStatusService:InternetStatusService,
+  private connectionService: ConnectionService
+) {
+  this.connectionService.monitor().subscribe(isConnected => {
+    this.isConnected =  isConnected;
+    if(this.isConnected){
+      this.status = "ONLINE";
+    } else {
+      this.status = "OFFLINE";
+    }
+    console.log(this.status);
+
+  });
+}
   ngOnInit() {
+    // console.log(this.internetStatusService.check());
   }
 
   addObservationslipData(){
