@@ -4,6 +4,7 @@ import {  Router } from '@angular/router';
 import { DataService } from '../../services/allServices';
 import { InternetStatusService } from '../../services/allServices';
 import { Observationslip } from '../../models/observationslip/observationslip';
+
 import { ConnectionService } from 'ng-connection-service';
 
 @Component({
@@ -127,20 +128,24 @@ constructor(
   private formBuilder: FormBuilder,
   private dataService: DataService,
   private router: Router,
-  private internetStatusService:InternetStatusService,
+  // private internetStatusService:InternetStatusService,
   private connectionService: ConnectionService
 ) {
   this.connectionService.monitor().subscribe(isConnected => {
-    this.isConnected =  isConnected;
-    if(this.isConnected){
+    this.isConnected = isConnected;
+    if (this.isConnected) {
       this.status = "ONLINE";
-    } else {
-      this.status = "OFFLINE";
+      console.log(this.status);
     }
-    console.log(this.status);
-
+    else {
+      this.status = "OFFLINE";
+      alert(this.status);
+    }
   });
 }
+
+
+
   ngOnInit() {
     // console.log(this.internetStatusService.check());
   }
