@@ -141,6 +141,8 @@ constructor(
       this.status = "OFFLINE";
       alert(this.status);
     }
+    alert(this.status);
+    console.log(this.status);
   });
 }
 
