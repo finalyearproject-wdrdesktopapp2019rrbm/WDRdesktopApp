@@ -13,7 +13,8 @@ export class DataService {
   public formsUrl:string='http://localhost:3000/forms';
   public stationsUrl:string='http://localhost:3000/stations';
   private wimeaOnlineURL:string='http://wimea.mak.ac.ug/wdr/ionic_login/wimeaAppconnect/insert.php';
-  private wimeaOfflineURL:string='http://localhost/ionic_login/wimeaAppconnect/insert.php';
+  private wimeaOnlineApi:string='http://wimea.mak.ac.ug/wdr/wimeaDesktopApiconnect/insert.php';
+  private wimeaOfflineURL:string='http://localhost/ionic_login/wimeaDesktopApiconnect/insert.php';
 
   constructor(private _http: Http) { }
   // STATION
@@ -38,73 +39,27 @@ export class DataService {
     getAllObservationslips(){
       return this._http.get(this.formsUrl);
     }
-    createObservationslip(observationslip: Observationslip){
-      let body = JSON.stringify(observationslip);
-      let headers = new Headers({ 'Content-Type': 'application/json'});
-      let options = new RequestOptions({ headers: headers });
-
-      return this._http.post(this.formsUrl, body, options)
-      .map((response: Response) => response.json());
-
-    }
 
     // createObservationslip(observationslip: Observationslip){
     //   let body = JSON.stringify(observationslip);
     //   let headers = new Headers({ 'Content-Type': 'application/json'});
     //   let options = new RequestOptions({ headers: headers });
-    //   console.log(observationslip);
     //
-    //
-    //   return this._http.post(this.wimeaOfflineURL, body, options)
+    //   return this._http.post(this.formsUrl, body, options)
     //   .map((response: Response) => response.json());
     //
     // }
 
-    getAllTasks(){
-          return this._http.get(this.url)
-           .map((response:Response)=>response.json());
-    }
-
-    deleteTask(item:Task){
-          let headers = new Headers({ 'Content-Type': 'application/json' });
-          let options = new RequestOptions({ headers: headers });
-
-          return this._http.delete(this.url+item.Id,options)
-          .map((response:Response)=>response.json());
-    }
-
-
-
-    addTask(item:Task){
-
-    let body = JSON.stringify(item);
-
-    let headers = new Headers({ 'Content-Type': 'application/json' });
-
-    let options = new RequestOptions({ headers: headers });
-
-    return this._http.post(this.url,body, options)
-
-    .map((response:Response)=>response.json());
+    createObservationslip(observationslip: Observationslip){
+      let body = JSON.stringify(observationslip);
+      let headers = new Headers({ 'Content-Type': 'application/json'});
+      let options = new RequestOptions({ headers: headers });
+      // console.log(observationslip);
+      return this._http.post(this.wimeaOnlineApi, body, options)
+      .map((response: Response) => response.json());
 
     }
 
-    getTaskId(id:any){
 
-    return this._http.get(this.url+id)
-
-    .map((response:Response)=>response.json());
-
-    }
-
-    editTask(item:Task){
-
-    let body = JSON.stringify(item);
-    let headers = new Headers({ 'Content-Type': 'application/json' });
-    let options = new RequestOptions({ headers: headers });
-    return this._http.put(this.url+item.Id, body, options)
-    .map((response:Response)=>response.json());
-
-    }
 
 }
