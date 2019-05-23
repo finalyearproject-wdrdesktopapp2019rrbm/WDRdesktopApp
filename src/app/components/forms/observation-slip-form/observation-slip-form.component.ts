@@ -2,11 +2,9 @@ import { Component, OnInit, HostBinding} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import {  Router } from '@angular/router';
 import { DataService, ConnectionServiceService } from '../../services/allServices';
-import { InternetStatusService } from '../../services/allServices';
 import { OnlineOfflineService } from '../../services/allServices';
 import { Observationslip } from '../../models/observationslip/observationslip';
 
-import { ConnectionService } from 'ng-connection-service';
 
 
 @Component({
@@ -17,10 +15,6 @@ import { ConnectionService } from 'ng-connection-service';
 export class ObservationSlipFormComponent implements OnInit {
 
   @HostBinding('class') classes ='row';
-  status = 'OFFLINE';
-  isConnected = false;
-
-
   observationslip:Observationslip = {
     Date: '2019-06-01',
     id:null,
@@ -131,26 +125,9 @@ constructor(
   private formBuilder: FormBuilder,
   private dataService: DataService,
   private router: Router,
-  private internetStatusService:InternetStatusService,
-  private connectionService: ConnectionService,
-  public readonly onlineOfflineService: OnlineOfflineService
-) {
-  this.connectionService.monitor().subscribe(isConnected => {
-    this.isConnected = isConnected;
-    if (this.isConnected) {
-      this.status = "ONLINE";
-    }
-    else {
-      this.status = "OFFLINE";
-    }
-    // console.log(this.status);
-    // alert(this.status);
-  });
-  // console.log(this.isConnected);
-  // console.log(this.status);
-
-
-}
+  public readonly onlineOfflineService: OnlineOfflineService,
+  private conn: ConnectionServiceService
+) {}
 
 
 
@@ -161,15 +138,7 @@ constructor(
 
 
   addObservationslipData(){
-    // if(this.status == "ONLINE"){
-    //   console.log('Online now');
-    //
-    // } else {
-    //   console.log('Offline now');
-    // }
-    // let iStatus = this.internetStatusService.check();
-
-    // console.log(this.observationslip)
+ 
     this.dataService.createObservationslip(this.observationslip)
     .subscribe( res =>{
       console.log(res);
