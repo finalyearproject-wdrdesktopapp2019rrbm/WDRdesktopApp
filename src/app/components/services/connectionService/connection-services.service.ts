@@ -11,8 +11,7 @@ export class ConnectionServiceService {
   public connected$ =  new BehaviorSubject<boolean>(false);
   private config = 'http://wimea.mak.ac.ug/wdr/wimeaDesktopApiconnect/insert.php';
   public connState: boolean;
-  private source = interval(3000)
-
+  private source = interval(3000);
   constructor(private _http: HttpClient) { 
     this.source.subscribe(() => {
       this._http.get(this.config, { observe: 'response'})
