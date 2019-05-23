@@ -121,6 +121,7 @@ export class ObservationSlipFormComponent implements OnInit {
     EndorsedBy:''
 
   }
+  public response;
 
 constructor(
   private formBuilder: FormBuilder,
@@ -137,8 +138,19 @@ ngOnInit(){ }
     this.dataService.createObservationslip(this.observationslip)
     .subscribe( res =>{
       console.log(res);
+      const row = res.affectedRows;
+      if(row == 1){
+        console.log('data inserted successfully');
+        this.response = "Observationslip successfully";
+      } else {
+        console.log(res);
+        this.response =  "Error occured during inserting data";
+      }
+      alert(this.response);
       this.router.navigate(['view-observationslipforms']);
     },  err => console.log(err));
+
+    
 
   }
 
