@@ -103,6 +103,5 @@ public Approved: number,
 public ApprovedBy: number,
 public Endorsed: string,
 public EndorsedBy: string
-
   ) {}
 }
