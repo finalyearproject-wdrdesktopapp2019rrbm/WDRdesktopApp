@@ -13,6 +13,7 @@ export class ConnectionServiceService {
   public connState: boolean;
   private source = interval(3000);
   constructor(private _http: HttpClient) { 
+    
     this.source.subscribe(() => {
       this._http.get(this.config, { observe: 'response'})
       .pipe(first())
@@ -34,5 +35,6 @@ export class ConnectionServiceService {
       this.connState = data;
       this.connected$.next(this.connState);
     }
+    
 
 }

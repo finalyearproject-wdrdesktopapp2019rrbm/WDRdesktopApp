@@ -5,22 +5,24 @@ import { Observationslip } from '../../models/observationslip/observationslip';
 
 import { Http,Headers,Response,RequestOptions } from '@angular/http';
 import 'rxjs/Rx';
+import { ConnectionServiceService } from '../allServices';
 
 
 @Injectable()
 
 export class DataService {
 
-  status = 'OFFLINE';
-  isConnected = false;
   public url:string='http://localhost:3000/Tasks';
   public formsUrl:string='http://localhost:3000/forms';
   public stationsUrl:string='http://localhost:3000/stations';
   // private wimeaOnlineURL:string='http://wimea.mak.ac.ug/wdr/ionic_login/wimeaAppconnect/insert.php';
   private wimeaOnlineApi:string='http://wimea.mak.ac.ug/wdr/wimeaDesktopApiconnect/insert.php';
   private wimeaOfflineURL:string='http://localhost/ionic_login/wimeaDesktopApiconnect/insert.php';
-  private testUrl:string = 'http://www.google.com';
-  constructor(private _http: Http) {
+  private connectionStatus;
+ 
+
+  constructor(private _http: Http, private conn: ConnectionServiceService) {
+    
     }
   // STATION
       //add a station
@@ -60,12 +62,23 @@ export class DataService {
     // }
 
     createObservationslip(observationslip: Observationslip){
+     
+       // check if internet is on
+      var v = this.conn.connected$;
+      this.connectionStatus = v.value;
+  
+      alert(this.connectionStatus); 
+
+      
+
       let body = JSON.stringify(observationslip);
       let headers = new Headers({ 'Content-Type': 'application/json'});
       let options = new RequestOptions({ headers: headers });
-      // console.log(observationslip);
-      return this._http.post(this.wimeaOnlineApi, body, options)
+      console.log(observationslip);
+      return this._http.post(this.formsUrl, body, options)
       .map((response: Response) => response.json());
+
+      
     
 
     }
