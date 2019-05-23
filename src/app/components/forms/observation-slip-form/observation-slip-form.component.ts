@@ -130,14 +130,9 @@ constructor(
   private conn: ConnectionServiceService
 ) {}
 
-
-
-  ngOnInit(){
-    
+ngOnInit(){    
 
   }
-
-
 
   addObservationslipData(){
  
