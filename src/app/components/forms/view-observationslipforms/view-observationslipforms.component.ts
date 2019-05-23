@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class ViewObservationslipformsComponent implements OnInit {
     observationslips: any = [];
+    syncData:any = [];
+    public unsyncedData:number;
   constructor(private router: Router, private dataService: DataService) { }
 
   ngOnInit() {
@@ -17,6 +19,15 @@ export class ViewObservationslipformsComponent implements OnInit {
       this.observationslips = data.json();
       console.log(this.observationslips);
     });
+
+    this.dataService.countSyncObservationslips()
+    .subscribe(res => {
+
+      this.syncData = res.json();
+      console.log(this.syncData);
+      this.unsyncedData = this.syncData[0].number;
+      console.log(this.unsyncedData);
+    })
 
 
   }

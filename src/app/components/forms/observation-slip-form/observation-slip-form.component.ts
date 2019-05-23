@@ -15,8 +15,9 @@ import { ConnectionService } from 'ng-connection-service';
 export class ObservationSlipFormComponent implements OnInit {
 
   @HostBinding('class') classes ='row';
-  status = 'ONLINE';
-  isConnected = true;
+  status = 'OFFLINE';
+  isConnected = false;
+
 
   observationslip:Observationslip = {
     Date: '2019-06-01',
@@ -128,31 +129,43 @@ constructor(
   private formBuilder: FormBuilder,
   private dataService: DataService,
   private router: Router,
-  // private internetStatusService:InternetStatusService,
+  private internetStatusService:InternetStatusService,
   private connectionService: ConnectionService
 ) {
   this.connectionService.monitor().subscribe(isConnected => {
     this.isConnected = isConnected;
     if (this.isConnected) {
       this.status = "ONLINE";
-      console.log(this.status);
     }
     else {
       this.status = "OFFLINE";
-      alert(this.status);
     }
-    alert(this.status);
     console.log(this.status);
+    alert(this.status);
   });
+  console.log(this.isConnected);
+  console.log(this.status);
+
+
 }
 
 
 
-  ngOnInit() {
-    // console.log(this.internetStatusService.check());
+  ngOnInit(){
+  
   }
 
+
+
   addObservationslipData(){
+    // if(this.status == "ONLINE"){
+    //   console.log('Online now');
+    //
+    // } else {
+    //   console.log('Offline now');
+    // }
+    // let iStatus = this.internetStatusService.check();
+
     // console.log(this.observationslip)
     this.dataService.createObservationslip(this.observationslip)
     .subscribe( res =>{
