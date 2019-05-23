@@ -32,6 +32,7 @@
     "ag-grid": "^18.1.2",
     "ag-grid-angular": "^20.2.0",
     "angular-font-awesome": "^3.1.2",
+    "angular-notification-icons": "^1.0.0",
     "angular2-notifications": "^2.0.0",
     "bootstrap": "^4.3.1",
     "core-js": "^2.5.4",
