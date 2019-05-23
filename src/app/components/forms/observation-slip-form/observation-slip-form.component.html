@@ -23,6 +23,9 @@
             <button class="btn btn-info">current status: {{ onlineOfflineService.isOnline ? 'online' : 'offline'}}</button>
 
           </p>
+          <div [ngClass]="(conn.connected$ | async) ? 'success' : 'error'">  
+              <span><b> Ping {{ (conn.connected$ | async) ? 'Success' : 'Failed... Retrying...' }} </b></span>
+            </div>
 
            <!-- Main content -->
         <section>
