@@ -1,12 +1,13 @@
 import { Component, OnInit, HostBinding} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import {  Router } from '@angular/router';
-import { DataService } from '../../services/allServices';
+import { DataService, ConnectionServiceService } from '../../services/allServices';
 import { InternetStatusService } from '../../services/allServices';
 import { OnlineOfflineService } from '../../services/allServices';
 import { Observationslip } from '../../models/observationslip/observationslip';
 
 import { ConnectionService } from 'ng-connection-service';
+
 
 @Component({
   selector: 'app-observation-slip-form',
