@@ -18,7 +18,7 @@ export class DataService {
   public url:string='http://localhost:3000/Tasks';
   public formsUrl:string='http://localhost:3000/forms';
   public stationsUrl:string='http://localhost:3000/stations';
-  private wimeaOnlineURL:string='http://wimea.mak.ac.ug/wdr/ionic_login/wimeaAppconnect/insert.php';
+  // private wimeaOnlineURL:string='http://wimea.mak.ac.ug/wdr/ionic_login/wimeaAppconnect/insert.php';
   private wimeaOnlineApi:string='http://wimea.mak.ac.ug/wdr/wimeaDesktopApiconnect/insert.php';
   private wimeaOfflineURL:string='http://localhost/ionic_login/wimeaDesktopApiconnect/insert.php';
   private testUrl:string = 'http://www.google.com';

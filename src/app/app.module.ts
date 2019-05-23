@@ -50,7 +50,7 @@ import { UsertestComponent } from './components/usertest/usertest.component';
 import { ObservationSlipFormComponent } from './components/forms/observation-slip-form/observation-slip-form.component';
 import { ObservationSlipReportComponent } from './components/forms/observation-slip-report/observation-slip-report.component';
 import { ViewObservationslipformsComponent } from './components/forms/view-observationslipforms/view-observationslipforms.component';
-import { AlertService, OnlineOfflineService } from './components/services/allServices';
+import { AlertService, OnlineOfflineService, ConnectionServiceService } from './components/services/allServices';
 import { InternetStatusService  } from './components/services/allServices';
 import { ViewStationComponent } from './components/forms/view-station/view-station.component';
 
@@ -128,7 +128,7 @@ import { ViewStationComponent } from './components/forms/view-station/view-stati
     FormsModule
   ],
    exports: [CommonModule, MatToolbarModule, MatButtonModule, MatCardModule, MatInputModule, MatDialogModule, MatTableModule],
-  providers: [DataService, AuthGuard, UserService, AlertService,InternetStatusService, OnlineOfflineService],
+  providers: [DataService, AuthGuard, UserService, AlertService,InternetStatusService, OnlineOfflineService, ConnectionServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
