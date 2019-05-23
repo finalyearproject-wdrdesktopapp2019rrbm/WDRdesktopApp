@@ -116,6 +116,7 @@ export class ObservationSlipFormComponent implements OnInit {
     Remarks: ' ',
     Approved: 0,
     ApprovedBy: 0,
+    SyncStatus: 0,
     Endorsed: '',
     EndorsedBy:''
 
@@ -132,6 +133,7 @@ constructor(
 
 
   ngOnInit(){
+    
 
   }
 

@@ -20,12 +20,12 @@
               </ol>
           </section>
           <p>
-            <button class="btn btn-info">current status: {{ onlineOfflineService.isOnline ? 'online' : 'offline'}}</button>
+            <button class="btn btn-info">current network status: {{ onlineOfflineService.isOnline ? 'connected' : 'offline'}}</button>
 
           </p>
           <div [ngClass]="(conn.connected$ | async) ? 'success' : 'error'">  
-              <span><b> Ping {{ (conn.connected$ | async) ? 'Success' : 'Failed... Retrying...' }} </b></span>
-            </div>
+              <span><b class="btn btn-success"> Current status  {{ (conn.connected$ | async) ? 'Online' : 'Failed... Retrying...' }} </b></span>
+            </div>  <br />        
 
            <!-- Main content -->
         <section>
