@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import {  Router } from '@angular/router';
 import { DataService } from '../../services/allServices';
 import { InternetStatusService } from '../../services/allServices';
+import { OnlineOfflineService } from '../../services/allServices';
 import { Observationslip } from '../../models/observationslip/observationslip';
 
 import { ConnectionService } from 'ng-connection-service';
@@ -130,7 +131,8 @@ constructor(
   private dataService: DataService,
   private router: Router,
   private internetStatusService:InternetStatusService,
-  private connectionService: ConnectionService
+  private connectionService: ConnectionService,
+  public readonly onlineOfflineService: OnlineOfflineService
 ) {
   this.connectionService.monitor().subscribe(isConnected => {
     this.isConnected = isConnected;
@@ -140,11 +142,11 @@ constructor(
     else {
       this.status = "OFFLINE";
     }
-    console.log(this.status);
-    alert(this.status);
+    // console.log(this.status);
+    // alert(this.status);
   });
-  console.log(this.isConnected);
-  console.log(this.status);
+  // console.log(this.isConnected);
+  // console.log(this.status);
 
 
 }
@@ -152,7 +154,7 @@ constructor(
 
 
   ngOnInit(){
-  
+
   }
 
 

@@ -31,11 +31,11 @@ export class DataService {
       else {
         this.status = "OFFLINE";
       }
-      console.log(this.status);
-      alert(this.status);
+      // console.log(this.status);
+      // alert(this.status);
     });
-    console.log(this.isConnected);
-    console.log(this.status);
+    // console.log(this.isConnected);
+    // console.log(this.status);
 
    }
   // STATION
