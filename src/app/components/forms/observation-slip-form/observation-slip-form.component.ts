@@ -181,6 +181,7 @@ ngOnInit(){ }
 
     this.dataService.syncObservationslip(data)
     .subscribe( res => {
+      alert(res);
       console.log(res);
       alert('Response from online server');
       alert(res);
@@ -200,8 +201,13 @@ ngOnInit(){ }
     console.log(syncedData);
     alert('called');
 
-
+    alert('update sync status');
+    console.log('Updating sync details');
     this.dataService.updateSyncStatus(syncedData)
+    .subscribe( res => {
+      console.log(res);
+      
+    })
   }
 
   

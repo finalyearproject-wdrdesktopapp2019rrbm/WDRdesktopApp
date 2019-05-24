@@ -17,7 +17,7 @@ export class DataService {
   public stationsUrl:string='http://localhost:3000/stations';
   // private wimeaOnlineURL:string='http://wimea.mak.ac.ug/wdr/ionic_login/wimeaAppconnect/insert.php';
   private wimeaOnlineApi:string='http://wimea.mak.ac.ug/wdr/wimeaDesktopApiconnect/insert.php';
-  // private wimeaOfflineURL:string='http://localhost/ionic_login/wimeaDesktopApiconnect/insert.php';
+  private wimeaOfflineURL:string='http://localhost/ionic_login/wimeaDesktopApiconnect/insert.php';
   private connectionStatus;
  
 
@@ -69,7 +69,7 @@ export class DataService {
       let headers = new Headers({ 'Content-Type': 'application/json'});
       let options = new RequestOptions({ headers: headers });
         // console.log(observationslip);    
-        return this._http.post(this.formsUrl, body, options)
+        return this._http.put(this.formsUrl+'/updateSyncStatus', body, options)
       .map((response: Response) => response.json());
 
     }
@@ -89,6 +89,9 @@ export class DataService {
         // console.log(this.connectionStatus);
         return this._http.post(this.wimeaOnlineApi, body, options)
       .map((response: Response) => response.json());
+
+      // return this._http.post(this.wimeaOfflineURL, body, options)
+      // .map((response: Response) => response.json());
 
       // }else{
       //   console.log(this.connectionStatus);
