@@ -15,6 +15,7 @@ import { Observationslip } from '../../models/observationslip/observationslip';
 export class ObservationSlipFormComponent implements OnInit {
 
   @HostBinding('class') classes ='row';
+  private connectionStatus;
   observationslip:Observationslip = {
     Date: '2019-06-01',
     id:null,
@@ -137,21 +138,72 @@ ngOnInit(){ }
  
     this.dataService.createObservationslip(this.observationslip)
     .subscribe( res =>{
-      console.log(res);
-      const row = res.affectedRows;
-      if(row == 1){
-        console.log('data inserted successfully');
-        this.response = "Observationslip successfully";
-      } else {
+      if(res.errno){
+        console.log('Sorry data has not been stored on local database, try resending it');
+        alert(res.sqlMessage);
+        console.log(res.sqlMessage);
+      }else{
         console.log(res);
-        this.response =  "Error occured during inserting data";
+        console.log('data inserted successfully');
+        this.response = "Observationslip stored locally successfully";
+        alert(this.response);
+        console.log("Sending it online");
+
+        this.syncObservationslip(res);
       }
-      alert(this.response);
+      // const row = res.affectedRows;
+      // if(row == 1){
+      //   console.log('data inserted successfully');
+      //   this.response = "Observationslip successfully";
+      // } else {
+      //   console.log(res);
+      //   this.response =  "Error occured during inserting data";
+      // }
+      
       this.router.navigate(['view-observationslipforms']);
     },  err => console.log(err));
 
     
 
   }
+
+  syncObservationslip(data) {
+    // cheeck if internet is on 
+    var v = this.conn.connected$;
+      this.connectionStatus = v.value;
+
+    alert('called sync function');
+    console.log('called sync function');
+    console.log(data);
+
+    console.log(this.connectionStatus);
+    if(this.connectionStatus){
+
+    this.dataService.syncObservationslip(data)
+    .subscribe( res => {
+      console.log(res);
+      alert('Response from online server');
+      alert(res);
+      console.log('checking if data is still there')
+      console.log(data) 
+      this.updateSyncStatus(data);    
+    });
+
+  }else{
+    console.log('Can not synchronize data, connet to internet first');
+    alert('Synchronizing failed .. trying again....');
+  }
+
+  }
+
+  updateSyncStatus(syncedData){
+    console.log(syncedData);
+    alert('called');
+
+
+    this.dataService.updateSyncStatus(syncedData)
+  }
+
+  
 
 }

@@ -17,7 +17,7 @@ export class DataService {
   public stationsUrl:string='http://localhost:3000/stations';
   // private wimeaOnlineURL:string='http://wimea.mak.ac.ug/wdr/ionic_login/wimeaAppconnect/insert.php';
   private wimeaOnlineApi:string='http://wimea.mak.ac.ug/wdr/wimeaDesktopApiconnect/insert.php';
-  private wimeaOfflineURL:string='http://localhost/ionic_login/wimeaDesktopApiconnect/insert.php';
+  // private wimeaOfflineURL:string='http://localhost/ionic_login/wimeaDesktopApiconnect/insert.php';
   private connectionStatus;
  
 
@@ -51,34 +51,51 @@ export class DataService {
       return this._http.get(this.formsUrl+'/count');
     }
   
+
+    //save observationslip offline
     createObservationslip(observationslip: Observationslip){
       let body = JSON.stringify(observationslip);
       let headers = new Headers({ 'Content-Type': 'application/json'});
       let options = new RequestOptions({ headers: headers });
+        // console.log(observationslip);    
+        return this._http.post(this.formsUrl, body, options)
+      .map((response: Response) => response.json());
+
+    }
+
+    // update sync status
+    updateSyncStatus(observationslip: Observationslip){
+      let body = JSON.stringify(observationslip);
+      let headers = new Headers({ 'Content-Type': 'application/json'});
+      let options = new RequestOptions({ headers: headers });
+        // console.log(observationslip);    
+        return this._http.post(this.formsUrl, body, options)
+      .map((response: Response) => response.json());
+
+    }
+
+
+    //save observationslip online
+    syncObservationslip(observationslip: Observationslip){
+      let body = JSON.stringify(observationslip);
+      let headers = new Headers({ 'Content-Type': 'application/json'});
+      let options = new RequestOptions({ headers: headers });
         // console.log(observationslip);
-     
        // check if internet is on
-      var v = this.conn.connected$;
-      this.connectionStatus = v.value;  
+      // var v = this.conn.connected$;
+      // this.connectionStatus = v.value;  
       // alert(this.connectionStatus); 
-      if(this.connectionStatus){
-        console.log(this.connectionStatus);
+      // if(this.connectionStatus){
+        // console.log(this.connectionStatus);
         return this._http.post(this.wimeaOnlineApi, body, options)
       .map((response: Response) => response.json());
 
-      }else{
-        console.log(this.connectionStatus);
-      }
-
-      
-
-     
-      
-
-      
-    
-
+      // }else{
+      //   console.log(this.connectionStatus);
+        
+      // }
     }
+
 
 
 
