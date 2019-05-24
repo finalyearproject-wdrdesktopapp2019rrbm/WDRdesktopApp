@@ -19,10 +19,10 @@ export class DataService {
   private wimeaOnlineApi:string='http://wimea.mak.ac.ug/wdr/wimeaDesktopApiconnect/insert.php';
   private wimeaOfflineURL:string='http://localhost/ionic_login/wimeaDesktopApiconnect/insert.php';
   private connectionStatus;
- 
+
 
   constructor(private _http: Http, private conn: ConnectionServiceService) {
-    
+
     }
   // STATION
       //add a station
@@ -50,14 +50,14 @@ export class DataService {
     countSyncObservationslips(){
       return this._http.get(this.formsUrl+'/count');
     }
-  
+
 
     //save observationslip offline
     createObservationslip(observationslip: Observationslip){
       let body = JSON.stringify(observationslip);
       let headers = new Headers({ 'Content-Type': 'application/json'});
       let options = new RequestOptions({ headers: headers });
-        // console.log(observationslip);    
+        // console.log(observationslip);
         return this._http.post(this.formsUrl, body, options)
       .map((response: Response) => response.json());
 
@@ -68,7 +68,7 @@ export class DataService {
       let body = JSON.stringify(observationslip);
       let headers = new Headers({ 'Content-Type': 'application/json'});
       let options = new RequestOptions({ headers: headers });
-        // console.log(observationslip);    
+        // console.log(observationslip);
         return this._http.put(this.formsUrl+'/updateSyncStatus', body, options)
       .map((response: Response) => response.json());
 
@@ -83,8 +83,8 @@ export class DataService {
         // console.log(observationslip);
        // check if internet is on
       // var v = this.conn.connected$;
-      // this.connectionStatus = v.value;  
-      // alert(this.connectionStatus); 
+      // this.connectionStatus = v.value;
+      // alert(this.connectionStatus);
       // if(this.connectionStatus){
         // console.log(this.connectionStatus);
         return this._http.post(this.wimeaOnlineApi, body, options)
@@ -95,7 +95,7 @@ export class DataService {
 
       // }else{
       //   console.log(this.connectionStatus);
-        
+
       // }
     }
 
