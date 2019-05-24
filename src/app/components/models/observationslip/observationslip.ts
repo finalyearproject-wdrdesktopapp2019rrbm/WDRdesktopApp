@@ -1,7 +1,7 @@
 export class Observationslip{
   constructor(
 public Date: string,
-public id:null,
+public id: null,
 public Userid: number,
 public Station: number,
 public TIME: string,
